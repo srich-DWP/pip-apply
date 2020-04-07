@@ -11,17 +11,17 @@
 
     <form id="form" method="post" action="/v1/list">
 
-      <h1 class="govuk-heading-l">Check your answers: your health condition</h1>
+      <h1 class="govuk-heading-l">Check your answers: preparing food</h1>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: {
-              text: "Healthcare professionals"
+              text: "Aid or appliance used to prepare or cook a simple meal"
             },
             value: {
-              html: '<p class="govuk-body">Content here</p>'
+              text: 'Yes'
             },
             actions: {
               items: [
@@ -35,10 +35,10 @@
           },
           {
             key: {
-              text: "health conditions, illnesses, disabilities or injuries"
+              text: "Help from another person needed to prepare or cook a simple meal"
             },
             value: {
-              html: '<p class="govuk-body">Content here</p>'
+              text: 'Yes'
             },
             actions: {
               items: [
@@ -52,7 +52,7 @@
           },
           {
             key: {
-              text: "About your health conditions or disabilities"
+              text: "Extra information"
             },
             value: {
               html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -75,7 +75,7 @@
         ]
       }) }}
 
-      <a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and continue</a>
+      <a href="/v1/list?preparingfood=completed" class="govuk-button">Confirm and continue</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
