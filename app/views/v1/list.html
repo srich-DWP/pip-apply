@@ -161,11 +161,25 @@
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
+              {% if sectionStatus.managingtoiletneeds === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/managing-toilet-needs/check">
+                  Managing toilet needs 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.managingtoiletneeds === "started" %}
+                <a class="app-task-list__task-name " href="/v1/managing-toilet-needs/">
+                  Managing toilet needs
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/managing-toilet-needs/">
                   Managing toilet needs
                 </a>
-              </span>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
