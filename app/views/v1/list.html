@@ -203,25 +203,67 @@
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
+              {% if sectionStatus.communicating === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/communicating/check">
+                  Communicating 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.communicating === "started" %}
+                <a class="app-task-list__task-name " href="/v1/communicating/">
+                  Communicating
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/communicating/">
                   Communicating
                 </a>
-              </span>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
+              {% if sectionStatus.reading === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/reading/check">
+                  Reading 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.reading === "started" %}
+                <a class="app-task-list__task-name " href="/v1/reading/">
+                  Reading
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/reading/">
                   Reading
                 </a>
-              </span>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
+              {% if sectionStatus.mixingwithotherpeople === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/mixing-with-other-people/check">
+                  Mixing with other people 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.mixingwithotherpeople === "started" %}
+                <a class="app-task-list__task-name " href="/v1/mixing-with-other-people/">
+                  Mixing with other people
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/mixing-with-other-people/">
                   Mixing with other people
                 </a>
-              </span>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
