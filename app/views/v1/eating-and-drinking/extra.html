@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-add-another">
+
+    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – eating and drinking</h1>
+    <form action="/v1/eating-and-drinking/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "18",
+        label: {
+          html: "
+          <p>Tell us more about any difficulties you have when eating and drinking:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>tell us how your condition affects you doing this activity</li>
+            <li>tell us how you manage at the moment and the problems you have when youcannot do this activity</li>
+            <li>tell us how long it takes you to complete this activity</li>
+            <li>does whether you can do this vary throughout the day? Tell us about good and bad</li>
+            <li>days</li>
+            <li>do you experience any other difficulties, either during or after the activity, like pain,</li>
+            <li>breathlessness or tiredness?</li>
+            <li>tell us about the aids and appliances you need to use to help you eat and drink</li>
+            <li>tell us about the help you need from another person when eating and drinking. This includes help you have and help you need but do not get</li>
+          </ul>"
+        }
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "v1/eating-and-drinking/_return-link.html" %}
+      
+    </div>{# /moj-add-another #}
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
+
+

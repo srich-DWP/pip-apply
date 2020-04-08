@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for Personal Independence Payment (PIP)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/v1/eating-and-drinking/extra" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "aid",
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Do you need help from another person to eat and drink?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '
+            <p class="govuk-!-margin-top-5">By this we mean:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>do they remind you to eat and drink?</li>
+              <li>do they supervise you?</li>
+              <li>do they physically help you to eat and drink?</li>
+              <li>do they help you manage a feeding tube?</li>
+            </ul>
+            <p>This includes help you have and help you need but do not get.</p>
+            '
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "sometimes",
+              text: "Sometimes"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      {% include "v1/eating-and-drinking/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
+

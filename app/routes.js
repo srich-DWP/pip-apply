@@ -31,7 +31,18 @@ router.get('/v1/list', (req, res, next) => {
       // cwyn: 'complete',
       aboutyou: undefined,
       aboutyourhealth: undefined,
-      preparingfood: undefined
+      preparingfood: undefined,
+      eatinganddrinking: undefined,
+      managingtreatments: undefined,
+      washingandbathing: undefined,
+      managingtoiletneeds: undefined,
+      dressingandundressing: undefined,
+      communicating: undefined,
+      reading: undefined,
+      mixingwithotherpeople: undefined,
+      makingdecisionsaboutmoney: undefined,
+      goingout: undefined,
+      movingaround: undefined,
     }
   }
   
@@ -43,6 +54,33 @@ router.get('/v1/list', (req, res, next) => {
   };
   if (req.query.preparingfood) {
     req.session.sectionStatus.preparingfood = req.query.preparingfood
+  };
+  if (req.query.eatinganddrinking) {
+    req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
+  };
+  if (req.query.managingtreatments) {
+    req.session.sectionStatus.managingtreatments = req.query.managingtreatments
+  };
+  if (req.query.dressingandundressing) {
+    req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
+  };
+  if (req.query.communicating) {
+    req.session.sectionStatus.communicating = req.query.communicating
+  };
+  if (req.query.reading) {
+    req.session.sectionStatus.reading = req.query.reading
+  };
+  if (req.query.mixingwithotherpeople) {
+    req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
+  };
+  if (req.query.makingdecisionsaboutmoney) {
+    req.session.sectionStatus.makingdecisionsaboutmoney = req.query.makingdecisionsaboutmoney
+  };
+  if (req.query.goingout) {
+    req.session.sectionStatus.goingout = req.query.goingout
+  };
+  if (req.query.movingaround) {
+    req.session.sectionStatus.movingaround = req.query.movingaround
   };
 
   res.render('v1/list.html', {sectionStatus: req.session.sectionStatus});
