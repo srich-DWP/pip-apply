@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {% include "v1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Managing treatments</h1>
+
+    <p class="govuk-body-l">Tell us about whether you can monitor changes in your health condition, take medication or manage any treatments carried out at home.</p>
+    <p>Monitoring changes include things like:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>blood sugar level</li>
+      <li>changes in mental state</li>
+      <li>pain levels</li>
+    </ul>
+    <p>A home treatment includes things like:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>physiotherapy</li>
+      <li>home dialysis</li>
+    </ul>
+
+    <a href="/v1/managing-treatments/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

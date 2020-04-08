@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
 
-<p style="margin-top: 20px"><a href="/v1/clear-v1">Clear all data</a></p>
+<p style="margin-top: 20px; background-color: #ffffcc; padding: 10px; border: 2px solid orange;"><a href="/v1/clear-v1">Clear all data</a></p>
 
 {% endblock %}
 
@@ -17,7 +17,9 @@
 
 
 
-      <h1 class="govuk-heading-xl">Apply for Personal Independence Payment (PIP)</h1>
+      <h1 class="govuk-heading-xl">Personal Independence Payment (PIP)</h1>
+
+      <h2 class="govuk-heading-l">How your disability affects you</h2>
 
       <ol class="app-task-list">
         <li>
@@ -117,11 +119,25 @@
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#">
+              {% if sectionStatus.managingtreatments === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/managing-treatments/check">
+                  Managing treatments 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.managingtreatments === "started" %}
+                <a class="app-task-list__task-name " href="/v1/managing-treatments/">
+                  Managing treatments
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/managing-treatments/">
                   Managing treatments
                 </a>
-              </span>
+              {% endif %}
             </li>
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
