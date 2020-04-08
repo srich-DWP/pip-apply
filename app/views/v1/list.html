@@ -177,15 +177,22 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
+{#               <span class="app-task-list__task-name">
                 <a href="#">
                   Consent, declaration and submit (do this last)
                 </a>
-              </span>
+              </span> #}
+              <span class="app-task-list__task-name " href="#" aria-describedby="#">
+                  <span style="opacity: 0.6">Submit your application <span style="font-weight: normal">(do this last)</span></span>
+                </span>
             </li>
           </ul>
         </li>
       </ol>
+
+      <p style="margin-top: -10px">
+        <a href="/v1/cancel-application">Cancel application</a>
+      </p>
 
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}

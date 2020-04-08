@@ -47,3 +47,10 @@ router.get('/v1/list', (req, res, next) => {
 
   res.render('v1/list.html', {sectionStatus: req.session.sectionStatus});
 });
+
+// Clear data on the 'application cancelled' screen
+
+router.get('/*/clear-v1', function (req, res) {
+  req.session.destroy()
+  res.render('v1/application-cancelled')
+})
