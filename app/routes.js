@@ -61,6 +61,9 @@ router.get('/v1/list', (req, res, next) => {
   if (req.query.managingtreatments) {
     req.session.sectionStatus.managingtreatments = req.query.managingtreatments
   };
+  if (req.query.washingandbathing) {
+    req.session.sectionStatus.washingandbathing = req.query.washingandbathing
+  };
   if (req.query.dressingandundressing) {
     req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
   };
