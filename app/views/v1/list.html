@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
 
-<p style="margin-top: 20px; background-color: #ffffcc; padding: 10px; border: 2px solid orange;"><a href="/v1/clear-v1">Clear all data</a></p>
+<p style="margin-top: 20px; margin-bottom: -5px; background-color: #ffffcc; padding: 10px; border: 2px solid orange;"><a href="/v1/clear-v1">Clear all data</a></p>
 
 {% endblock %}
 
@@ -14,16 +14,18 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Personal Independence Payment (PIP)</h1>
 
-      <h2 class="govuk-heading-l">How your disability affects you</h2>
+
+      <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
+        How your disability affects you
+      </h1>
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> About you and your health condition
+            <span class="app-task-list__section-number">1. </span> Tell us about you and your health
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.aboutyou === "completed" %}
                 <a class="app-task-list__task-name " href="/v1/about-you/check">
@@ -42,6 +44,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/about-you/name">
                   About you
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -63,6 +68,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/about-your-health">
                   About your health condition
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -70,9 +78,9 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Your day-to-day life
+            <span class="app-task-list__section-number">2. </span> Tell us about your day-to-day life
           </h2>
-          <ul class="app-task-list__items">
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.preparingfood === "completed" %}
                 <a class="app-task-list__task-name " href="/v1/preparing-food/check">
@@ -91,6 +99,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/preparing-food/">
                   Preparing food
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -112,6 +123,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/eating-and-drinking/">
                   Eating and drinking
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -133,6 +147,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/managing-treatments/">
                   Managing treatments
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -154,6 +171,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/washing-and-bathing/">
                   Washing and bathing
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -169,12 +189,15 @@
                 <a class="app-task-list__task-name " href="/v1/managing-toilet-needs/">
                   Managing toilet needs
                   <span>
-                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
                 </a>
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/managing-toilet-needs/">
                   Managing toilet needs
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -183,7 +206,7 @@
                 <a class="app-task-list__task-name " href="/v1/dressing-and-undressing/check">
                   Dressing and undressing 
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
                 </a>
               {% elif sectionStatus.dressingandundressing === "started" %}
@@ -196,6 +219,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/dressing-and-undressing/">
                   Dressing and undressing
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -217,6 +243,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/communicating/">
                   Communicating
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -238,6 +267,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/reading/">
                   Reading
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -259,6 +291,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/mixing-with-other-people/">
                   Mixing with other people
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -280,6 +315,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/making-decisions-about-money/">
                   Making decisions about money
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -301,6 +339,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/going-out/">
                   Going out
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -322,6 +363,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/moving-around/">
                   Moving around
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>
@@ -343,6 +387,9 @@
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/additional-information/">
                   Additional information (optional)
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
               {% endif %}
             </li>

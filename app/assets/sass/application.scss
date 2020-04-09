@@ -28,6 +28,12 @@ $govuk-assets-path: '/govuk/assets/';
   border: 2px solid govuk-colour("blue");
 }
 
+.tag-notstarted {
+  background-color: govuk-colour("light-grey");
+  color: govuk-colour("dark-grey");
+  border: 2px solid govuk-colour("light-grey");
+}
+
 // // Tag layout to include the label within the link
 
 .app-task-list__task-name {
