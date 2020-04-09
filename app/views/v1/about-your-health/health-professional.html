@@ -93,21 +93,40 @@
 
       {% endcall %}
 
-
-
         {{ govukDateInput({
-          id: "expiry",
-          namePrefix: "expiry",
-          fieldset: {
-            legend: {
-              text: "When did you last see them?",
-              classes: "govuk-fieldset__legend--m"
+        id: "date-of-birth",
+        fieldset: {
+          legend: {
+            text: "When did you last see them?",
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This can be an approximate date – for example, 3 2020"
+        },
+        items: [
+          {
+            id: "condition-0--dob--month-",
+            name: "condition-0--dob--month-",
+            label: "Month",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--month-',
+              'data-id': 'condition-%index%--dob--month-'
             }
           },
-          hint: {
-            text: "This can be an approximate date – for example, 3 2020"
+          {
+            id: "condition-0--dob--year-",
+            name: "condition-0--dob--year-",
+            label: "Year",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--year-',
+              'data-id': 'condition-%index%--dob--year-'
+            }
           }
-        }) }}
+        ]
+      }) }}
 
         {{ govukButton({
           text: "Continue"
