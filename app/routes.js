@@ -18,8 +18,32 @@ router.use(function(req, res, next){
   next();
 });
 
-
 var path = require('path')
+
+// Routes
+
+router.get('/v1/about-your-health/another-answer', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('health-professional')
+    } else {
+      res.redirect('conditions')
+    }
+});
+
+router.get('/v1/about-your-health/q-health-professional-answer', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('health-professional')
+    } else {
+      res.redirect('conditions')
+    }
+});
+
 
 // Code for the list screen
 
