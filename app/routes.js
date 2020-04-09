@@ -43,6 +43,7 @@ router.get('/v1/list', (req, res, next) => {
       makingdecisionsaboutmoney: undefined,
       goingout: undefined,
       movingaround: undefined,
+      additionalinformation: undefined,
     }
   }
   
@@ -87,6 +88,9 @@ router.get('/v1/list', (req, res, next) => {
   };
   if (req.query.movingaround) {
     req.session.sectionStatus.movingaround = req.query.movingaround
+  };
+  if (req.query.additionalinformation) {
+    req.session.sectionStatus.additionalinformation = req.query.additionalinformation
   };
 
   res.render('v1/list.html', {sectionStatus: req.session.sectionStatus});

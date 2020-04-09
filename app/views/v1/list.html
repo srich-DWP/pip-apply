@@ -14,9 +14,6 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
-
       <h1 class="govuk-heading-xl">Personal Independence Payment (PIP)</h1>
 
       <h2 class="govuk-heading-l">How your disability affects you</h2>
@@ -308,11 +305,46 @@
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="medical-information-completed">
+              {% if sectionStatus.movingaround === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/moving-around/check">
+                  Moving around 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.movingaround === "started" %}
+                <a class="app-task-list__task-name " href="/v1/moving-around/">
+                  Moving around
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/moving-around/">
                   Moving around
                 </a>
-              </span>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.additionalinformation === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/additional-information/check">
+                  Additional information (optional)
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.additionalinformation === "started" %}
+                <a class="app-task-list__task-name " href="/v1/additional-information/">
+                  Additional information (optional)
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/additional-information/">
+                  Additional information (optional)
+                </a>
+              {% endif %}
             </li>
           </ul>
         </li>
