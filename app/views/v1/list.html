@@ -6,7 +6,11 @@
 
 {% block beforeContent %}
 
-<p style="margin-top: 20px; margin-bottom: -5px; background-color: #ffffcc; padding: 10px; border: 2px solid orange;"><a href="/v1/clear-v1">Clear all data</a></p>
+<p style="margin-top: 20px; margin-bottom: -5px; background-color: #ffffcc; padding: 10px; border: 2px solid orange;">
+  <strong>Shortcuts:</strong> &nbsp;
+  <a href="/v1/list?aboutyou=completed&amp;aboutyourhealth=completed&amp;preparingfood=completed&amp;eatinganddrinking=completed&amp;managingtreatments=completed&amp;washingandbathing=completed&amp;managingtoiletneeds=completed&amp;dressingandundressing=completed&amp;communicating=completed&amp;reading=completed&amp;mixingwithotherpeople=completed&amp;makingdecisionsaboutmoney=completed&amp;goingout=completed&amp;movingaround=completed&amp;additionalinformation=completed">Complete all sections</a> &nbsp;
+  <a href="/v1/clear-v1">Clear all data</a>
+</p>
 
 {% endblock %}
 
@@ -401,17 +405,36 @@
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
-{#               <span class="app-task-list__task-name">
-                <a href="#">
-                  Consent, declaration and submit (do this last)
+              {% if 
+                sectionStatus.aboutyou === "completed" and
+                sectionStatus.aboutyourhealth === "completed" and
+                sectionStatus.preparingfood === "completed" and
+                sectionStatus.eatinganddrinking === "completed" and
+                sectionStatus.managingtreatments === "completed" and
+                sectionStatus.washingandbathing === "completed" and
+                sectionStatus.dressingandundressing === "completed" and
+                sectionStatus.communicating === "completed" and
+                sectionStatus.reading === "completed" and
+                sectionStatus.mixingwithotherpeople === "completed" and
+                sectionStatus.makingdecisionsaboutmoney === "completed" and
+                sectionStatus.goingout === "completed" and
+                sectionStatus.movingaround === "completed" and
+                sectionStatus.additionalinformation === "completed"
+              %}
+                <a class="app-task-list__task-name " href="/v1/apply/declaration">
+                 Submit your application
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
                 </a>
-              </span> #}
-              <span class="app-task-list__task-name " href="#" aria-describedby="#">
+              {% else %}
+                <span class="app-task-list__task-name " href="#" aria-describedby="#">
                   <span style="opacity: 0.6">Submit your application <span style="font-weight: normal">(do this last)</span></span>
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
                 </span>
+              {% endif %}
             </li>
           </ul>
         </li>

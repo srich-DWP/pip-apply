@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for Personal Independence Payment (PIP)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Declaration</h1>
+
+      <p>By sending this application you confirm that:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the information you've given is correct and complete as far as you know</li>
+        <li>you&rsquo;ll report any changes in your circumstances</li>
+        <li>you&rsquo;ll pay back any money you&rsquo;re overpaid if you&rsquo;re asked to</li>
+      </ul>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          You could be prosecuted or have to pay a penalty if you deliberately give the wrong or incomplete information or do not report changes.
+        </strong>
+      </div>
+
+      <a href="/v1/apply/confirmation" class="govuk-button">I understand, send my application</a>
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
