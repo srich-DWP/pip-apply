@@ -376,21 +376,21 @@
             <li class="app-task-list__item">
               {% if sectionStatus.additionalinformation === "completed" %}
                 <a class="app-task-list__task-name " href="/v1/additional-information/check">
-                  Additional information (optional)
+                  Additional information
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
                   </span>
                 </a>
               {% elif sectionStatus.additionalinformation === "started" %}
                 <a class="app-task-list__task-name " href="/v1/additional-information/">
-                  Additional information (optional)
+                  Additional information
                   <span>
                     <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
                   </span>
                 </a>
               {% else %}
                 <a class="app-task-list__task-name " href="/v1/additional-information/">
-                  Additional information (optional)
+                  Additional information
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
@@ -460,7 +460,7 @@
                 </a>
               {% else %}
                 <span class="app-task-list__task-name " href="#" aria-describedby="#">
-                  <span style="opacity: 0.6; width: 70%; display: inline-block;">Submit your application<br>(do this after completing all other sections)</span>
+                  <span style="color: #626a6e; width: 70%; display: inline-block;">Submit your application after completing all other&nbsp;sections</span>
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Do this last</strong>
                   </span>
