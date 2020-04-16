@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      text: "Back",
+      href: "/v1/list"
+   }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Supporting evidence</h1>
+      <p class="govuk-body-l">Leading paragraph</p>
+      <p>Main content.</p>
+    </div><!-- govuk-form-group -->
+
+    <a href="/v1/supporting-evidence/supporting-evidence" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

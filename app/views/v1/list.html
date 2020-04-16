@@ -401,7 +401,38 @@
         </li>
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Apply
+            <span class="app-task-list__section-number">3. </span> Upload any supporting evidence you have
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              {% if sectionStatus.supportingevidence === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/supporting-evidence/supporting-evidence-uploaded-3">
+                  Supporting evidence
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.supportingevidence === "started" %}
+                <a class="app-task-list__task-name " href="/v1/supporting-evidence/">
+                  Supporting evidence
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/supporting-evidence/">
+                  Supporting evidence
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Apply
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">

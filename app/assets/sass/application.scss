@@ -63,6 +63,19 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
-// .app-task-list__section {
-//   background-color: red;
-// }
+// downloads
+
+.responsive-image {
+  width: 100%;
+}
+
+// uploading
+
+.progress-container {
+  background-image: url(/public/images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-align: center;
+  padding-top: 40px;
+  min-height: 400px;
+}
