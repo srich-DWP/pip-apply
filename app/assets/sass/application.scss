@@ -79,3 +79,11 @@ $govuk-assets-path: '/govuk/assets/';
   padding-top: 40px;
   min-height: 400px;
 }
+
+
+// 
+
+.govuk-panel__title {
+  @include govuk-font($size: 36);
+  font-weight: bold;
+}

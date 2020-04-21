@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+  {% include "v1/_beta-banner.html" %}
   {% include "v1/_back-link.html" %}
 {% endblock %}
 
@@ -30,7 +31,7 @@
       </form>
 
       {% include "v1/about-you/_return-link.html" %}
-      
+
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
 {% endblock %}

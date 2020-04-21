@@ -5,13 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-
-<p style="margin-top: 20px; margin-bottom: -5px; background-color: #eee; padding: 10px; font-size: 16px">
-  <strong>Prototype shortcuts:</strong> &nbsp;
-  <a href="/v1/list?aboutyou=completed&amp;aboutyourhealth=completed&amp;preparingfood=completed&amp;eatinganddrinking=completed&amp;managingtreatments=completed&amp;washingandbathing=completed&amp;managingtoiletneeds=completed&amp;dressingandundressing=completed&amp;communicating=completed&amp;reading=completed&amp;mixingwithotherpeople=completed&amp;makingdecisionsaboutmoney=completed&amp;goingout=completed&amp;movingaround=completed&amp;additionalinformation=completed&amp;supportingevidence=completed">Complete sections 1, 2 and 3</a> &nbsp;
-  <a href="/v1/clear-v1">Clear all data</a>
-</p>
-
+  {% include "v1/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -478,9 +472,13 @@
         <a href="/v1/cancel-application">Cancel application</a>
       </p>
 
-    </div>{# /govuk-grid-column-one-third #}
-  </div>{# /govuk-grid-row #}
-{% endblock %}
+    </div>{# /govuk-grid-column-two-thirds #}
 
-{% block footer %}
+  </div>{# /govuk-grid-row #}
+
+  <p style="margin-top: 20px; margin-bottom: -5px; background-color: #eee; padding: 10px; font-size: 16px">
+  <strong>Prototype shortcuts:</strong> &nbsp;
+  <a href="/v1/list?aboutyou=completed&amp;aboutyourhealth=completed&amp;preparingfood=completed&amp;eatinganddrinking=completed&amp;managingtreatments=completed&amp;washingandbathing=completed&amp;managingtoiletneeds=completed&amp;dressingandundressing=completed&amp;communicating=completed&amp;reading=completed&amp;mixingwithotherpeople=completed&amp;makingdecisionsaboutmoney=completed&amp;goingout=completed&amp;movingaround=completed&amp;additionalinformation=completed&amp;supportingevidence=completed">Complete sections 1, 2 and 3</a> &nbsp;
+  <a href="/v1/clear-v1">Clear all data</a>
+</p>
 {% endblock %}
