@@ -19,6 +19,25 @@ $govuk-assets-path: '/govuk/assets/';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.card {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: 20px;
+}
+
+.card-head {
+  padding: 1em;
+  background-color: govuk-colour("light-grey");
+}
+
+.card-body {
+  padding: 1em;
+}
+
+.responsive-image img {
+  width: 100%;
+  margin-bottom: govuk-spacing(2);
+}
+
 
 // Task list pattern
 
@@ -86,4 +105,12 @@ $govuk-assets-path: '/govuk/assets/';
 .govuk-panel__title {
   @include govuk-font($size: 36);
   font-weight: bold;
+}
+
+a:visited {
+  color: $govuk-link-colour;
+}
+
+.govuk-phase-banner a:visited {
+  color: $govuk-link-colour;
 }
