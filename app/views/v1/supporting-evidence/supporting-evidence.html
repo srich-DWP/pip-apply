@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
+{% include "v1/_beta-banner.html" %}
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
