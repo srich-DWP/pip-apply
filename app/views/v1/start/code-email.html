@@ -16,37 +16,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-       <h1 class="govuk-heading-l">Enter the 4-digit code</h1>
+       <h1 class="govuk-heading-l">A 4-digit code has been sent to email@gmail.com</h1>
 
       <form action="/v1/list" method="POST" novalidate>
-
-        <div class="govuk-inset-text">
-          <span class="govuk-body">If the details match to a saved application, a 4-digit code will have been sent to</span>
-          <strong>email@gmail.com</strong>.
-          <span class="govuk-body">The code is valid for 60 minutes.</span>
-        </div>
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="code" >Your 4-digit code</label>
           <input class="govuk-input govuk-input--width-4 input-capitals" id="code" name="code" maxlength="4" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
-
-        <div class="govuk-form-group">
-
-          <label class="govuk-label" data-uipath="postcode.label" for="postcode" >Your postcode</label>
-
-          <span class="govuk-hint" id="postcode-hint" data-uipath="postcode.label_hint" >This is used to verify the application</span>
-
-          <input class="govuk-input govuk-input govuk-input--width-10"
-          data-uipath="postcode.field"
-          id="postcode"
-          name="postcode"
-          type="text"
-          aria-describedby="postcode-hint"
-          data-hj-suppress value="">
-        </div>
-
-        
 
         <button type="submit" class="govuk-button">Continue</button>
 

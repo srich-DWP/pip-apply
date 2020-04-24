@@ -4,6 +4,15 @@
   Apply for Personal Independence Payment (PIP)
 {% endblock %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    serviceName: &nbsp;
+  }) }}
+{% endblock %}
+
+
 {% block beforeContent %}
   {% include "v1/_beta-banner.html" %}
 {% endblock %}
@@ -21,7 +30,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/v1/start/email",
+        href: "/v1/start/sign-in",
         isStartButton: true
       }) }}
 
