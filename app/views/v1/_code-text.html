@@ -16,13 +16,6 @@
 
        <h1 class="govuk-heading-l">A 4-digit code has been texted to<br>XXXX XXX 789</h1>
 
-
-      {% if getData.next === "list" %}
-        <form action="/v1/list" method="POST" novalidate>
-      {% else %}
-        <form action="/v1/start/password" method="POST" novalidate>
-      {% endif %}
-
       <form action="/v1/start/password" method="POST" novalidate>
 
         <div class="govuk-form-group">
