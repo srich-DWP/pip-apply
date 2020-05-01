@@ -22,17 +22,62 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-form-group">
-        <h1 class="govuk-heading-l">Apply for Personal Independence Payment (PIP)</h1>
-        <p>You can only use this service if you have been invited.</p>
-        <p>If you have not been invited, call XXXXX to apply for Personal Independence Payment (PIP).</p>
-      </div>{# /govuk-form-group #}
+      <h1 class="govuk-heading-l">Tell DWP how your disability affects you for your PIP claim</h1>
+
+      <p>Only use this service if you’ve already applied for Personal Independence Payment (PIP).</p>
+
+      <p>Use the service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>tell the Department for Work and Pensions (DWP) how your health condition or disability affects you</li>
+        <li>upload photos or scans of any documents as evidence</li>
+      </ul>
+
+      <p>Take your time and describe all the help you need. You don’t have to answer all the questions in one go.</p>
+
+      <p>You’ll be asked questions about your ability to carry out everyday activities. The answers will help DWP understand the effect of your health condition or disability on your everyday life and assess your entitlement to the benefit.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>It might be helpful to keep a diary of how your disability affects you for a few days. Write down a list of things you need help with or find difficult.</p>
+
+      <p>You’ll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>names and contact details of professionals who might be supporting you</li>
+        <li>details of your medication </li>
+        <li>photos or scans of evidence of your condition or disability and how it affects you</li>
+      </ul>
+
+      <p>Examples of evidence might include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>prescription lists</li>
+        <li>care plans</li>
+        <li>a diary of how of things you find difficult or need help with at different times</li>
+        <li>reports or information from health professionals such as a GP, hospital doctor, specialist nurse or physiotherapist</li>
+        <li>reports or information from other professionals such as a social worker, support worker or counsellor</li>
+      </ul>
+
+      <p>Only send evidence you already have. It does not need to be recent.</p>
+
+      <p>Do not request further evidence – for example, from your GP. This could slow down your application or cost you money. If DWP needs further evidence, it will ask for it.</p>
 
       {{ govukButton({
         text: "Start now",
         href: "/v1/start/sign-in",
         isStartButton: true
       }) }}
+
+
+      <h2 class="govuk-heading-m">Other ways to send this information</h2>
+
+      <p>Call the PIP enquiry line if you would like to fill in and post a paper form and your evidence instead.</p>
+
+      <div class="indent-hairline">
+        {% include "v1/_contact.html" %}
+      </div>
+      
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
