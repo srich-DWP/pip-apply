@@ -30,6 +30,7 @@ router.get('/v1/list', (req, res, next) => {
       // cwyn: 'complete',
       aboutyou: undefined,
       aboutyourhealth: undefined,
+      aboutyourhealthprofessionals: undefined,
       preparingfood: undefined,
       eatinganddrinking: undefined,
       managingtreatments: undefined,
@@ -52,6 +53,9 @@ router.get('/v1/list', (req, res, next) => {
   };
   if (req.query.aboutyourhealth) {
     req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
+  };
+  if (req.query.aboutyourhealthprofessionals) {
+    req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
   };
   if (req.query.preparingfood) {
     req.session.sectionStatus.preparingfood = req.query.preparingfood
@@ -107,28 +111,27 @@ router.get('/*/clear-v1', function (req, res) {
 })
 
 
-
 // Routes
 
-router.get('/v1/about-your-health/another-answer', function(req, res) {
+router.get('/v1/about-your-health-professionals/another-answer', function(req, res) {
 
   let question = req.session.data['question']
 
   if (question === 'yes') {
       res.redirect('health-professional')
     } else {
-      res.redirect('conditions')
+      res.redirect('check')
     }
 });
 
-router.get('/v1/about-your-health/q-health-professional-answer', function(req, res) {
+router.get('/v1/about-your-health-professionals/q-health-professional-answer', function(req, res) {
 
   let question = req.session.data['question']
 
   if (question === 'yes') {
       res.redirect('health-professional')
     } else {
-      res.redirect('conditions')
+      res.redirect('check')
     }
 });
 
@@ -312,7 +315,3 @@ router.get('/v1/supporting-evidence/supporting-evidence-uploaded-3-data-cya', fu
       res.redirect('check')
     }
 });
-
-
-
-

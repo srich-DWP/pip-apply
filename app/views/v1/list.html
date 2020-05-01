@@ -62,15 +62,39 @@
                   </span>
                 </a>
               {% elif sectionStatus.aboutyourhealth === "started" %}
-                <a class="app-task-list__task-name " href="/v1/about-your-health">
+                <a class="app-task-list__task-name " href="/v1/about-your-health/conditions">
                   About your health condition
                   <span>
                     <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/v1/about-your-health">
+                <a class="app-task-list__task-name " href="/v1/about-your-health/conditions">
                   About your health condition
+                  <span>
+                    <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.aboutyourhealthprofessionals === "completed" %}
+                <a class="app-task-list__task-name " href="/v1/about-your-health-professionals/check">
+                  About your health professionals 
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.aboutyourhealthprofessionals === "started" %}
+                <a class="app-task-list__task-name " href="/v1/about-your-health-professionals">
+                  About your health professionals
+                  <span>
+                    <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/v1/about-your-health-professionals">
+                  About your health professionals
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>

@@ -12,16 +12,25 @@
 
     <form id="form" method="post" action="/v1/list">
 
-      <h1 class="govuk-heading-l">Check your answers: your health condition</h1>
+      <h1 class="govuk-heading-l">Check your answers: your health professionals</h1>
 
       {{ govukSummaryList({
         rows: [
-          {
+
+        {
             key: {
-              text: "Health conditions or disabilities"
+              text: "Healthcare professional 1"
             },
             value: {
-              html: '<p class="govuk-body">Content here</p>'
+              html: '<p class="govuk-body">
+                David Smith<br>
+                Specialist nurse<br>
+                01165 9178 678<br>
+                34 Moorbank Street<br>
+                Nottingham<br>
+                NG1 1TY<br>
+                Last seen: March 2020
+              </p>'
             },
             actions: {
               items: [
@@ -35,30 +44,34 @@
           },
           {
             key: {
-              text: "About your health conditions or disabilities"
+              text: "Healthcare professional 2"
             },
             value: {
-              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+              html: '<p class="govuk-body">
+                Jason Jackson<br>
+                Physiotherapist<br>
+                01165 1111 222<br>
+                34 Clumber Road<br>
+                Nottingham<br>
+                NG1 7YH<br>
+                Last seen: February 2019
+              </p>'
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "contact details"
+                  visuallyHiddenText: "name"
                 }
               ]
             }
           }
+
         ]
       }) }}
 
-      <a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and continue</a>
+      <a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and continue</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

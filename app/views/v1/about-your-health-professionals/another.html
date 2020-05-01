@@ -14,14 +14,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v1/about-your-health/q-health-professional-answer" method="post" novalidate>
+      <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>David Smith</strong>
+      </p>
+
+      <form action="/v1/about-your-health-professionals/another-answer" method="post" novalidate>
 
         {{ govukRadios({
           idPrefix: "aid",
           name: "question",
           fieldset: {
             legend: {
-              text: "Are there any health professionals that you would like to tell us about?",
+              text: "Are there any other health professionals that you would like to tell us about?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -49,7 +53,7 @@
 
       </form>
 
-      {% include "v1/about-your-health/_return-link.html" %}
+      {% include "v1/about-your-health-professionals/_return-link.html" %}
       
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
