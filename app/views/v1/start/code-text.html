@@ -32,8 +32,12 @@
 
         <button type="submit" class="govuk-button">Continue</button>
 
+        <p><a href="#">Didn’t get a code</a></p>
+
+        <p><a href="#">Don’t have your phone?</a></p>
+
         <!-- No 4 digit code guidance -->
-        <details class="govuk-details" data-module="govuk-details">
+{#         <details class="govuk-details" data-module="govuk-details">
            <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text" id="haveNot4DigitCode">I haven’t received an email with my 4-digit code</span>
             </summary>
@@ -53,10 +57,10 @@
               <span>If you have followed the guidance above and have still not received a code, you will need to</span>
               <a href="#">contact info here.</a>.    
             </div>
-          </details>
+          </details> #}
 
           <!-- Code does not work guidance -->
-          <details class="govuk-details" data-module="govuk-details">
+{#           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text" id="codeFails">My 4-digit code doesn’t work</span>
             </summary>
@@ -75,7 +79,7 @@
                 <span>If you have followed the guidance above and have still not been able to return to your application, you will need to</span>
                 <a id="codeFailsRestartApplication" href="/applicant">start a new application.</a>
               </div>
-
+ #}
           </details>
         </form>
 
