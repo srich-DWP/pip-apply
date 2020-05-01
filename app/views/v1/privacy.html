@@ -1,0 +1,40 @@
+{% extends "layout-signed-out.html" %}
+
+{% block pageTitle %}
+  Apply for Personal Independence Payment (PIP)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v1/_beta-banner.html" %}
+  {% include "v1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How the Department for Work and Pensions collects and uses information 
+      </h1>
+
+      <p>When we collect information about you we may use it for any of our purposes. These include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>social security benefits and allowances</li>
+        <li>child maintenance </li>
+        <li>employment and training</li>
+        <li>investigating and prosecuting tax credits offences</li>
+        <li>private pensions policy, and</li>
+        <li>retirement planning </li>
+      </ul>
+
+      <p>We may get information about you from other parties for any of our purposes as the law allows to check the information you provide and improve our services. We may give information about you to other organisations as the law allows, for example to protect against crime. </p>
+
+      <p>To find out more about our purposes, how we use personal information for those purposes and your information rights, including how to request a copy of your information, please see <a href="https://www.gov.uk/dwp/personal-information-charter">DWP’s personal information charter</a>.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
