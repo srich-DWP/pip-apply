@@ -1,20 +1,9 @@
-{% extends "layout-v2.html" %}
+{% set pageTitle = "Upload another file" %}
 
-{% set pageTitle = "Upload evidence – Send your PIP form – GOV.UK" %}
+{% extends "layout-v2.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -56,7 +45,7 @@
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Upload another piece of evidence
+              Upload another file
             </h1>
           </legend>
           <div class="govuk-form-group">

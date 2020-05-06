@@ -1,20 +1,9 @@
-{% extends "layout-v2.html" %}
+{% set pageTitle = "Check your uploaded files" %}
 
-{% set pageTitle = "Check the uploaded evidence – Send your PIP form – GOV.UK" %}
+{% extends "layout-v2.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
-{% endblock %}
-
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -53,7 +42,7 @@
         </div>{# /moj-banner #}
       {% endif %}
 
-        <h1 class="govuk-heading-l">Check the uploaded evidence</h1>
+        <h1 class="govuk-heading-l">Check your uploaded files</h1>
 
         <h2 class="govuk-heading-m">Files added</h2>
 
@@ -66,7 +55,7 @@
               <a download href="/">{{ data['supporting-evidence-file-1'] }}</a>, 2MB
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/v2/supporting-evidence/supporting-evidence-upload-1?delete=true">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/v2/supporting-evidence/supporting-evidence-upload-1?delete=true">
                 Delete<span class="govuk-visually-hidden"> file 1</span>
               </a>
             </dd>

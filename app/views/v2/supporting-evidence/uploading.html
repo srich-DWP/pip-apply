@@ -1,21 +1,11 @@
+{% set pageTitle = "Uploading file" %}
+
 {% extends "layout-v2.html" %}
 
-{% set pageTitle = "Uploading – Send your PIP form – GOV.UK" %}
-
 {% block pageTitle %}
-  {{ pageTitle }}
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
-{% endblock %}
 
 {% block content %}
 
@@ -36,13 +26,13 @@
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-1-cya';
-        }, 2000);
+        }, 4000);
       </script>
     {% else %}
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-1';
-        }, 2000);
+        }, 4000);
       </script>
     {% endif %}
   {% elif file == "supporting-evidence-2" %}
@@ -50,13 +40,13 @@
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-2-cya';
-        }, 2000);
+        }, 4000);
       </script>
     {% else %}
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-2';
-        }, 2000);
+        }, 4000);
       </script>
     {% endif %}
   {% elif file == "supporting-evidence-3" %}
@@ -64,13 +54,13 @@
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-3-cya';
-        }, 2000);
+        }, 4000);
       </script>
     {% else %}
       <script>
         setTimeout(function(){
           window.location.href = '/v2/supporting-evidence/supporting-evidence-uploaded-3';
-        }, 2000);
+        }, 4000);
       </script>
     {% endif %}
   {% else %}
@@ -78,13 +68,13 @@
       <script>
         setTimeout(function(){
           window.location.href = '/v2/check-your-answers';
-        }, 2000);
+        }, 4000);
       </script>
     {% else %}
       <script>
         setTimeout(function(){
           window.location.href = '/v2/uploaded-1';
-        }, 2000);
+        }, 4000);
       </script>
     {% endif %}
   {% endif %}
