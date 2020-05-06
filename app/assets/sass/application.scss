@@ -38,6 +38,9 @@ $govuk-assets-path: '/govuk/assets/';
   margin-bottom: govuk-spacing(2);
 }
 
+.sans * {
+  font-family: sans-serif !important;
+}
 
 // Task list pattern
 
@@ -131,4 +134,19 @@ a:visited {
 
 abbr {
   text-decoration: none;
+}
+
+.notify-width-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.notify-width-container-border {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
 }
