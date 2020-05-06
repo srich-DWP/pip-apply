@@ -1,10 +1,10 @@
+{% set pageTitle = "Help and contacts" %}
+{% set current = "help" %}
+
 {% extends "layout-v2.html" %}
 
-<!-- Adds a class to increase vertical spacing for pages without a back button -->
-{% set mainClasses = "govuk-main-wrapper--l" %}
-
 {% block pageTitle %}
-  Help and contacts
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}

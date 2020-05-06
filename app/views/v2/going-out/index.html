@@ -1,4 +1,10 @@
+{% set pageTitle = "Going out" %}
+
 {% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
+{% endblock %}
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
