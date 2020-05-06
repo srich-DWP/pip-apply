@@ -1,7 +1,10 @@
-{% extends "layout-signed-out.html" %}
+{% set status = "signed-out" %}
+{% set pageTitle = "A 4-digit code has been texted to XXXX XXX 789" %}
+
+{% extends "layout-v2.html" %}
 
 {% block pageTitle %}
-  Enter the 4-digit code
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +18,6 @@
     <div class="govuk-grid-column-two-thirds">
 
        <h1 class="govuk-heading-l">A 4-digit code has been texted to<br>XXXX XXX 789</h1>
-
 
       {% if getData.next === "list" %}
         <form action="/v2/list" method="POST" novalidate>

@@ -1,7 +1,9 @@
 {% extends "layout-v2.html" %}
 
+{% set pageTitle = "Tell us how your disability affects you" %}
+
 {% block pageTitle %}
-  Apply for Personal Independence Payment (PIP)
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,10 +18,6 @@
       <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
         Tell us how your disability affects you
       </h1>
-
-{#       <div>
-        <p class="notice" style="border: 3px solid #1d70b8; padding: 10px; margin-bottom: 40px">You can leave this application at any point and your progress will be saved. You can return to this application at any time until 21 June 2020 at 15:35.</p>
-      </div> #}
 
       <p class="govuk-!-margin-bottom-7">You can leave this application at any point and your progress will be saved. You can return to this application at any time until 21 June 2020 at 15:35.</p>
 

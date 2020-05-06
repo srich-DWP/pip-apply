@@ -1,14 +1,15 @@
-{% extends "layout-signed-out.html" %}
+{% set status = "signed-out" %}
+{% set pageTitle = "We’ve saved your application" %}
+
+{% extends "layout-v2.html" %}
 
 {% block pageTitle %}
-  We’ve saved your application
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
-
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
 {% endblock %}
-
 
 {% block content %}
 

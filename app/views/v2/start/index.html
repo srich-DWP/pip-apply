@@ -1,17 +1,17 @@
-{% extends "layout-signed-out.html" %}
+{% extends "layout-v2.html" %}
+
+{% set pageTitle = "Tell DWP how your disability affects you for your PIP claim" %}
 
 {% block pageTitle %}
-  Apply for Personal Independence Payment (PIP)
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
   {{ govukHeader({
     serviceName: &nbsp;
   }) }}
 {% endblock %}
-
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
