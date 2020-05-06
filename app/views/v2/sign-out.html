@@ -1,0 +1,34 @@
+{% extends "layout-signed-out.html" %}
+
+{% block pageTitle %}
+  We’ve saved your application
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {{ govukPanel({
+        titleText: "We’ve saved your application for 90 days"
+      }) }}
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>You can <a href="/v2/sign-in">return to your application later</a>.</p>
+      <p>We’ll save this application for 90 days before we delete it.</p>
+      <p>It’s now safe to close this window.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

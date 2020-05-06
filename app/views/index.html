@@ -1,1 +1,56 @@
-<meta http-equiv="refresh" content="0; URL='/v1/start'" />
+{% extends "layout-signed-out.html" %}
+
+{% block pageTitle %}
+  Designs for a strategic PIP solution
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Designs for a strategic PIP solution</h1>
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Agent screens</h2>
+        </div>{# /card-header #}
+        <div class="card-body">
+          <p>To follow</p>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Notify emails</h2>
+        </div>
+        <div class="card-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/emails/email-to-claimant">Notify email to claimant</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Claimant-facing screens (version 2)</h2>
+        </div>
+        <div class="card-body">
+          <h4 class="govuk-heading-s">Happy path</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/start">Start</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

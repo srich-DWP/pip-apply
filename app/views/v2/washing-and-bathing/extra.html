@@ -1,0 +1,57 @@
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-add-another">
+
+    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – washing and bathing</h1>
+    <form action="/v2/washing-and-bathing/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "18",
+        label: {
+          html: "<p>Tell us more about any difficulties you have when washing and bathing:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>tell us how your condition affects you doing this activity</li>
+            <li>tell us how you manage at the moment and the problems you have when you can't do this activity</li>
+            <li>tell us how long it takes you to wash and bathe</li>
+            <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
+            <li>do you have difficulty washing particular parts of your body? Which parts?</li>
+            <li>does it take you a long time to wash and bathe?</li>
+            <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness or tiredness?</li>
+            <li>tell us about the aids or appliances you need to help you wash and bathe</li>
+            <li>tell us about the help you need from another person when washing and bathing. This includes help you have and help you need but don't get</li>
+          </ul>"
+        }
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "v2/washing-and-bathing/_return-link.html" %}
+      
+    </div>{# /moj-add-another #}
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
+

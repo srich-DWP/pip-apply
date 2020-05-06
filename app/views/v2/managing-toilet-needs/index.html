@@ -1,0 +1,36 @@
+{% extends "layout-v2.html" %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Managing toilet needs</h1>
+      <p class="govuk-body-l">Tell us about whether you can use the toilet and manage incontinence.</p>
+      <p>Using the toilet means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>being able to get on or off and use a standard toilet</li>
+        <li>being able to pass water or solids</li>
+        <li>cleaning yourself after using the toilet</li>
+      </ul>
+      <p>Managing incontinence means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>emptying your bowel and bladder, including if you need a collecting device such as a bottle, bucket or catheter, and</li>
+        <li>cleaning yourself after doing so</li>
+      </ul>
+      <p>This doesn't include difficulties you have getting to the bathroom.</p>
+      <p>We understand talking about your personal care needs can be difficult, but we need you to tell us as much as you can.</p>
+
+    </div><!-- govuk-form-group -->
+
+    <a href="/v2/managing-toilet-needs/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

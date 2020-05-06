@@ -1,0 +1,28 @@
+{% extends "layout-signed-out.html" %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+{% endblock %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Cancel your application
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Application cancelled</h1>
+
+      <p>Your information has been deleted.</p>
+
+      <p>You can <a href="/v2/start">start a new application</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

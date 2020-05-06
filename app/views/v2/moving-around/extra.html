@@ -1,0 +1,55 @@
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – moving around</h1>
+    <form action="/v2/moving-around/check" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "18",
+        label: {
+          html: "<p>Tell us more about any difficulties when moving around:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>tell us how your condition affects you doing this activity</li>
+            <li>tell us how you manage at the moment and the problems you have when you can't do this activity</li>
+            <li>tell us how long it takes you to complete this activity</li>
+            <li>does whether you can do this activity vary throughout the day? Tell us about good and bad days</li>
+            <li>do you regularly fall? Do you find it difficult to move around on certain ground surfaces?</li>
+            <li>do you use a wheelchair? Is it motorised or manual?</li>
+            <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness, tiredness, dizziness or anxiety?</li>
+            <li>tell us about the aids or appliances you need to use when moving around</li>
+            <li>tell us about the help you need from another person when moving around. This includes help you have and help you need but don't get</li>
+          </ul>"
+        }
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "v2/moving-around/_return-link.html" %}
+      
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
+
+

@@ -1,0 +1,47 @@
+{% extends "layout-v2.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Help and contacts
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-l">Help and contacts</h1>
+
+      <h2 class="govuk-heading-m">Help links</h2>
+
+      <p><a href="/public/pdfs/pip-information-booklet.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
+
+      <p><a href="/public/pdfs/pip-flyer.pdf" download>Help with the types of documentary evidence you should upload and send (PDF)</a></p>
+
+      <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your claim</a></p>
+
+      <h2 class="govuk-heading-m">Contacts</h2>
+
+      <p>Call the PIP enquiry line if you would like to fill in and post a paper form and your evidence instead.</p>
+
+      <div class="indent-hairline">
+        {% include "v2/_contact.html" %}
+      </div>
+
+    </div>
+  </div>
+
+  <p style="margin-top: 120px; margin-bottom: -5px; background-color: #eee; padding: 10px; font-size: 16px">
+  <strong>Prototype shortcuts:</strong> &nbsp;
+  <a href="/v2/list?aboutyou=completed&amp;aboutyourhealth=completed&amp;aboutyourhealthprofessionals=completed&amp;preparingfood=completed&amp;eatinganddrinking=completed&amp;managingtreatments=completed&amp;washingandbathing=completed&amp;managingtoiletneeds=completed&amp;dressingandundressing=completed&amp;communicating=completed&amp;reading=completed&amp;mixingwithotherpeople=completed&amp;makingdecisionsaboutmoney=completed&amp;goingout=completed&amp;movingaround=completed&amp;additionalinformation=completed&amp;supportingevidence=completed">Complete sections 1, 2 and 3</a> &nbsp;
+  <a href="/v2/clear-v2">Clear all data</a>
+</p>
+
+{% endblock %}
