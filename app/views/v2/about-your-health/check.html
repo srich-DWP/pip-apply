@@ -18,16 +18,16 @@
 
     <form id="form" method="post" action="/v2/list">
 
-      <h1 class="govuk-heading-l">Check your answers: your health condition</h1>
+      <h1 class="govuk-heading-l">Check your answers: your health</h1>
 
       {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Health conditions or disabilities"
+              text: "Condition or disability 1"
             },
             value: {
-              html: '<p class="govuk-body">Content here</p>'
+              text: 'Depression'
             },
             actions: {
               items: [
@@ -41,22 +41,65 @@
           },
           {
             key: {
-              text: "About your health conditions or disabilities"
+              text: "About condition or disability 1"
             },
             value: {
-              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+              html: '<p class="govuk-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>'
             },
             actions: {
               items: [
                 {
                   href: "#",
                   text: "Change",
-                  visuallyHiddenText: "contact details"
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Condition or disability 2"
+            },
+            value: {
+              text: 'Depression'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "About condition or disability 2"
+            },
+            value: {
+              html: '<p class="govuk-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
                 }
               ]
             }

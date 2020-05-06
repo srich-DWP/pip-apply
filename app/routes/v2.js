@@ -108,6 +108,17 @@ module.exports = function (app) {
 
   // Routes
 
+  app.get('/v2/about-your-health/another-answer', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'yes') {
+        res.redirect('condition')
+      } else {
+        res.redirect('check')
+      }
+  });
+
   app.get('/v2/about-your-health-professionals/another-answer', function(req, res) {
 
     let question = req.session.data['question']

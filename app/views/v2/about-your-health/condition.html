@@ -1,0 +1,109 @@
+{% set pageTitle = "What health conditions or disabilities do you have?" %}
+
+{% extends "layout-v2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-add-another">
+
+    <form action="/v2/about-your-health/conditions-details" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'What health condition or disability do you have?',
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>By health condition or disability, we mean:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>physical</li>
+        <li>sight</li>
+        <li>hearing or speech difficulty</li>
+        <li>learning</li>
+        <li>developmental and behavioural difficulties</li>
+        <li>mental health problems</li>
+      </ul>
+
+      <p>You can add other other conditions and disabilities later if you need to.</p>
+
+      {{ govukInput({
+        id: 'condition-0--name-',
+        name: 'condition-0--name-',
+        label: {
+          html: 'Name of condition',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        attributes: {
+          'data-name': 'condition-%index%--name-',
+          'data-id': 'condition-%index%--name-'
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        fieldset: {
+          legend: {
+            text: "Approximate start date",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 3 1997"
+        },
+        items: [
+          {
+            id: "condition-0--dob--month-",
+            name: "condition-0--dob--month-",
+            label: "Month",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--month-',
+              'data-id': 'condition-%index%--dob--month-'
+            }
+          },
+          {
+            id: "condition-0--dob--year-",
+            name: "condition-0--dob--year-",
+            label: "Year",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--year-',
+              'data-id': 'condition-%index%--dob--year-'
+            }
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "v2/about-your-health/_return-link.html" %}
+      
+    </div>{# /moj-add-another #}
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
