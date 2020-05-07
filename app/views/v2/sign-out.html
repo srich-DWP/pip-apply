@@ -15,9 +15,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      {{ govukPanel({
-        titleText: "We’ve saved your application for 90 days"
-      }) }}
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          We’ve saved your application until<br>{% include 'includes/_date.html' %}
+        </h1>
+      </div>
     </div>
   </div>
 
@@ -25,8 +28,8 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>You can <a href="/v2/sign-in">return to your application later</a>.</p>
-      <p>We’ll save this application for 90 days before we delete it.</p>
+      <p>You can <a href="/v2/sign-in">return to your application later</a>. [content here about the link being in the initial email and potentially something about bookmarking].</p>
+      <p>We’ll save this application until {% include 'includes/_date.html' %} before it is deleted.</p>
       <p>It’s now safe to close this window.</p>
 
     </div>{# /govuk-grid-column-two-thirds #}
