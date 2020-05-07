@@ -27,7 +27,7 @@
             <span class="app-task-list__section-number">1. </span> Tell us about you and your health
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
-            <li class="app-task-list__item">
+{#             <li class="app-task-list__item">
               {% if sectionStatus.aboutyou === "completed" %}
                 <a class="app-task-list__task-name " href="/v2/about-you/check">
                   About you 
@@ -50,7 +50,7 @@
                   </span>
                 </a>
               {% endif %}
-            </li>
+            </li> #}
             <li class="app-task-list__item">
               {% if sectionStatus.aboutyourhealth === "completed" %}
                 <a class="app-task-list__task-name " href="/v2/about-your-health/check">
@@ -458,7 +458,6 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               {% if 
-                sectionStatus.aboutyou === "completed" and
                 sectionStatus.aboutyourhealth === "completed" and
                 sectionStatus.preparingfood === "completed" and
                 sectionStatus.eatinganddrinking === "completed" and
