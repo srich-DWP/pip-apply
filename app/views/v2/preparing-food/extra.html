@@ -20,7 +20,7 @@
     
     <form action="/v2/preparing-food/check" method="post" novalidate>
 
-      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – preparing food</h1>
+      <h1 class="govuk-heading-l moj-add-another__heading">Extra information – preparing food</h1>
 
       <p>Tell us more about any difficulties you have when preparing and cooking food:</p>
 
@@ -35,50 +35,24 @@
         <li>tell us about the help you need from another person when preparing food. This includes help you have and help you need but do not get</li>
       </ul>
 
-      {% set emailHtml %}
-        {{ govukTextarea({
-        name: "extra-information",
-        id: "extra-information",
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
         rows: "18",
+        
         label: {
-          html: "Extra information on preparing and cooking food"
+          text: "Extra information on preparing and cooking food (optional)",
+          classes: "govuk-label--m"
         }
-      }) }}
-      {% endset -%}
-
-      {{ govukRadios({
-        idPrefix: "extra-information-conditional",
-        name: "extra-information-conditional",
-        fieldset: {
-          legend: {
-            text: "Would you like to tell us more about any difficulties you have when preparing and cooking food?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: emailHtml
-            }
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
       }) }}
 
       {{ govukButton({
         text: 'Save and continue'
       }) }}
 
+    </form>
 
-      </form>
-
-      {% include "v2/preparing-food/_return-link.html" %}
+    {% include "v2/preparing-food/_return-link.html" %}
       
     </div>{# /moj-add-another #}
   </div>{# /govuk-grid-column-two-thirds #}

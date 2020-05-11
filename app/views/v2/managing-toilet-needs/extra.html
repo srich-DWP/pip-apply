@@ -16,44 +16,43 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="moj-add-another">
-
-    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – managing toilet needs</h1>
     <form action="/v2/managing-toilet-needs/check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Extra information – managing toilet needs</h1>
+
+      <p>Tell us more about any difficulties you have with your toilet needs or incontinence:</p>
+
+      <ul class='govuk-list govuk-list--bullet'>
+        <li>tell us how your condition affects you doing this activity</li>
+        <li>tell us how your manage at the moment and the problems you have when you can’t do this activity</li>
+        <li>tell us how long it takes you to complete this activity</li>
+        <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
+        <li>are you incontinent? Tell us in what way and how you manage it</li>
+        <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness or tiredness?</li>
+        <li>tell us about the aids or appliances you need to use to help you manage your toilet needs</li>
+        <li>tell us about the help you need from another person when managing your toilet needs. This includes help you have and help you need but don’t get</li>
+      </ul>
 
       {{ govukTextarea({
         name: "more-detail",
         id: "more-detail",
         rows: "18",
+        
         label: {
-          html: "<p>Tell us more about any difficulties you have with your toilet needs or incontinence:</p>
-          <ul class='govuk-list govuk-list--bullet'>
-            <li>tell us how your condition affects you doing this activity</li>
-            <li>tell us how your manage at the moment and the problems you have when you can’t do this activity</li>
-            <li>tell us how long it takes you to complete this activity</li>
-            <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
-            <li>are you incontinent? Tell us in what way and how you manage it</li>
-            <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness or tiredness?</li>
-            <li>tell us about the aids or appliances you need to use to help you manage your toilet needs</li>
-            <li>tell us about the help you need from another person when managing your toilet needs. This includes help you have and help you need but don’t get</li>
-          </ul>"
+          text: "Extra information on managing toilet needs (optional)",
+          classes: "govuk-label--m"
         }
       }) }}
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Save and continue'
-        }) }}
-      </div>
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
 
-      </form>
+    </form>
 
-      {% include "v2/managing-toilet-needs/_return-link.html" %}
+    {% include "v2/managing-toilet-needs/_return-link.html" %}
       
-    </div>{# /moj-add-another #}
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 
 {% endblock %}
-
-
