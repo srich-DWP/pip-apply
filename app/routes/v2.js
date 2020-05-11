@@ -151,7 +151,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('interruption-screen')
       } else {
-        res.redirect('../list?supportingevidence=completed')
+        res.redirect('check')
       }
   });
 
@@ -162,7 +162,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-2')
       } else {
-        res.redirect('../list?supportingevidence=completed')
+        res.redirect('check')
       }
   });
 
@@ -173,7 +173,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-3')
       } else {
-        res.redirect('../list?supportingevidence=completed')
+        res.redirect('check')
       }
   });
 
@@ -184,7 +184,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-4')
       } else {
-        res.redirect('../list?supportingevidence=completed')
+        res.redirect('check')
       }
   });
 
