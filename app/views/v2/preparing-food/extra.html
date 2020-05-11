@@ -17,34 +17,64 @@
   <div class="govuk-grid-column-two-thirds">
 
     <div class="moj-add-another">
-
-    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – preparing food</h1>
+    
     <form action="/v2/preparing-food/check" method="post" novalidate>
 
-      {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
+      <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Extra information – preparing food</h1>
+
+      <p>Tell us more about any difficulties you have when preparing and cooking food:</p>
+
+      <ul class='govuk-list govuk-list--bullet'>
+        <li>tell us how your condition affects you doing this activity</li>
+        <li>tell us how you manage at the moment and the problems you have when you cannot do this activity</li>
+        <li>tell us how long it takes to prepare and cook food</li>
+        <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
+        <li>can you cook using an oven safely? If not, tell us why not</li>
+        <li>tell us about the aids or appliances you need to use to help you prepare and cook food</li>
+        <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness or tiredness?</li>
+        <li>tell us about the help you need from another person when preparing food. This includes help you have and help you need but do not get</li>
+      </ul>
+
+      {% set emailHtml %}
+        {{ govukTextarea({
+        name: "extra-information",
+        id: "extra-information",
         rows: "18",
         label: {
-          html: "<p>Tell us more about any difficulties you have when preparing and cooking food:</p>
-          <ul class='govuk-list govuk-list--bullet'>
-            <li>tell us how your condition affects you doing this activity</li>
-            <li>tell us how you manage at the moment and the problems you have when you cannot do this activity</li>
-            <li>tell us how long it takes to prepare and cook food</li>
-            <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
-            <li>can you cook using an oven safely? If not, tell us why not</li>
-            <li>tell us about the aids or appliances you need to use to help you prepare and cook food</li>
-            <li>do you experience any other difficulties, either during or after the activity, like pain, breathlessness or tiredness?</li>
-            <li>tell us about the help you need from another person when preparing food. This includes help you have and help you need but do not get</li>
-          </ul>"
+          html: "Extra information"
         }
       }) }}
+      {% endset -%}
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Save and continue'
-        }) }}
-      </div>
+      {{ govukRadios({
+        idPrefix: "extra-information-conditional",
+        name: "extra-information-conditional",
+        fieldset: {
+          legend: {
+            text: "Would you like to tell us more about any difficulties you have when preparing and cooking food?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "no",
+            text: "No"
+          },
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: emailHtml
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
+
 
       </form>
 
