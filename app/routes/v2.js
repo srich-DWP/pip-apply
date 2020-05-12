@@ -141,6 +141,19 @@ module.exports = function (app) {
       }
   });
 
+  // Additional information
+
+  app.get('/v2/additional-information/index-answer', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'yes') {
+        res.redirect('additional-information')
+      } else {
+        res.redirect('check')
+      }
+  });
+
 
   // Supporting evidence
 
