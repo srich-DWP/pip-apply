@@ -9,7 +9,7 @@
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
-{#   {% include "v2/_back-link.html" %} #}
+  {% include "v2/_back-link.html" %}
 {% endblock %}
 
 
@@ -18,7 +18,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v2/start/code-text" method="post" novalidate>
+      <form action="/v2/sign-in/password" method="post" novalidate>
 
         <h1 class="govuk-heading-l">Sign in</h1>
 
@@ -30,6 +30,7 @@
           hint: {
             text: "The email address your invite was sent to."
           },
+          classes: "govuk-input--width-20",
           id: "email",
           name: "email",
           type: "email",
@@ -39,23 +40,9 @@
           }
         }) }}
 
-        {{ govukInput({
-          label: {
-            text: "Your password",
-            isPageHeading: false
-          },
-          classes: "govuk-input--width-10",
-          id: "password",
-          name: "password",
-          type: "password",
-          attributes: {
-            spellcheck: "false"
-          }
+        {{ govukButton({
+          text: "Continue"
         }) }}
-
-        <a href="/v2/start/code-text?next=list" class="govuk-button" data-module="govuk-button">Continue</a>
-
-        <p><a href="#">Forgotten your password?</a></p>
 
       </form>
 
