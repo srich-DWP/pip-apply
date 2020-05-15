@@ -18,11 +18,114 @@
 
       <div class="card">
         <div class="card-head">
-          <h2 class="govuk-heading-m govuk-!-margin-0">Agent screens</h2>
-        </div>{# /card-header #}
+          <h2 class="govuk-heading-m govuk-!-margin-0">Claimant-facing screens</h2>
+        </div>
+
         <div class="card-body">
-          <p>To follow</p>
+
+          <h4 class="govuk-heading-m">Sign in</h4>
+          <ul class="thumbs">
+            <li>
+              <a href="/public/flow-diagrams/sign-in.pdf">
+                <img src="/public/flow-diagrams/sign-in-thumb.png" class="thumb">
+              Sign in flow</a>
+            </li>
+          </ul>
+          <div class="clear" style="clear: both"></div>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/sign-in">Sign in / enter email address</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/sign-in/intro">Introduction to the service</a>
+            </li>
+            <li>
+              <a href="/v2/sign-in/create-your-account">Create your account</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/sign-in/code-text">Enter a 4-digit code from text message</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/sign-in/create-password">Create your password</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/sign-in/password">Enter password</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h4 class="govuk-heading-m">Claim form</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/list">Task list</a></li>
+          </ul>
+          <h5 class="govuk-heading-s">About your health</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v2/about-your-health/condition">What health condition or disability do you have?</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/conditions-details">About this condition or disability</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/another">Do you have another condition or disability?</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/check">Check your answers</a>
+            </li>
+          </ul>
+{#           <h5 class="govuk-heading-s">About your health</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/v2/about-your-health/condition">What health condition or disability do you have?</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/conditions-details">About this condition or disability</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/another">Do you have another condition or disability?</a>
+              <ul>
+                <li>Validation messages to follow</li>
+              </ul>
+            </li>
+            <li>
+              <a href="/v2/about-your-health/check">Check your answers</a>
+            </li>
+          </ul> #}
+
+          <p>More links to follow&hellip;</p>
+
         </div>{# /card-body #}
+
       </div>{# /card #}
 
       <div class="card">
@@ -32,7 +135,7 @@
         <div class="card-body">
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/v2/emails/welcome">Welcome</a></li>
-            <li><a href="/v2/emails/code">Email code (locked out)</a></li>
+            <li><a href="/v2/emails/code">Email code (when user is locked out of their account)</a></li>
           </ul>
         </div>
       </div>
@@ -50,42 +153,12 @@
 
       <div class="card">
         <div class="card-head">
-          <h2 class="govuk-heading-m govuk-!-margin-0">Claimant-facing screens (version 2)</h2>
-        </div>
+          <h2 class="govuk-heading-m govuk-!-margin-0">Agent screens</h2>
+        </div>{# /card-header #}
         <div class="card-body">
-          <h4 class="govuk-heading-s">Sign in</h4>
-          <ul class="thumbs">
-            <li>
-              <a href="/public/flow-diagrams/sign-in.pdf">
-                <img src="/public/flow-diagrams/sign-in-thumb.png" class="thumb">
-              Sign in flow</a>
-            </li>
-{#             <li>
-              <a href="/public/flow-diagrams/sign-in.pdf">
-                <img src="/public/flow-diagrams/sign-in-thumb.png" class="thumb">
-              Sign in</a>
-            </li> #}
-          </ul>
-          <div class="clear" style="clear: both"></div>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v2/sign-in">Sign in / enter email address</a></li>
-            <li><a href="/v2/sign-in/intro">Introduction to the service</a></li>
-            <li><a href="/v2/sign-in/create-your-account">Create your account</a></li>
-            <li><a href="/v2/sign-in/code-text">Enter a 4-digit code (text message)</a></li>
-            <li><a href="/v2/sign-in/create-password">Create your password</a></li>
-            <li><a href="/v2/sign-in/password">Enter password</a></li>
-          </ul>
-        </div>
-        <div class="card-body">
-          <h4 class="govuk-heading-s">Application form</h4>
-          <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v2/list">Claim form</a></li>
-          </ul>
-        </div>
-
-
-
-      </div>
+          <p>To follow</p>
+        </div>{# /card-body #}
+      </div>{# /card #}
 
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
