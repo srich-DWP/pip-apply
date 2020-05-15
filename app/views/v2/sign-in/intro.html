@@ -1,3 +1,4 @@
+{% set status = "signed-out" %}
 {% set pageTitle = "Tell DWP how your disability affects you for your PIP claim" %}
 
 {% extends "layout-v2.html" %}
@@ -6,15 +7,9 @@
   {{ pageTitle }} {% include "v2/_page-title-slug.html" %}
 {% endblock %}
 
-{% block header %}
-  {% include "includes/cookie-banner.html" %}
-  {{ govukHeader({
-    serviceName: &nbsp;
-  }) }}
-{% endblock %}
-
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
+  {% include "v2/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -53,23 +48,9 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/v2/start/sign-in",
+        href: "/v2/sign-in/code-text",
         isStartButton: true
       }) }}
-
-{#       <h2 class="govuk-heading-m">Help and contacts</h2>
-
-
-      <p><a href="/public/pdfs/pip-information-booklet.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
-
-      <p><a href="/public/pdfs/pip-flyer.pdf" download>Help with the types of documentary evidence you should upload and send (PDF)</a></p>
-
-
-      <p>Call the PIP enquiry line if you would like to fill in and post a paper form and your evidence instead.</p>
-
-      <div class="indent-hairline">
-        {% include "v2/_contact.html" %}
-      </div> #}
       
 
     </div>{# /govuk-grid-column-two-thirds #}
