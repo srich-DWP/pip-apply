@@ -154,6 +154,20 @@ module.exports = function (app) {
       }
   });
 
+  // Apply
+
+  app.get('/v2/apply/pdf-answer', function(req, res) {
+
+    let question = req.session.data['download']
+
+    if (question === 'yes') {
+        res.redirect('download')
+      } else {
+        res.redirect('confirmation')
+      }
+  });
+
+
 
   // Supporting evidence
 
