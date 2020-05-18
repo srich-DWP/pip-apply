@@ -31,6 +31,20 @@ $govuk-assets-path: '/govuk/assets/';
 
 .card-body {
   padding: 1em;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  h1, h2, h3, h4, h5, h6, ul {
+    max-width: 600px
+  }
+
+  h5 {
+    margin-bottom: 10px !important;
+  }
+
 }
 
 .responsive-image img {
