@@ -24,7 +24,21 @@
         rows: [
           {
             key: {
-              text: "Condition or disability 1"
+              html: "<h3 class='govuk-heading-m'>Depression</h3>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name of condition or disability"
             },
             value: {
               text: 'Depression'
@@ -41,11 +55,68 @@
           },
           {
             key: {
-              text: "About condition or disability 1"
+              text: "About this condition or disability"
             },
             value: {
               html: '<p class="govuk-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                This is information about my depression. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi.
+              </p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              html: "<h3 class='govuk-heading-m'>Epilepsy</h3>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Remove",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Name of condition or disability"
+            },
+            value: {
+              text: 'Epilepsy'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "About this condition or disability"
+            },
+            value: {
+              html: '<p class="govuk-body">
+                This is information about my epilepsy. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -62,19 +133,21 @@
                 }
               ]
             }
-          },
+          }
+        ]
+      }) }}
+
+      {{ govukSummaryList({
+        rows: [
           {
             key: {
-              text: "Condition or disability 2"
-            },
-            value: {
-              text: 'Depression'
+              html: "<h3 class='govuk-heading-m'>Other conditions or disabilities</h3>"
             },
             actions: {
               items: [
                 {
                   href: "#",
-                  text: "Change",
+                  text: "Remove",
                   visuallyHiddenText: "name"
                 }
               ]
@@ -82,34 +155,10 @@
           },
           {
             key: {
-              text: "About condition or disability 2"
+              text: "Do you have any other conditions or disabilities?"
             },
             value: {
-              html: '<p class="govuk-body">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Other conditions or disabilities"
-            },
-            value: {
-              html: 'No'
+              text: 'No'
             },
             actions: {
               items: [
