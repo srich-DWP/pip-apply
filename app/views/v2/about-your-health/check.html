@@ -8,7 +8,6 @@
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
-  {% include "v2/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,164 +15,127 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/v2/list">
+    {% if getData.remove == "true" %}
+      <div class="moj-banner moj-banner--success">
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+        <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Depression has been removed</div>
+      </div>{# /moj-banner #}
+    {% endif %}
 
-      <h1 class="govuk-heading-l">Check your answers: your health</h1>
+    <h1 class="govuk-heading-l">Check your answers: your health</h1>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              html: "<h3 class='govuk-heading-m'>Depression</h3>"
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          Depression
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/v2/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> depression</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+  
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name of condition or disability"
+              },
+              value: {
+                text: "Depression"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name of condition or disability – depression"
+                  }
+                ]
+              }
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Remove",
-                  visuallyHiddenText: "name"
-                }
-              ]
+            {
+              key: {
+                text: "About this condition or disability"
+              },
+              value: {
+                text: "This is information about my depression. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "about this condition or disability – depression"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Name of condition or disability"
-            },
-            value: {
-              text: 'Depression'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "About this condition or disability"
-            },
-            value: {
-              html: '<p class="govuk-body">
-                This is information about my depression. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi.
-              </p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              html: "<h3 class='govuk-heading-m'>Epilepsy</h3>"
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          Epilepsy
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/v2/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> epilepsy</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+  
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name of condition or disability"
+              },
+              value: {
+                text: "Epilepsy"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name of condition or disability – epilepsy"
+                  }
+                ]
+              }
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Remove",
-                  visuallyHiddenText: "name"
-                }
-              ]
+            {
+              key: {
+                text: "About this condition or disability"
+              },
+              value: {
+                text: "This is information about my epilepsy. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "about this condition or disability – epilepsy"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Name of condition or disability"
-            },
-            value: {
-              text: 'Epilepsy'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "About this condition or disability"
-            },
-            value: {
-              html: '<p class="govuk-body">
-                This is information about my epilepsy. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              html: "<h3 class='govuk-heading-m'>Other conditions or disabilities</h3>"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Remove",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Do you have any other conditions or disabilities?"
-            },
-            value: {
-              text: 'No'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+    <p><a href="/v2/about-your-health/condition">Add another condition or disability</a></p>
 
-      <a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a>
+    <p><a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
