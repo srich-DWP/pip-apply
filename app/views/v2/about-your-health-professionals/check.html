@@ -8,7 +8,6 @@
 
 {% block beforeContent %}
   {% include "v2/_beta-banner.html" %}
-  {% include "v2/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,18 +15,36 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/v2/list">
+    {% if getData.remove == "true" %}
+      <div class="moj-banner moj-banner--success">
+        <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+        <div class="moj-banner__message">
+          <span class="moj-banner__assistive">Success</span>Jason Jackson has been removed</div>
+      </div>{# /moj-banner #}
+    {% endif %}
 
-      <h1 class="govuk-heading-l">Check your answers: your health professionals</h1>
+    <h1 class="govuk-heading-l">Check your answers: your health professionals</h1>
 
-      {{ govukSummaryList({
-        rows: [
-
-        {
-            key: {
-              text: "Healthcare professional 1"
-            },
-            value: {
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          David Smith
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/v2/about-your-health-professionals/check-remove">Remove<span class="govuk-visually-hidden"> David Smith</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+  
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Details"
+              },
+              value: {
               html: '<p class="govuk-body">
                 David Smith<br>
                 Specialist nurse<br>
@@ -38,21 +55,41 @@
                 Last seen: March 2020
               </p>'
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "details for David Smith"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Healthcare professional 2"
-            },
-            value: {
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
+
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          Jason Jackson
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/v2/about-your-health-professional/check-remove">Remove<span class="govuk-visually-hidden"> Jason Jackson</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+  
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Details"
+              },
+              value: {
               html: '<p class="govuk-body">
                 Jason Jackson<br>
                 Physiotherapist<br>
@@ -63,38 +100,24 @@
                 Last seen: February 2019
               </p>'
             },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "details for Jason Jackson"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Other healthcare professionals"
-            },
-            value: {
-              html: 'No'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          }
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
 
-        ]
-      }) }}
+    <p><a href="/v2/about-your-health-professionals/health-professional">Add another health professional</a></p>
 
-      <a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a>
+    <p><a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
