@@ -29,60 +29,6 @@
     
       <header class="app-summary-card__header">
         <h2 class="app-summary-card__title">
-          Depression
-        </h2>
-        <div class="app-summary-card__actions">
-          <a class="govuk-link" href="/v2/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> depression</span>
-          </a>
-        </div>{# /app-summary-card__actions #}
-      </header>
-  
-      <div class="app-summary-card__body">
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Name of condition or disability"
-              },
-              value: {
-                text: "Depression"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "name of condition or disability – depression"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "About this condition or disability"
-              },
-              value: {
-                text: "This is information about my depression. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "about this condition or disability – depression"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
-      </div>{# /app-summary-card__body #}
-    </section>
-
-    <section class="app-summary-card govuk-!-margin-bottom-6">
-    
-      <header class="app-summary-card__header">
-        <h2 class="app-summary-card__title">
           Epilepsy
         </h2>
         <div class="app-summary-card__actions">
@@ -124,6 +70,60 @@
                     href: "#",
                     text: "Change",
                     visuallyHiddenText: "about this condition or disability – epilepsy"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+      </div>{# /app-summary-card__body #}
+    </section>
+
+    <section class="app-summary-card govuk-!-margin-bottom-6">
+    
+      <header class="app-summary-card__header">
+        <h2 class="app-summary-card__title">
+          Depression
+        </h2>
+        <div class="app-summary-card__actions">
+          <a class="govuk-link" href="/v2/about-your-health/check-remove">Remove<span class="govuk-visually-hidden"> depression</span>
+          </a>
+        </div>{# /app-summary-card__actions #}
+      </header>
+  
+      <div class="app-summary-card__body">
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name of condition or disability"
+              },
+              value: {
+                text: "Depression"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name of condition or disability – depression"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "About this condition or disability"
+              },
+              value: {
+                text: "This is information about my depression."
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "about this condition or disability – depression"
                   }
                 ]
               }

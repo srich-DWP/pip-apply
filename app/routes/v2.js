@@ -113,7 +113,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('condition')
+        res.redirect('condition-2')
       } else {
         res.redirect('check')
       }
@@ -124,7 +124,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('health-professional')
+        res.redirect('health-professional-2')
       } else {
         res.redirect('check')
       }
