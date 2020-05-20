@@ -20,15 +20,14 @@
 
       <form action="/v2/sign-in/choose-scenario" method="post" novalidate>
 
-        <h1 class="govuk-heading-l">Sign in</h1>
-
         {{ govukInput({
           label: {
-            text: "Your email address",
-            isPageHeading: false
+            text: "Enter your email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
           },
           hint: {
-            text: "The email address your invite was sent to."
+            text: "This must be the same email address we sent your invitation email to."
           },
           id: "email",
           classes: "govuk-input--width-20",
