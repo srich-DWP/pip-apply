@@ -176,9 +176,9 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('interruption-screen')
+        res.redirect('supporting-evidence-upload-1')
       } else {
-        res.redirect('check')
+        res.redirect('../apply/declaration')
       }
   });
 
@@ -189,7 +189,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-2')
       } else {
-        res.redirect('check')
+        res.redirect('../apply/declaration')
       }
   });
 
@@ -200,7 +200,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-3')
       } else {
-        res.redirect('check')
+        res.redirect('../apply/declaration')
       }
   });
 
@@ -211,7 +211,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-4')
       } else {
-        res.redirect('check')
+        res.redirect('../apply/declaration')
       }
   });
 

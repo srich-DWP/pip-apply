@@ -17,7 +17,7 @@
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/v2/supporting-evidence/interruption-screen?uploaded=1"
+      href: "/v2/supporting-evidence/index?uploaded=1"
     }) }}
   {% endif %}
 
@@ -89,12 +89,10 @@
         </div>{# /govuk-form-group #}
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
-        Confirm and save
+        Confirm
         </button> 
 
       </form>
-
-      {% include "v2/supporting-evidence/_return-link.html" %}
 
     </div>{# /govuk-grid-column-two-thirds #}
 
