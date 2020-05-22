@@ -176,7 +176,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('supporting-evidence-upload-1')
+        res.redirect('file-upload-help')
       } else {
         res.redirect('../apply/declaration')
       }
