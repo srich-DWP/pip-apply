@@ -30,11 +30,18 @@
           <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
 
-        <button type="submit" class="govuk-button">Continue</button>
-
-        <p><a href="/v2/sign-in/code-text-get-another">I did not get a code</a></p>
-
-        <p><a href="/v2/sign-in/code-email">Get a code by email instead</a></p>
+        {% if getData.lockedout === "true" %}
+          <a href="/v2/sign-in/create-password?lockedout=true" class="govuk-button">Continue</a>
+          <p><a href="/v2/sign-in/code-text-get-another?lockedout=true">I did not get a code</a></p>
+        {% elif getData.next === "list" %}
+          <a href="/v2/list" class="govuk-button">Continue</a>
+          <p><a href="/v2/sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/v2/sign-in/code-email">Get a code by email instead</a></p>
+        {% else %}
+          <a href="/v2/sign-in/create-password" class="govuk-button">Continue</a>
+          <p><a href="/v2/sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/v2/sign-in/code-email">Get a code by email instead</a></p>
+        {% endif %}
 
       </form>
 

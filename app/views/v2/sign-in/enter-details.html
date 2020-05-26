@@ -17,7 +17,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v2/sign-in/reset-code-email" method="post" novalidate>
+      {% if expr %}
+        
+      {% endif %}
+
+      <form action="#" method="post" novalidate>
 
         <h1 class="govuk-heading-l">Enter details</h1>
 
@@ -29,7 +33,6 @@
             text: "This must be the same email address we sent your invitation email to."
         }
         }) }}
-
 
         {{ govukInput({
           label: {
@@ -60,9 +63,11 @@
           }
         }) }}
 
-        {{ govukButton({
+{#         {{ govukButton({
           text: "Continue"
-        }) }}
+        }) }} #}
+
+        <a href="/v2/sign-in/reset-code-email?lockedout=true" class="govuk-button">Continue</a>
 
         {% include "v2/sign-in/_problems.html" %}
 

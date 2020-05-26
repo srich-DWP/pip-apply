@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v2/sign-in/reset-code-text" method="POST" novalidate>
+      <form action="#" method="POST" novalidate>
 
         <h1 class="govuk-heading-l">A 6-digit code has been emailed to myemail@gmail.com</h1>
 
@@ -25,9 +25,13 @@
           <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
 
-        <button type="submit" class="govuk-button">Continue</button>
-
-        <p><a href="/v2/sign-in/code-email-get-another">I did not get a code</a></p>
+        {% if getData.lockedout === "true" %}
+          <a href="/v2/sign-in/reset-code-text?lockedout=true" class="govuk-button">Continue</a>
+          <p><a href="/v2/sign-in/code-email-get-another?lockedout=true">I did not get a code</a></p>
+        {% else %}
+          <a href="/v2/sign-in/reset-code-text?lockedout=true" class="govuk-button">Continue</a>
+          <p><a href="/v2/sign-in/code-email-get-another">I did not get a code</a></p>
+        {% endif %}
 
       </form>
 

@@ -29,7 +29,11 @@
 
       <h1 class="govuk-heading-l">Get another 6-digit code sent to email@email.com</h1>
 
-      <a href="code-email?next=list" class="govuk-button">Get another code</a>
+      {% if getData.lockedout === "true" %}
+        <a href="/v2/sign-in/code-email?lockedout=true" class="govuk-button">Get another code</a>
+      {% else %}
+        <a href="/v2/sign-in/code-email" class="govuk-button">Get another code</a>
+      {% endif %}
 
       {% include "v2/sign-in/_problems.html" %} 
 
