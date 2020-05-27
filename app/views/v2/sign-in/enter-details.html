@@ -31,7 +31,14 @@
           },
           hint: {
             text: "This must be the same email address we sent your invitation email to."
-        }
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          attributes: {
+            spellcheck: "false"
+          }
         }) }}
 
         {{ govukInput({
