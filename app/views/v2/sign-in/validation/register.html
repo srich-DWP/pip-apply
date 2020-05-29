@@ -12,17 +12,24 @@
   {% include "v2/_back-link.html" %}
 {% endblock %}
 
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v2/sign-in/code-text" method="post" novalidate>
+      {% if expr %}
+        
+      {% endif %}
+
+      <form action="#" method="post" novalidate>
 
         {{ govukErrorSummary({
           titleText: "There is a problem",
           errorList: [
+            {
+              text: "Enter your email address",
+              href: "#email"
+            },
             {
               text: "Enter your National Insurance number",
               href: "#national-insurance-number"
@@ -38,6 +45,25 @@
 
         {{ govukInput({
           label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter your email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
             text: "Your National Insurance number"
           },
           hint: {
@@ -47,7 +73,7 @@
           id: "national-insurance-number",
           name: "national-insurance-number",
           errorMessage: {
-            "text": "Enter your National Insurance number"
+            text: "Enter your National Insurance number"
           },
           attributes: {
             spellcheck: "false"
@@ -95,11 +121,15 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <form action="/v2/sign-in/code-text" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
         {{ govukErrorSummary({
           titleText: "There is a problem",
           errorList: [
+            {
+              text: "Enter a valid email address",
+              href: "#email"
+            },
             {
               text: "Enter a National Insurance number in the correct format",
               href: "#national-insurance-number"
@@ -115,6 +145,26 @@
 
         {{ govukInput({
           label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          value: "emailaddressincorrectformat.com",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter your email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
             text: "Your National Insurance number"
           },
           hint: {
@@ -125,7 +175,7 @@
           name: "national-insurance-number",
           value: "dwugwdqou&*&)",
           errorMessage: {
-            "text": "Enter a National Insurance number in the correct format"
+            text: "Enter a National Insurance number in the correct format"
           },
           attributes: {
             spellcheck: "false"
@@ -142,7 +192,7 @@
             }
           },
           errorMessage: {
-            text: "Enter a valid date of birth"
+            text: "Enter a valid date or birth"
           },
           hint: {
             text: "For example, 12 11 2007."
@@ -150,18 +200,18 @@
           items: [
             {
               name: "day",
-              value: "1",
-              classes: "govuk-input--width-2 govuk-input--error"
+              classes: "govuk-input--width-2 govuk-input--error",
+              value: "1"
             },
             {
               name: "month",
-              value: "02",
-              classes: "govuk-input--width-2 govuk-input--error"
+              classes: "govuk-input--width-2 govuk-input--error",
+              value: "02"
             },
             {
               name: "year",
-              value: "2999",
-              classes: "govuk-input--width-4 govuk-input--error"
+              classes: "govuk-input--width-4 govuk-input--error",
+              value: "2999"
             }
           ]
         }) }}
@@ -176,19 +226,36 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-      <form action="/v2/sign-in/code-text" method="post" novalidate>
+      <form action="#" method="post" novalidate>
 
         {{ govukErrorSummary({
           titleText: "There is a problem",
           errorList: [
             {
               text: "Your date of birth must include a year",
-              href: "#dob-year"
+              href: "#dob-day"
             }
           ]
         }) }}
 
         <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          value: "email@gmail.com",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
 
         {{ govukInput({
           label: {
@@ -246,20 +313,39 @@
 
         {% include "v2/sign-in/_problems.html" %}
 
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </form>
 
-      <form action="/v2/sign-in/code-text" method="post" novalidate>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
 
         {{ govukErrorSummary({
           titleText: "There is a problem",
           errorList: [
             {
-              text: "Check your form. Either your National Insurance number or date of birth is incorrect."
+              text: "Check your form. Either your email address, National Insurance number or date of birth is incorrect."
             }
           ]
         }) }}
 
         <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          value: "email@gmail.com",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
 
         {{ govukInput({
           label: {
@@ -315,6 +401,10 @@
         {% include "v2/sign-in/_problems.html" %}
 
       </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}

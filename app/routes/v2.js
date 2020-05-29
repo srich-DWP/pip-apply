@@ -108,6 +108,28 @@ module.exports = function (app) {
 
   // Routes
 
+  app.get('/v2/sign-in/answer-choice', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'pdf') {
+        res.redirect('tactical-pdf')
+      } else {
+        res.redirect('intro-question')
+      }
+  });
+
+  app.get('/v2/sign-in/intro-question-answer', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'yes') {
+        res.redirect('intro')
+      } else {
+        res.redirect('sign-in')
+      }
+  });
+
   app.get('/v2/about-your-health/another-answer', function(req, res) {
 
     let question = req.session.data['question']

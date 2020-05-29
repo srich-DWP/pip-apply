@@ -21,7 +21,7 @@
 
         <div class="card-body">
 
-          <h4 class="govuk-heading-m">Sign in</h4>
+          <h4 class="govuk-heading-m">Authentication</h4>
           <ul class="thumbs">
             <li>
               <a href="/public/flow-diagrams/sign-in.pdf">
@@ -35,12 +35,22 @@
             </li>
           </ul>
           <div class="clear" style="clear: both"></div>
+
+          <h5 class="govuk-heading-s">Service home</h4>
           <ul class="govuk-list govuk-list--bullet">
-            <li><a href="/v2/sign-in">Sign in / enter email address</a>
+            <li><a href="/v2/sign-in">Service index</a><br>(temporary fallback while the tactical PDF service is in use)
               <ul>
                 <li><a href="/v2/sign-in/validation">Validation messages</a></li>
               </ul>
             </li>
+            <li><a href="/v2/sign-in/intro-question">New or existing</a>
+              <ul>
+                <li><a href="/v2/sign-in/validation/intro-question">Validation messages</a></li>
+              </ul>
+            </li>
+          </ul>
+          <h5 class="govuk-heading-s">New users</h4>
+          <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/v2/sign-in/intro">Introduction to the service</a>
             </li>
@@ -68,13 +78,18 @@
                 <li><a href="/v2/sign-in/validation/create-password">Validation messages</a></li>
               </ul>
             </li>
-            <li>
-              <a href="/v2/sign-in/password">Enter password</a>
+          </ul>
+
+          <h5 class="govuk-heading-s">Sign in</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/sign-in/sign-in">Sign in</a>
               <ul>
-                <li><a href="/v2/sign-in/validation/password">Validation messages</a></li>
+                <li><a href="/v2/sign-in/validation/sign-in">Validation messages</a></li>
               </ul>
             </li>
           </ul>
+
 
           <h5 class="govuk-heading-s">Code expired</h5>
 
@@ -87,6 +102,12 @@
 
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/v2/sign-in/forgot-password">Forgot password / request reset</a></li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Failed to sign in</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/v2/sign-in/forgot-password">Incorrect email or password</a></li>
           </ul>
 
           <h5 class="govuk-heading-s">Account locked</h5>
