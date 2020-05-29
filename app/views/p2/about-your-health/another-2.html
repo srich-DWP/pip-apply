@@ -1,0 +1,58 @@
+{% set pageTitle = "Other conditions" %}
+
+{% extends "layout-p2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p2/_beta-banner.html" %}
+  {% include "p2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-!-font-size-24">You have added details for:
+        <br><strong>Epilepsy</strong>
+        <br><strong>Depression</strong>
+      </p>
+
+      <form action="/p2/about-your-health/another-answer" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "another",
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Do you have another condition or disability?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p2/about-your-health-professionals/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

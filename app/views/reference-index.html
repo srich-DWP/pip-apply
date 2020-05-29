@@ -1,0 +1,137 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Reference screens to support JIRA stories &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Reference screens to support JIRA&nbsp;stories</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Claimant-facing screens</h2>
+        </div>
+
+        <div class="card-body">
+
+          <h4 class="govuk-heading-m">Authentication</h4>
+          <ul class="thumbs">
+            <li>
+              <a href="/public/flow-diagrams/sign-in.pdf">
+                <img src="/public/flow-diagrams/sign-in-thumb.png" class="thumb">
+              Sign in flow</a>
+            </li>
+            <li>
+              <a href="/public/flow-diagrams/locked.pdf">
+                <img src="/public/flow-diagrams/locked-thumb.png" class="thumb">
+              Forgot password / account locked flow</a>
+            </li>
+          </ul>
+          <div class="clear" style="clear: both"></div>
+
+          <h5 class="govuk-heading-s">Service home</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/r1/sign-in">Service index</a><br>(temporary fallback while the tactical PDF service is in use)
+              <ul>
+                <li><a href="/r1/sign-in/validation">Validation messages</a></li>
+              </ul>
+            </li>
+            <li><a href="/r1/sign-in/intro-question">New or existing</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/intro-question">Validation messages</a></li>
+              </ul>
+            </li>
+          </ul>
+          <h5 class="govuk-heading-s">New users</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/r1/sign-in/intro">Introduction to the service</a>
+            </li>
+            <li>
+              <a href="/r1/sign-in/register">Register</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/register">Validation messages</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/r1/sign-in/code-text">Enter a 6-digit code from text message</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/code-text">Validation messages</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/r1/sign-in/code-email">Enter a 6-digit code from email</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/code-email">Validation messages</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/r1/sign-in/create-password">Create your password</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/create-password">Validation messages</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Sign in</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/r1/sign-in/sign-in">Sign in</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/sign-in">Validation messages</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <h5 class="govuk-heading-s">Code expired</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/r1/sign-in/code-text-get-another?expired=true">Text message code expired</a></li>
+            <li><a href="/r1/sign-in/code-email-get-another?expired=true">Email code expired</a></li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Forgot password</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/r1/sign-in/forgot-password">Forgot password / request reset</a></li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Account locked</h5>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/r1/sign-in/locked-out">Locked out</a></li>
+            <li><a href="/r1/sign-in/enter-details?scenario=locked">Enter details</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/enter-details">Validation messages</a></li>
+              </ul>
+            </li>
+            <li><a href="/r1/sign-in/code-text?scenario=locked">Text code - account locked</a></li>
+            <li><a href="/r1/sign-in/code-text-get-another?scenario=locked">Get another text code - account locked</a></li>
+            <li><a href="/r1/sign-in/code-email?scenario=locked">Email code  - account locked</a></li>
+            <li><a href="/r1/sign-in/code-email-get-another?scenario=locked">Get another email code - account locked</a></li>
+            <li>
+              <a href="/r1/sign-in/create-new-password">Create your new password</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/create-new-password">Validation messages</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>{# /card-body #}
+      </div>{# /card #}
+  </div> <!-- govuk-grid-column-full -->
+</div> <!-- govuk-grid-column-one-third -->
+
+{% endblock %}

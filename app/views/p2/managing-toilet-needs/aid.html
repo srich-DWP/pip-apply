@@ -1,0 +1,79 @@
+{% set pageTitle = "Do you need to use an aid or appliance to use the toilet or manage incontinence?" %}
+
+{% extends "layout-p2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p2/_beta-banner.html" %}
+  {% include "p2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p2/managing-toilet-needs/help" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "aid",
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Do you need to use an aid or appliance to use the toilet or manage incontinence?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '
+            <p class="govuk-!-margin-top-2">Aids and appliances include things like:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>commodes</li>
+              <li>raised toilet seats</li>
+              <li>bottom wipers</li>
+              <li>bidets</li>
+              <li>incontinence pads</li>
+              <li>stoma bags</li>
+            </ul>
+            '
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "sometimes",
+              text: "Sometimes"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p2/managing-toilet-needs/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
+
+
+
+
+
+
+
+
+

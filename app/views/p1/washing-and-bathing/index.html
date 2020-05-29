@@ -1,0 +1,31 @@
+{% extends "layout-p1.html" %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Washing and bathing</h1>
+      <p class="govuk-body-l">Tell us about whether you can wash and bathe.</p>
+      <p>This means things like:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>washing your body, limbs, face, underarms and hair, and</li>
+        <li>using a standard bath or shower</li>
+      </ul>
+      <p>This doesn’t include any difficulties you have getting to the bathroom.</p>
+
+      <p>We understand talking about your personal care needs can be difficult, but we need you to tell us as much as you can.</p>
+
+    </div><!-- govuk-form-group -->
+
+    <a href="/p1/washing-and-bathing/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -12,8 +12,10 @@ module.exports = {
 
     // Includes
 
-    // Experiments
-    require('./routes/v1.js')(app);
-    require('./routes/v2.js')(app);
+    // Prototypes and exploration
+    require('./routes/p1.js')(app);
+    require('./routes/p2.js')(app);
+    // Reference screens
+    require('./routes/r1.js')(app);
   }
 }

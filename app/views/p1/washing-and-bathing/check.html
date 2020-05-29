@@ -1,0 +1,82 @@
+{% extends "layout-p1.html" %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p1/list">
+
+      <h1 class="govuk-heading-l">Check your answers: washing and bathing</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Aid or appliance to wash and bathe yourself, including using a bath or shower"
+            },
+            value: {
+              text: 'Yes'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Help from another person needed to wash and bathe?"
+            },
+            value: {
+              text: 'Yes'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Extra information"
+            },
+            value: {
+              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <a href="/p1/list?washingandbathing=completed" class="govuk-button">Confirm and continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

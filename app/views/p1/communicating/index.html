@@ -1,0 +1,23 @@
+{% extends "layout-p1.html" %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  	<div class="govuk-form-group">
+	    <h1 class="govuk-heading-l">Communicating</h1>
+	    <p class="govuk-body-l">Tell us about whether you have difficulties with your speech, your hearing or your understanding of what is being said to you.</p>
+	    <p>This means in your native spoken language.</p>
+    </div><!-- govuk-form-group -->
+
+    <a href="/p1/communicating/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

@@ -1,0 +1,58 @@
+{% set pageTitle = "Extra information – going out" %}
+
+{% extends "layout-p2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p2/_beta-banner.html" %}
+  {% include "p2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <form action="/p2/going-out/check" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">Extra information – going out</h1>
+
+      <p>Tell us more about any difficulties you have when planning and following a route:</p>
+
+      <ul class='govuk-list govuk-list--bullet'>
+        <li>tell us how your condition affects you doing this activity</li>
+        <li>tell us how you manage at the moment and the problems you have when you can’t do this activity</li>
+        <li>tell us how long it takes you to complete this activity</li>
+        <li>does whether you can do this vary throughout the day? Tell us about good and bad days</li>
+        <li>does whether you can do this depend on where you're going?</li>
+        <li>do you experience any other difficulties, either during or after the activity, like anxiety or distress?</li>
+        <li>tell us about the help you need from another person when planning and following a journey. This includes help you have and help you need but don’t get</li>
+      </ul>
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "18",
+        label: {
+          text: "Extra information on making decisions about going out (optional)",
+          classes: "govuk-label--m"
+        }
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+      </div>
+
+    </form>
+
+    {% include "p2/going-out/_return-link.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
