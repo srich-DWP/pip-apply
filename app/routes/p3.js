@@ -32,7 +32,7 @@ module.exports = function (app) {
         washingandbathing: undefined,
         managingtoiletneeds: undefined,
         dressingandundressing: undefined,
-        communicating: undefined,
+        talkingandlistening: undefined,
         reading: undefined,
         mixingwithotherpeople: undefined,
         makingdecisionsaboutmoney: undefined,
@@ -70,8 +70,8 @@ module.exports = function (app) {
     if (req.query.dressingandundressing) {
       req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
     };
-    if (req.query.communicating) {
-      req.session.sectionStatus.communicating = req.query.communicating
+    if (req.query.talkingandlistening) {
+      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
     };
     if (req.query.reading) {
       req.session.sectionStatus.reading = req.query.reading
@@ -233,6 +233,19 @@ module.exports = function (app) {
   app.get('/p3/dressing-and-undressing/index-answer', function(req, res) {
 
     let question = req.session.data['dressingandundressing-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Talking and listening
+
+  app.get('/p3/talking-and-listening/index-answer', function(req, res) {
+
+    let question = req.session.data['talkingandlistening-question']
 
     if (question === 'Yes') {
         res.redirect('details')
