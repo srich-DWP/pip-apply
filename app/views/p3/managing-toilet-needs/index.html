@@ -1,4 +1,4 @@
-{% set pageTitle = "Managing toilet needs" %}
+{% set pageTitle = "Preparing food" %}
 
 {% extends "layout-p3.html" %}
 
@@ -16,26 +16,36 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Managing toilet needs</h1>
-      <p class="govuk-body-l">Tell us about whether you can use the toilet and manage incontinence.</p>
-      <p>Using the toilet means:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>being able to get on or off and use a standard toilet</li>
-        <li>being able to pass water or solids</li>
-        <li>cleaning yourself after using the toilet</li>
-      </ul>
-      <p>Managing incontinence means:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>emptying your bowel and bladder, including if you need a collecting device such as a bottle, bucket or catheter, and</li>
-        <li>cleaning yourself after doing so</li>
-      </ul>
-      <p>This doesn't include difficulties you have getting to the bathroom.</p>
-      <p>We understand talking about your personal care needs can be difficult, but we need you to tell us as much as you can.</p>
+    <form action="/p3/managing-toilet-needs/index-answer" method="post" novalidate>
 
-    </div><!-- govuk-form-group -->
+      {{ govukRadios({
+        name: "managingtoiletneeds-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you using the toilet or managing incontinence?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("managingtoiletneeds-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingtoiletneeds-question", "Yes")
+          }
+        ]
+      }) }}
 
-    <a href="/p3/managing-toilet-needs/aid" class="govuk-button">Continue</a>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

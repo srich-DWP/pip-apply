@@ -202,6 +202,32 @@ module.exports = function (app) {
       }
   });
 
+  // Washing and bathing
+
+  app.get('/p3/washing-and-bathing/index-answer', function(req, res) {
+
+    let question = req.session.data['washingandbathing-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Managing toilet needs
+
+  app.get('/p3/managing-toilet-needs/index-answer', function(req, res) {
+
+    let question = req.session.data['managingtoiletneeds-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
 
   // Additional information
 

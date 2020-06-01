@@ -1,4 +1,4 @@
-{% set pageTitle = "Washing and bathing" %}
+{% set pageTitle = "Preparing food" %}
 
 {% extends "layout-p3.html" %}
 
@@ -16,21 +16,47 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Washing and bathing</h1>
-      <p class="govuk-body-l">Tell us about whether you can wash and bathe.</p>
-      <p>This means things like:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>washing your body, limbs, face, underarms and hair, and</li>
-        <li>using a standard bath or shower</li>
-      </ul>
-      <p>This doesn’t include any difficulties you have getting to the bathroom.</p>
+    <form action="/p3/washing-and-bathing/index-answer" method="post" novalidate>
 
-      <p>We understand talking about your personal care needs can be difficult, but we need you to tell us as much as you can.</p>
+      {{ govukRadios({
+        name: "washingandbathing-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you washing and bathing?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>washing your body, limbs, face, underarms and hair</li>
+            <li>using a normal bath or shower</li>
+            <li>getting in and out of a normal bath or shower</li>
+          </ul>
+          <p>Do consider if you spend too long or too little time washing and bathing. And consider whether you do it too often or not often enough.</p>
+          '
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("washingandbathing-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("washingandbathing-question", "Yes")
+          }
+        ]
+      }) }}
 
-    </div><!-- govuk-form-group -->
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
 
-    <a href="/p3/washing-and-bathing/aid" class="govuk-button">Continue</a>
+    </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
