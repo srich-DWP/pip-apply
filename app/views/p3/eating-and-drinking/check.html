@@ -19,19 +19,21 @@
 
       <h1 class="govuk-heading-l">Check your answers: eating and drinking</h1>
 
-      {{ govukSummaryList({
+      {% if data['eatinganddrinking-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
         rows: [
           {
             key: {
-              text: "Aid or appliance used to eat and drink"
+              text: "Does your condition affect you eating and drinking?"
             },
             value: {
-              text: 'Yes'
+              text: data['eatinganddrinking-question']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/p3/eating-and-drinking/",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -40,15 +42,15 @@
           },
           {
             key: {
-              text: "Feeding tube or similar device used to eat and drink"
+              text: "Do you use a feeding tube or similar device to eat or drink?"
             },
             value: {
-              text: 'Yes'
+              text: data['eatinganddrinking-feedingtube']
             },
             actions: {
               items: [
                 {
-                  href: "#",
+                  href: "/p3/eating-and-drinking/feeding-tube",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -57,37 +59,15 @@
           },
           {
             key: {
-              text: "Help from another person needed to eat and drink"
+              text: "Difficulties you have with eating and drinking and how you manage them"
             },
             value: {
-              text: 'Yes'
+              html: data['eatinganddrinking-details']
             },
             actions: {
               items: [
                 {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Extra information"
-            },
-            value: {
-              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
+                  href: "/p3/eating-and-drinking/details",
                   text: "Change",
                   visuallyHiddenText: "contact details"
                 }
@@ -96,6 +76,32 @@
           }
         ]
       }) }}
+
+      {% else %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Does your condition affect you eating and drinking?"
+            },
+            value: {
+              text: data['eatinganddrinking-question']
+            },
+            actions: {
+              items: [
+                {
+                  href: "/p3/eating-and-drinking/",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+        
+      {% endif %}
 
       <a href="/p3/list?eatinganddrinking=completed" class="govuk-button">Confirm and save</a>
 

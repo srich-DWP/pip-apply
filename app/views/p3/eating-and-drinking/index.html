@@ -16,20 +16,48 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Eating and drinking</h1>
-      <h2 class="govuk-body-l">Use the following questions to tell us about whether you can eat and drink.</h2>
-      <p>This means:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>remembering when to eat</li>
-        <li>cutting food into pieces</li>
-        <li>putting food and drink in your mouth</li>
-        <li>chewing and swallowing food and drink</li>
-        <li>using therapeutic sources such as a feeding tube</li>
-      </ul>
-    </div><!-- govuk-form-group -->
-    
-    <a href="/p3/eating-and-drinking/aid" class="govuk-button">Continue</a>
+    <form action="/p3/eating-and-drinking/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "eatinganddrinking-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you eating and drinking? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>remembering when to eat</li>
+            <li>cutting food into pieces</li>
+            <li>putting food and drink in your mouth</li>
+            <li>chewing and swallowing food and drink</li>
+          </ul>
+          <p>Do consider if you can eat and drink without needing prompting.</p>
+          '
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("eatinganddrinking-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("eatinganddrinking-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

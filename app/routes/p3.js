@@ -176,6 +176,32 @@ module.exports = function (app) {
       }
   });
 
+  // Eating and drinking
+
+  app.get('/p3/eating-and-drinking/index-answer', function(req, res) {
+
+    let question = req.session.data['eatinganddrinking-question']
+
+    if (question === 'Yes') {
+        res.redirect('feeding-tube')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Managing treatments
+
+  app.get('/p3/managing-treatments/index-answer', function(req, res) {
+
+    let question = req.session.data['managingtreatments-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
 
   // Additional information
 

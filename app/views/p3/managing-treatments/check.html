@@ -19,66 +19,72 @@
 
       <h1 class="govuk-heading-l">Check your answers: managing treatments</h1>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Aid or appliance used to monitor your health conditions"
+      {% if data['managingtreatments-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you managing your treatments?"
+              },
+              value: {
+                text: data['managingtreatments-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/managing-treatments/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
             },
-            value: {
-              text: 'Yes'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+            {
+              key: {
+                text: "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them. "
+              },
+              value: {
+                html: data['managingtreatments-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/managing-treatments/details",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Help from another person needed to monitor your health conditions, take medication or manage home treatments"
-            },
-            value: {
-              text: 'Yes'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you managing your treatments?"
+              },
+              value: {
+                text: data['managingtreatments-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/managing-treatments/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Extra information"
-            },
-            value: {
-              html: '<p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "contact details"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
+        
+      {% endif %}
 
       <a href="/p3/list?managingtreatments=completed" class="govuk-button">Confirm and save</a>
 

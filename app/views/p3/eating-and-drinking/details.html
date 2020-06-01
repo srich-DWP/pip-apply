@@ -1,4 +1,4 @@
-{% set pageTitle = "Extra information – preparing food" %}
+{% set pageTitle = "Tell us about the difficulties you have with eating and drinking and how you manage them" %}
 
 {% extends "layout-p3.html" %}
 
@@ -16,15 +16,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form action="/p3/preparing-food/check" method="post" novalidate>
+    <form action="/p3/eating-and-drinking/check" method="post" novalidate>
 
       {{ govukTextarea({
-        name: "preparingfood-details",
-        id: "preparingfood-details",
+        name: "eatinganddrinking-details",
+        id: "eatinganddrinking-details",
         rows: "18",
-        value: data['preparingfood-details'],
+        value: data['eatinganddrinking-details'],
         label: {
-          text: "Tell us about the difficulties you have with preparing food and how you manage them",
+          text: "Tell us about the difficulties you have with eating and drinking and how you manage them",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
@@ -33,15 +33,15 @@
           <p>For each difficulty, please tell us:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>how often you have this difficulty. Tell us about both good and bad days</li>
-            <li>what the difficulty is</li>
-            <li>why you have it, or how it relates to your condition</li>
+            <li>what the difficulty is </li>
+            <li>why you have it, or how it relates to your condition </li>
             <li>any aids or adaptations you use, or help you get from another person</li>
             <li>any help you feel you need but don’t get</li>
           </ul>
           <h2 class="govuk-heading-m">Examples</h2>
           <ol class="govuk-list govuk-list--number">
-            <li>About twice a year, for about three weeks at a time I have difficulty remembering to turn the hob off because I get too distracted to complete complex tasks. My partner supervises me in the kitchen to make sure I stay safe.</li>
-            <li>Every day, I have difficulty standing for more than ten minutes while preparing food because my leg is too stiff and painful. I need to use a perching stool so I can rest my leg while preparing food.</li>
+            <li>Two or three times a year, for about two weeks at a time, I have difficulty cutting up my food at dinner because my right hand hurts when I hold a knife. I need adapted cutlery so I can cut up my food myself.</li>
+            <li>I always have difficulty eating enough food at mealtimes to keep healthy because I am preoccupied with my weight and get very upset. My partner prompts me to manage my portion size and eat my meals.</li>
           </ol>
         '
         }
@@ -53,7 +53,7 @@
 
     </form>
 
-    {% include "p3/preparing-food/_return-link.html" %}
+    {% include "p3/eating-and-drinking/_return-link.html" %}
       
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

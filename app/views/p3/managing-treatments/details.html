@@ -1,4 +1,4 @@
-{% set pageTitle = "Extra information – preparing food" %}
+{% set pageTitle = "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them" %}
 
 {% extends "layout-p3.html" %}
 
@@ -16,15 +16,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     
-    <form action="/p3/preparing-food/check" method="post" novalidate>
+    <form action="/p3/managing-treatments/check" method="post" novalidate>
 
       {{ govukTextarea({
-        name: "preparingfood-details",
-        id: "preparingfood-details",
+        name: "managingtreatments-details",
+        id: "managingtreatments-details",
         rows: "18",
-        value: data['preparingfood-details'],
+        value: data['managingtreatments-details'],
         label: {
-          text: "Tell us about the difficulties you have with preparing food and how you manage them",
+          text: "Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them",
           isPageHeading: true,
           classes: "govuk-label--l"
         },
@@ -40,8 +40,8 @@
           </ul>
           <h2 class="govuk-heading-m">Examples</h2>
           <ol class="govuk-list govuk-list--number">
-            <li>About twice a year, for about three weeks at a time I have difficulty remembering to turn the hob off because I get too distracted to complete complex tasks. My partner supervises me in the kitchen to make sure I stay safe.</li>
-            <li>Every day, I have difficulty standing for more than ten minutes while preparing food because my leg is too stiff and painful. I need to use a perching stool so I can rest my leg while preparing food.</li>
+            <li>About four days a week, I have trouble taking my arthritis medication because my wrists hurt when I try to open the pill bottle. I put my pills in a dosette box so I do not need to open the pill bottle on days when I’m unable.</li>
+            <li>Every evening, I have trouble monitoring my blood glucose levels because I forget and get confused on how to do it. My partner prompts me and helps me measure my blood glucose levels in the evening.</li>
           </ol>
         '
         }
@@ -53,7 +53,7 @@
 
     </form>
 
-    {% include "p3/preparing-food/_return-link.html" %}
+    {% include "p3/managing-treatments/_return-link.html" %}
       
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

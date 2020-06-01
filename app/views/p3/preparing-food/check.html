@@ -22,74 +22,69 @@
       {% if data['preparingfood-question'] === 'Yes' %}
 
         {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Does your condition affect you preparing food, or ever prevent you from doing so?"
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you preparing food, or ever prevent you from doing so?"
+              },
+              value: {
+                text: data['preparingfood-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/preparing-food/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
             },
-            value: {
-              text: data['preparingfood-question']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/p3/preparing-food/",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+            {
+              key: {
+                text: "Difficulties you have with preparing food and how you manage them"
+              },
+              value: {
+                html: data['preparingfood-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/preparing-food/details",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
             }
-          },
-          {
-            key: {
-              text: "Difficulties you have with preparing food and how you manage them"
-            },
-            value: {
-              html: data['preparingfood-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/p3/preparing-food/details",
-                  text: "Change",
-                  visuallyHiddenText: "contact details"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
 
       {% else %}
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Does your condition affect you preparing food, or ever prevent you from doing so?"
-            },
-            value: {
-              text: data['preparingfood-question']
-            },
-            actions: {
-              items: [
-                {
-                  href: "/p3/preparing-food/",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you preparing food, or ever prevent you from doing so?"
+              },
+              value: {
+                text: data['preparingfood-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/preparing-food/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
             }
-          }
-        ]
-      }) }}
+          ]
+        }) }}
         
       {% endif %}
-
-      
-
-
-
 
       <a href="/p3/list?preparingfood=completed" class="govuk-button">Confirm and save</a>
 

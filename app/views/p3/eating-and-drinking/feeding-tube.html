@@ -1,4 +1,4 @@
-{% set pageTitle = "Do you use a feeding tube or similar device to eat or drink?" %}
+{% set pageTitle = "Eating and drinking" %}
 
 {% extends "layout-p3.html" %}
 
@@ -13,50 +13,47 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form action="/p3/eating-and-drinking/help" method="post" novalidate>
+    <form action="/p3/eating-and-drinking/details" method="post" novalidate>
 
-        {{ govukRadios({
-          idPrefix: "aid",
-          name: "question",
-          fieldset: {
-            legend: {
-              text: "Do you use a feeding tube or similar device to eat or drink?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--l"
-            }
+      {{ govukRadios({
+        name: "eatinganddrinking-feedingtube",
+        fieldset: {
+          legend: {
+            text: "Do you use a feeding tube or similar device to eat or drink?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("eatinganddrinking-feedingtube", "No")
           },
-          hint: {
-            html: '
-            <p class="govuk-!-margin-top-2">This means things like a feeding tube with a rate limiting device as a delivery system or feed pump.</p>
-            '
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("eatinganddrinking-feedingtube", "Yes")
           },
-          items: [
-            {
-              value: "yes",
-              text: "Yes"
-            },
-            {
-              value: "no",
-              text: "No"
-            },
-            {
-              value: "sometimes",
-              text: "Sometimes"
-            }
-          ]
-        }) }}
+          {
+            value: "Sometimes",
+            text: "Sometimes",
+            checked: checked("eatinganddrinking-feedingtube", "Sometimes")
+          }
+        ]
+      }) }}
 
-        {{ govukButton({
-          text: "Save and continue"
-        }) }}
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
 
-      </form>
+    </form>
 
-      {% include "p3/eating-and-drinking/_return-link.html" %}
-      
-    </div>{# /govuk-grid-column-one-third #}
-  </div>{# /govuk-grid-row #}
+    {% include "p3/preparing-food/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
 {% endblock %}

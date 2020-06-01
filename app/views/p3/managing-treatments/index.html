@@ -16,29 +16,46 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Managing treatments</h1>
-      <p class="govuk-body-l">Tell us about whether you can monitor changes in your health condition, manage medication, or manage any treatments carried out at home.</p>
+    <form action="/p3/managing-treatments/index-answer" method="post" novalidate>
 
-      <p>Monitoring changes in your health condition means being able to detect any changes in a condition and take necessary actions as advised by a health professional.</p>
+      {{ govukRadios({
+        name: "managingtreatments-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you managing your treatments?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>monitoring changes in your health condition or disability (for example, your blood sugar level, mental state or pain levels)</li>
+            <li>taking medication in the right way and at the right time</li>
+            <li>managing therapies that take place at home which have been recommended by a health professional or pharmacist (for example, physiotherapy or home dialysis)</li>
+          </ul>
+          '
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("managingtreatments-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("managingtreatments-question", "Yes")
+          }
+        ]
+      }) }}
 
-      <p>Monitoring changes include things like:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>blood sugar level</li>
-        <li>changes in mental state</li>
-        <li>pain levels</li>
-      </ul>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
 
-      <p>Managing medication means to take regular medication prescribed or advised by a doctor, nurse or pharmacist in the right way at the right time. This includes tablets, inhalers and creams.</p>
-
-      <p>Home treatments can be NHS or private treatment and include things like:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>physiotherapy</li>
-        <li>home dialysis</li>
-      </ul>
-    </div><!-- govuk-form-group -->
-
-    <a href="/p3/managing-treatments/aid" class="govuk-button">Continue</a>
+    </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
