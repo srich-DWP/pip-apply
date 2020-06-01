@@ -1,4 +1,4 @@
-{% set pageTitle = "Reading" %}
+{% set pageTitle = "Does your condition affect you reading?" %}
 
 {% extends "layout-p3.html" %}
 
@@ -16,18 +16,46 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Reading</h1>
-      <p class="govuk-body-l">Tell us about whether you can read and understand signs, symbols and words in your native language. Also tell us about difficulties you have concentrating when doing so.</p>
-      <p>This means:</p>
-      <ul class="govuk-list govuk-list--bullet">
-      	<li>signs, symbols and words written or printed in your native language, not braille</li>
-        <li>understanding numbers, including dates</li>
-        <li>other instructions, such as timetables</li>
-      </ul>
-    </div><!-- govuk-form-group -->
+    <form action="/p3/reading/index-answer" method="post" novalidate>
 
-    <a href="/p3/reading/aid" class="govuk-button">Continue</a>
+      {{ govukRadios({
+        name: "reading-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you reading?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means doing the following in your own language:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>reading written words and numbers both indoors and outdoors</li>
+            <li>reading signs and symbols (for example, a green exit sign on a door) </li>
+          </ul>
+          <p>For this question, reading braille does not count as reading.</p>
+          '
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("reading-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("reading-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

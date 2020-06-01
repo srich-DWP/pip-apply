@@ -254,6 +254,18 @@ module.exports = function (app) {
       }
   });
 
+  // Reading
+
+  app.get('/p3/reading/index-answer', function(req, res) {
+
+    let question = req.session.data['reading-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
 
   // Additional information
 
