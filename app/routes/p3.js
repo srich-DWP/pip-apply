@@ -267,6 +267,19 @@ module.exports = function (app) {
       }
   });
 
+  // Mixing with other people
+
+  app.get('/p3/mixing-with-other-people/index-answer', function(req, res) {
+
+    let question = req.session.data['mixingwithotherpeople-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
   // Additional information
 
   app.get('/p3/additional-information/index-answer', function(req, res) {
