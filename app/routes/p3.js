@@ -228,6 +228,19 @@ module.exports = function (app) {
       }
   });
 
+  // Dressing and undressing
+
+  app.get('/p3/dressing-and-undressing/index-answer', function(req, res) {
+
+    let question = req.session.data['dressingandundressing-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
 
   // Additional information
 
