@@ -306,6 +306,19 @@ module.exports = function (app) {
       }
   });
 
+  // Moving around
+
+  app.get('/p3/moving-around/index-answer', function(req, res) {
+
+    let question = req.session.data['movingaround-question']
+
+    if (question === 'Yes') {
+        res.redirect('info')
+      } else {
+        res.redirect('check')
+      }
+  });
+
   // Additional information
 
   app.get('/p3/additional-information/index-answer', function(req, res) {
