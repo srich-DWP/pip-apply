@@ -35,8 +35,8 @@ module.exports = function (app) {
         talkingandlistening: undefined,
         reading: undefined,
         mixingwithotherpeople: undefined,
-        makingdecisionsaboutmoney: undefined,
-        goingout: undefined,
+        managingmoney: undefined,
+        planningandfollowingajourney: undefined,
         movingaround: undefined,
         additionalinformation: undefined,
         supportingevidence: undefined,
@@ -79,11 +79,11 @@ module.exports = function (app) {
     if (req.query.mixingwithotherpeople) {
       req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
     };
-    if (req.query.makingdecisionsaboutmoney) {
-      req.session.sectionStatus.makingdecisionsaboutmoney = req.query.makingdecisionsaboutmoney
+    if (req.query.managingmoney) {
+      req.session.sectionStatus.managingmoney = req.query.managingmoney
     };
-    if (req.query.goingout) {
-      req.session.sectionStatus.goingout = req.query.goingout
+    if (req.query.planningandfollowingajourney) {
+      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
     };
     if (req.query.movingaround) {
       req.session.sectionStatus.movingaround = req.query.movingaround
@@ -272,6 +272,32 @@ module.exports = function (app) {
   app.get('/p3/mixing-with-other-people/index-answer', function(req, res) {
 
     let question = req.session.data['mixingwithotherpeople-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Managing money
+
+  app.get('/p3/managing-money/index-answer', function(req, res) {
+
+    let question = req.session.data['managingmoney-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  // Planning and following a journey
+
+  app.get('/p3/planning-and-following-a-journey/index-answer', function(req, res) {
+
+    let question = req.session.data['planningandfollowingajourney-question']
 
     if (question === 'Yes') {
         res.redirect('details')

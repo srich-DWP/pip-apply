@@ -77,14 +77,11 @@
             </li>
           </ul>
         </li>
+        {# Daily living activities #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Tell us about your day-to-day life
+            <span class="app-task-list__section-number">2. </span> Tell us about your daily living activities
           </h2>
-{#           <div class="app-task-list__intro">
-            <p>Personal Independence Payment is assessed on how your condition affects you, not the condition itself.</p>
-            <p>Tell us in this section how your health condition or disability affects your day-to-day life.</p>
-          </div> #}{# /app-task-list__intro #}
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.preparingfood === "completed" %}
@@ -303,47 +300,55 @@
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.makingdecisionsaboutmoney === "completed" %}
-                <a class="app-task-list__task-name " href="/p3/making-decisions-about-money/check">
-                  Making decisions about money 
+              {% if sectionStatus.managingmoney === "completed" %}
+                <a class="app-task-list__task-name " href="/p3/managing-money/check">
+                  Managing money 
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.makingdecisionsaboutmoney === "started" %}
-                <a class="app-task-list__task-name " href="/p3/making-decisions-about-money/">
-                  Making decisions about money
+              {% elif sectionStatus.managingmoney === "started" %}
+                <a class="app-task-list__task-name " href="/p3/managing-money/">
+                  Managing money
                   <span>
                     <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p3/making-decisions-about-money/">
-                  Making decisions about money
+                <a class="app-task-list__task-name " href="/p3/managing-money/">
+                  Managing money
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
+          </ul>
+        </li>
+        {# Mobility activities #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Tell us about your mobility activities
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.goingout === "completed" %}
-                <a class="app-task-list__task-name " href="/p3/going-out/check">
-                  Going out 
+              {% if sectionStatus.planningandfollowingajourney === "completed" %}
+                <a class="app-task-list__task-name " href="/p3/planning-and-following-a-journey/check">
+                  Planning and following a journey 
                   <span>
                     <strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.goingout === "started" %}
-                <a class="app-task-list__task-name " href="/p3/going-out/">
-                  Going out
+              {% elif sectionStatus.planningandfollowingajourney === "started" %}
+                <a class="app-task-list__task-name " href="/p3/planning-and-following-a-journey/">
+                  Planning and following a journey 
                   <span>
                     <strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p3/going-out/">
-                  Going out
+                <a class="app-task-list__task-name " href="/p3/planning-and-following-a-journey/">
+                  Planning and following a journey 
                   <span>
                     <strong class="govuk-tag tag-notstarted app-task-list__task-completed" id="#">Not started</strong>
                   </span>
@@ -374,6 +379,14 @@
                 </a>
               {% endif %}
             </li>
+          </ul>
+        </li>
+        {# Additional information #}
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Tell us about anything else
+          </h2>
+          <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
               {% if sectionStatus.additionalinformation === "completed" %}
                 <a class="app-task-list__task-name " href="/p3/additional-information/check">
@@ -400,9 +413,10 @@
             </li>
           </ul>
         </li>
+        {# Upload supporting evidence and apply #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Upload supporting evidence and apply
+            <span class="app-task-list__section-number">5. </span> Upload supporting evidence and apply
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -417,7 +431,7 @@
                 sectionStatus.reading === "completed" and
                 sectionStatus.mixingwithotherpeople === "completed" and
                 sectionStatus.makingdecisionsaboutmoney === "completed" and
-                sectionStatus.goingout === "completed" and
+                sectionStatus.planningandfollowingajourney === "completed" and
                 sectionStatus.movingaround === "completed"
               %}
                 <a class="app-task-list__task-name " href="/p3/supporting-evidence">
