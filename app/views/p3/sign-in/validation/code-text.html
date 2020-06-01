@@ -1,0 +1,94 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Error – A 6-digit code has been texted to XXXX XXX 789" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" novalidate>
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Enter your 6-digit code",
+              "href": "#code"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">A 6-digit code has been texted to<br>XXXX XXX 789</h1>
+
+        {{ govukInput({
+          label: {
+            "text": 'Your 6-digit code'
+          },
+          id: "name",
+          classes: "govuk-input govuk-input--width-5 input-capitals",
+          name: "name",
+          errorMessage: {
+            "text": "Enter your 6-digit code"
+          }
+        }) }}
+
+        <button type="submit" class="govuk-button">Continue</button>
+
+        <p><a href="#">I did not get a code</a></p>
+
+        <p><a href="#">Get a code by email instead</a></p>
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" novalidate>
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Enter your 6-digit code in the correct format",
+              "href": "#code"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">A 6-digit code has been texted to<br>XXXX XXX 789</h1>
+
+        {{ govukInput({
+          label: {
+            "text": 'Your 6-digit code'
+          },
+          id: "name",
+          classes: "govuk-input govuk-input--width-5 input-capitals",
+          name: "name",
+          value: "123TY6788",
+          errorMessage: {
+            "text": "Enter your 6-digit code in the correct format"
+          }
+        }) }}
+
+        <button type="submit" class="govuk-button">Continue</button>
+
+        <p><a href="#">I did not get a code</a></p>
+
+        <p><a href="#">Get a code by email instead</a></p>
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% set pageTitle = "Eating and drinking" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Eating and drinking</h1>
+      <h2 class="govuk-body-l">Use the following questions to tell us about whether you can eat and drink.</h2>
+      <p>This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>remembering when to eat</li>
+        <li>cutting food into pieces</li>
+        <li>putting food and drink in your mouth</li>
+        <li>chewing and swallowing food and drink</li>
+        <li>using therapeutic sources such as a feeding tube</li>
+      </ul>
+    </div><!-- govuk-form-group -->
+    
+    <a href="/p3/eating-and-drinking/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

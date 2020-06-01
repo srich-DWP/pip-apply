@@ -1,0 +1,35 @@
+{% set pageTitle = "Making decisions about money" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-heading-l">Making decisions about money</h1>
+      <p class="govuk-body-l">Tell us about whether you can make decisions about spending and managing your money.</p>
+      <p>This means:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>understanding how much things costs</li>
+        <li>understanding how much change you should get</li>
+        <li>managing budgets, paying bills and planning future purchases</li>
+      </ul>
+      <p>This activity looks at your decision-making ability not things like getting to the bank.</p>
+    </div><!-- govuk-form-group -->
+
+    <a href="/p3/making-decisions-about-money/aid" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

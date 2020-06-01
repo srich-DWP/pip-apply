@@ -1,0 +1,57 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Tell DWP how your disability affects you for your PIP claim" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "r1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Tell DWP how your disability affects you for your PIP claim</h1>
+
+      <p>Only use this service if you’ve already applied for Personal Independence Payment (PIP).</p>
+
+      <p>Use the service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>tell the Department for Work and Pensions (DWP) how your health condition or disability affects you</li>
+        <li>upload photos or scans of any documentary evidence of your condition or disability and how it affects you</li>
+      </ul>
+
+      <p>You’ll be asked questions about your ability to carry out everyday activities. The answers will help DWP understand the effect of your health condition or disability on your everyday life and assess your entitlement to the benefit.</p>
+
+      <p>Take your time and describe all the help you need. You don’t have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>It might be helpful to keep a diary of how your disability affects you for a few days. Write down a list of things you need help with or find difficult.</p>
+
+      <p>You’ll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your mobile phone</li>
+        <li>your National Insurance number</li>
+      </ul>
+
+      <div style="margin-top: 30px"></div>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/p3/sign-in/register",
+        isStartButton: true
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

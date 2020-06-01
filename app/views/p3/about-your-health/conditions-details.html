@@ -1,0 +1,56 @@
+{% set pageTitle = "About your health conditions or disabilities" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-add-another">
+
+    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">About this condition or disability – epilepsy{# [condition or disability entered appears here] #}</h1>
+    <form action="/p3/about-your-health/another" method="post" novalidate>
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        rows: "18",
+        label: {
+          html: "<p>Tell us about:</p>
+          <ul class='govuk-list govuk-list--bullet'>
+            <li>
+              tablets or other medication you are taking or will be taking and the dosage
+            </li>
+            <li>
+              any treatments you are having or will be having, such as chemotherapy,
+              physiotherapy or dialysis</li>
+            <li>any side effects these have on you</li>
+          </ul>"
+        }
+      }) }}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Save and continue'
+        }) }}
+      </div>
+
+      </form>
+
+      {% include "p3/about-your-health/_return-link.html" %}
+      
+    </div>{# /moj-add-another #}
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
