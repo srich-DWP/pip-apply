@@ -69,6 +69,12 @@ $govuk-assets-path: '/govuk/assets/';
   border: 2px solid govuk-colour("blue");
 }
 
+.tag-inprogress {
+  background-color: govuk-colour("white");
+  color: govuk-colour("blue");
+  border: 2px solid govuk-colour("blue");
+}
+
 .tag-notstarted {
   background-color: govuk-colour("light-grey");
   color: govuk-colour("dark-grey");
