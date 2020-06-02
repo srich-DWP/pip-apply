@@ -323,10 +323,10 @@ module.exports = function (app) {
 
   app.get('/p3/additional-information/index-answer', function(req, res) {
 
-    let question = req.session.data['question']
+    let question = req.session.data['additionalinformation-question']
 
-    if (question === 'yes') {
-        res.redirect('additional-information')
+    if (question === 'Yes') {
+        res.redirect('details')
       } else {
         res.redirect('check')
       }

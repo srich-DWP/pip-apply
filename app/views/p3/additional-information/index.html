@@ -19,8 +19,7 @@
     <form action="/p3/additional-information/index-answer" method="post" novalidate>
 
       {{ govukRadios({
-        idPrefix: "additional-info",
-        name: "question",
+        name: "additionalinformation-question",
         fieldset: {
           legend: {
             text: "Is there anything else you would like to tell us about?",
@@ -35,12 +34,14 @@
         },
         items: [
           {
-            value: "yes",
-            text: "Yes"
+            value: "No",
+            text: "No",
+            checked: checked("additionalinformation-question", "No")
           },
           {
-            value: "no",
-            text: "No"
+            value: "Yes",
+            text: "Yes",
+            checked: checked("additionalinformation-question", "Yes")
           }
         ]
       }) }}

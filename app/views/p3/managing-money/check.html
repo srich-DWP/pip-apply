@@ -1,4 +1,4 @@
-{% set pageTitle = "Check your answers: preparing food" %}
+{% set pageTitle = "Check your answers: managing money" %}
 
 {% extends "layout-p3.html" %}
 
@@ -17,7 +17,7 @@
 
     <form id="form" method="post" action="/p3/list">
 
-      <h1 class="govuk-heading-l">Check your answers: preparing food</h1>
+      <h1 class="govuk-heading-l">Check your answers: managing money</h1>
 
       {% if data['managingmoney-question'] === 'Yes' %}
 
@@ -25,7 +25,7 @@
           rows: [
             {
               key: {
-                text: "Does your condition affect you preparing food, or ever prevent you from doing so?"
+                text: "Does your condition affect you managing your money?"
               },
               value: {
                 text: data['managingmoney-question']
@@ -42,7 +42,7 @@
             },
             {
               key: {
-                text: "Difficulties you have with preparing food and how you manage them"
+                text: "Difficulties you have with managing your money and how you manage them"
               },
               value: {
                 html: data['managingmoney-details']

@@ -19,6 +19,81 @@
 
       <h1 class="govuk-heading-l">Check your answers: additional information</h1>
 
+
+      {% if data['additionalinformation-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Is there anything else you would like to tell us about?"
+              },
+              value: {
+                text: data['additionalinformation-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/additional-information/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Additional information"
+              },
+              value: {
+                html: data['additionalinformation-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/additional-information/details",
+                    text: "Change",
+                    visuallyHiddenText: "contact details"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Is there anything else you would like to tell us about?"
+              },
+              value: {
+                text: data['additionalinformation-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p3/additional-information/",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+        
+      {% endif %}
+
+
+
+
+
+
+{# 
+
       {{ govukSummaryList({
         rows: [
           {
@@ -63,7 +138,7 @@
             }
           }
         ]
-      }) }}
+      }) }} #}
 
       <a href="/p3/list?additionalinformation=completed" class="govuk-button">Confirm and save</a>
 

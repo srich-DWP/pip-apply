@@ -19,6 +19,10 @@
     <form action="/p3/additional-information/check" method="post" novalidate>
 
       {{ govukTextarea({
+        name: "additionalinformation-details",
+        id: "additionalinformation-details",
+        rows: "18",
+        value: data['additionalinformation-details'],
         label: {
           text: "Additional information",
           isPageHeading: true,
@@ -26,11 +30,8 @@
         },
         hint: {
           html: '
-          <p>TTell us anything else you think we should know that you have not already told us about how your health condition or disability affects you, that you haven’t mentioned already.</p>'
-        },
-        id: "postcode",
-        rows: "18",
-        name: "postcode"
+          <p>Tell us anything else you think we should know that you have not already told us about how your health condition or disability affects you, that you haven’t mentioned already.</p>'
+        }
       }) }}
 
       <div class="moj-button-action">
