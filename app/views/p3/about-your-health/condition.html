@@ -29,9 +29,7 @@
         }
       }) %}
 
-      <p>By long-term health condition or disability, we mean physical, sight, hearing or speech difficulties, learning, developmental or behavioural difficulties or mental health problems.</p>
-
-      <p>We will ask you how your long-term health condition or disability affects how you carry out day-to-day activities in the rest of the form.</p>
+      <p>By condition or disability, we mean physical, sight, hearing or speech difficulties, learning, developmental or behavioural difficulties or mental health problems.</p>
 
       <p>You can add other other conditions and disabilities later if you need to.</p>
 
@@ -39,7 +37,7 @@
         id: 'condition-0--name-',
         name: 'condition-0--name-',
         label: {
-          html: 'Name of condition',
+          html: 'Name of condition or disability',
           classes: 'govuk-!-font-weight-bold'
         },
         hint: {
@@ -68,15 +66,11 @@
         }
       }) }}
 
-
-
       {% endcall %}
-
 
         {{ govukButton({
           text: 'Save and continue'
         }) }}
-
 
       </form>
 
