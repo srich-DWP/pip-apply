@@ -16,8 +16,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="moj-add-another">
-
     <form action="/p3/about-your-health/conditions-details-2" method="post" novalidate>
 
       {% call govukFieldset({
@@ -34,21 +32,20 @@
       <p>You can add other other conditions and disabilities later if you need to.</p>
 
       {{ govukInput({
-        id: 'condition-0--name-',
-        name: 'condition-0--name-',
+        id: 'condition-name-2',
+        name: 'condition-name-2',
         label: {
-          html: 'Name of condition',
+          html: 'Name of condition or disability',
           classes: 'govuk-!-font-weight-bold'
         },
-        attributes: {
-          'data-name': 'condition-%index%--name-',
-          'data-id': 'condition-%index%--name-'
+        hint: {
+          text: "For example, Kidney failure."
         }
       }) }}
 
       {{ govukInput({
-        id: 'condition-0--date-',
-        name: 'condition-0--date-',
+        id: 'condition-date-2',
+        name: 'condition-date-2',
         classes: "govuk-!-width-two-thirds",
         label: {
           html: 'Approximate start date',
@@ -56,26 +53,20 @@
         },
         hint: {
           text: "For example, about 14 months ago."
-        },
-        attributes: {
-          'data-name': 'condition-%index%--name-',
-          'data-id': 'condition-%index%--name-'
         }
       }) }}
 
       {% endcall %}
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Save and continue'
-        }) }}
-      </div>
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
 
-      </form>
+    </form>
 
-      {% include "p3/about-your-health/_return-link.html" %}
+    {% include "p3/about-your-health/_return-link.html" %}
       
-    </div>{# /moj-add-another #}
+
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 

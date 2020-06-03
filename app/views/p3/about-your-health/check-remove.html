@@ -1,4 +1,5 @@
-{% set pageTitle = "Check your answers: your health condition" %}
+{% set pageTitle = "Are you sure you want to remove ‘{{data['condition-name-1']}}’?
+" %}
 
 {% extends "layout-p3.html" %}
 
@@ -21,7 +22,7 @@
       name: "remove",
       fieldset: {
         legend: {
-          text: "Are you sure you want to remove ‘Depression’?",
+          text: "Are you sure you want to remove ‘" + data['condition-name-1'] + "’?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }

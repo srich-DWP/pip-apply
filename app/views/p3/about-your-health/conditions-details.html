@@ -16,16 +16,18 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="moj-add-another">
-
-    <h1 class="govuk-heading-l moj-add-another__heading" tabindex="-1">About this condition or disability – epilepsy{# [condition or disability entered appears here] #}</h1>
     <form action="/p3/about-your-health/another" method="post" novalidate>
 
       {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
+        name: "condition-detail-1",
+        id: "condition-detail-1",
         rows: "18",
         label: {
+          text: "About this condition or disability –" + data['condition-name-1'] | lower,
+          isPageHeading: true,
+        classes: "govuk-label--l"
+        },
+        hint: {
           html: "<p>Tell us about:</p>
           <ul class='govuk-list govuk-list--bullet'>
             <li>
@@ -38,17 +40,14 @@
         }
       }) }}
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Save and continue'
-        }) }}
-      </div>
+      {{ govukButton({
+        text: 'Save and continue'
+      }) }}
 
-      </form>
+    </form>
 
-      {% include "p3/about-your-health/_return-link.html" %}
+    {% include "p3/about-your-health/_return-link.html" %}
       
-    </div>{# /moj-add-another #}
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 
