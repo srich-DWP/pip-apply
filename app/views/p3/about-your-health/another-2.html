@@ -21,11 +21,11 @@
         <br><strong>{{ data['condition-name-2'] | capitalize }}</strong>
       </p>
 
-      <form action="/p3/about-your-health/another-answer" method="post" novalidate>
+      <form action="/p3/about-your-health/another-2-answer" method="post" novalidate>
 
         {{ govukRadios({
-          idPrefix: "another",
-          name: "question",
+          idPrefix: "condition3",
+          name: "condition3",
           fieldset: {
             legend: {
               text: "Do you have another condition or disability?",
@@ -35,11 +35,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]

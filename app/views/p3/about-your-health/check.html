@@ -83,61 +83,68 @@
     </section>
     {% endif %}
 
-    <section class="app-summary-card govuk-!-margin-bottom-6">
-    
-      <header class="app-summary-card__header">
-        <h2 class="app-summary-card__title">
-          {{ data['condition-name-2'] | capitalize }}
-        </h2>
-        <div class="app-summary-card__actions">
-          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-2'] | lower }}</span>
-          </a>
-        </div>{# /app-summary-card__actions #}
-      </header>
-  
-      <div class="app-summary-card__body">
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Condition or disability"
-              },
-              value: {
-                html: data['condition-name-2'] | capitalize + "<br>Approximate start date: " + data['condition-date-2']
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "condition or disability – " + data['condition-name-2'] | lower
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "About this condition or disability"
-              },
-              value: {
-                text: data['condition-detail-2'] | capitalize
-              },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "about this condition or disability - " + data['condition-name-2']
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
-      </div>{# /app-summary-card__body #}
-    </section>
 
-    <p><a href="/p3/about-your-health/condition">Add another condition or disability</a></p>
+    {% if data['condition2'] == "Yes" %}
+
+    
+
+      <section class="app-summary-card govuk-!-margin-bottom-6">
+      
+        <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            {{ data['condition-name-2'] | capitalize }}
+          </h2>
+          <div class="app-summary-card__actions">
+            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['condition-name-2'] | lower }}</span>
+            </a>
+          </div>{# /app-summary-card__actions #}
+        </header>
+    
+        <div class="app-summary-card__body">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Condition or disability"
+                },
+                value: {
+                  html: data['condition-name-2'] | capitalize + "<br>Approximate start date: " + data['condition-date-2']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "condition or disability – " + data['condition-name-2'] | lower
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "About this condition or disability"
+                },
+                value: {
+                  text: data['condition-detail-2'] | capitalize
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "about this condition or disability - " + data['condition-name-2']
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+        </div>{# /app-summary-card__body #}
+      </section>
+
+      {% endif %}
+
+    <p><a href="#">Add another condition or disability</a></p>
 
     <p><a href="../list?aboutyourhealth=completed" class="govuk-button">Confirm and save</a></p>
 

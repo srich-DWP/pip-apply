@@ -23,8 +23,8 @@
       <form action="/p3/about-your-health/another-answer" method="post" novalidate>
 
         {{ govukRadios({
-          idPrefix: "another",
-          name: "question",
+          idPrefix: "condition2",
+          name: "condition2",
           fieldset: {
             legend: {
               text: "Do you have another condition or disability?",
@@ -34,11 +34,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]

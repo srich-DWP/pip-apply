@@ -132,10 +132,21 @@ module.exports = function (app) {
 
   app.get('/p3/about-your-health/another-answer', function(req, res) {
 
-    let question = req.session.data['question']
+    let condition2 = req.session.data['condition2']
 
-    if (question === 'yes') {
+    if (condition2 === 'Yes') {
         res.redirect('condition-2')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p3/about-your-health/another-2-answer', function(req, res) {
+
+    let question = req.session.data['condition3']
+
+    if (question === 'Yes') {
+        res.redirect('condition-3')
       } else {
         res.redirect('check')
       }
@@ -146,7 +157,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('health-professional-2')
+        res.redirect('health-professional2')
       } else {
         res.redirect('check')
       }
