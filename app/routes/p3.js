@@ -157,7 +157,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'yes') {
-        res.redirect('health-professional2')
+        res.redirect('health-professional-2')
       } else {
         res.redirect('check')
       }
