@@ -21,33 +21,11 @@
 
         <div class="card-body">
 
-{#           <h4 class="govuk-heading-m">Authentication</h4>
-          <ul class="thumbs">
-            <li>
-              <a href="/public/flow-diagrams/sign-in.pdf">
-                <img src="/public/flow-diagrams/sign-in-thumb.png" class="thumb">
-              Sign in flow</a>
-            </li>
-            <li>
-              <a href="/public/flow-diagrams/locked.pdf">
-                <img src="/public/flow-diagrams/locked-thumb.png" class="thumb">
-              Forgot password / account locked flow</a>
-            </li>
-          </ul>
-          <div class="clear" style="clear: both"></div> #}
-
           <h5 class="govuk-heading-s">Service home</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/p3/sign-in">Service index</a><br>(temporary fallback while the tactical PDF service is in use)
-              <ul>
-                <li><a href="/p3/sign-in/validation">Validation messages</a></li>
-              </ul>
             </li>
-            <li><a href="/p3/sign-in/intro-question">New or existing</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/intro-question">Validation messages</a></li>
-              </ul>
-            </li>
+            <li><a href="/p3/sign-in/intro-question">New or existing</a></li>
           </ul>
           <h5 class="govuk-heading-s">New users</h4>
           <ul class="govuk-list govuk-list--bullet">
@@ -56,27 +34,15 @@
             </li>
             <li>
               <a href="/p3/sign-in/register">Register</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/register">Validation messages</a></li>
-              </ul>
             </li>
             <li>
               <a href="/p3/sign-in/code-text">Enter a 6-digit code from text message</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/code-text">Validation messages</a></li>
-              </ul>
             </li>
             <li>
               <a href="/p3/sign-in/code-email">Enter a 6-digit code from email</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/code-email">Validation messages</a></li>
-              </ul>
             </li>
             <li>
               <a href="/p3/sign-in/create-password">Create your password</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/create-password">Validation messages</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -84,12 +50,8 @@
 
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/p3/sign-in/sign-in">Sign in</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/sign-in">Validation messages</a></li>
-              </ul>
             </li>
           </ul>
-
 
           <h5 class="govuk-heading-s">Code expired</h5>
 
@@ -109,9 +71,6 @@
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/p3/sign-in/locked-out">Locked out</a></li>
             <li><a href="/p3/sign-in/enter-details?scenario=locked">Enter details</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/enter-details">Validation messages</a></li>
-              </ul>
             </li>
             <li><a href="/p3/sign-in/code-text?scenario=locked">Text code - account locked</a></li>
             <li><a href="/p3/sign-in/code-text-get-another?scenario=locked">Get another text code - account locked</a></li>
@@ -119,9 +78,6 @@
             <li><a href="/p3/sign-in/code-email-get-another?scenario=locked">Get another email code - account locked</a></li>
             <li>
               <a href="/p3/sign-in/create-new-password">Create your new password</a>
-              <ul>
-                <li><a href="/p3/sign-in/validation/create-new-password">Validation messages</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -135,41 +91,24 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/p3/about-your-health/condition">What health condition or disability do you have?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health/conditions-details">About this condition or disability</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health/another">Do you have another condition or disability?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health/check">Check your answers</a>
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="/p3/about-your-health/check-remove">Remove a condition or disability</a>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Validation messages to follow</li>
-                  </ul>
                 </li>
               </ul>
             </li>
           </ul>
-          <ul class="thumbs">
-            <li>
-              <a href="/public/flow-diagrams/cya-about-your-health.pdf">
-                <img src="/public/flow-diagrams/cya-about-your-health-thumb.png" class="thumb">
-              About your health: CYA&nbsp;flow</a>
-            </li>
-          </ul>
-          <div class="clear" style="clear: both"></div>
           <h5 class="govuk-heading-s">About your health professionals</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
@@ -177,107 +116,48 @@
             </li>
             <li>
               <a href="/p3/about-your-health-professionals/q-health-professional">Are there any health professionals that you would like to tell us about?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health-professionals/health-professional">Health professional details</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health-professionals/another">Are there any other health professionals that you would like to tell us about?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/about-your-health-professionals/check">Check your answers: your health professionals</a>
               <ul class="govuk-list govuk-list--bullet">
                 <li><a href="/p3/about-your-health-professionals/check-remove">Remove a health professional</a>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>Validation messages to follow</li>
-                  </ul>
                 </li>
               </ul>
             </li>
           </ul>
-
-          <ul class="thumbs">
-            <li>
-              <a href="/public/flow-diagrams/cya-health-professionals.pdf">
-                <img src="/public/flow-diagrams/cya-health-professionals-thumb.png" class="thumb">
-              About your health professionals: CYA flow</a>
-            </li>
-          </ul>
-          <div class="clear" style="clear: both"></div>
-
           <h5 class="govuk-heading-s">Preparing food</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/preparing-food">Introduction</a>
+              <a href="/p3/preparing-food">Does your condition affect you preparing food, or ever prevent you from doing so?</a>
             </li>
             <li>
-              <a href="/p3/preparing-food/aid">Do you need to use an aid or appliance to prepare or cook a simple meal?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/preparing-food/help">Do you need help from another person to prepare or cook a simple meal?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/preparing-food/extra">Extra information – preparing food</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/preparing-food/details">Tell us about the difficulties you have with preparing food and how you manage them</a>
             </li>
             <li>
               <a href="/p3/preparing-food/check">Check your answers: preparing food</a>
             </li>
           </ul>
-          <ul class="thumbs">
-            <li>
-              <a href="/public/flow-diagrams/cya-day-to-day.pdf">
-                <img src="/public/flow-diagrams/cya-day-to-day-thumb.png" class="thumb">
-              Day-today: CYA&nbsp;flow</a>
-            </li>
-          </ul>
-          <div class="clear" style="clear: both"></div>
 
           <h5 class="govuk-heading-s">Eating and drinking</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/eating-and-drinking/">Introduction</a>
-            </li>
-            <li>
-              <a href="/p3/eating-and-drinking/aid">Do you need to use an aid or appliance to eat and drink?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/eating-and-drinking/">Does your condition affect you eating and drinking?</a>
             </li>
             <li>
               <a href="/p3/eating-and-drinking/feeding-tube">Do you use a feeding tube or similar device to eat or drink?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
             </li>
             <li>
-              <a href="/p3/eating-and-drinking/help">Do you need help from another person to eat and drink?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/eating-and-drinking/extra">Extra information – eating and drinking</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/eating-and-drinking/details">Tell us about the difficulties you have with eating and drinking and how you manage them</a>
+
             </li>
             <li>
               <a href="/p3/eating-and-drinking/check">Check your answers: eating and drinking</a>
@@ -287,25 +167,13 @@
           <h5 class="govuk-heading-s">Managing treatments</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/managing-treatments/">Introduction</a>
+              <a href="/p3/managing-treatments/">Does your condition affect you managing your treatments?</a>
             </li>
             <li>
-              <a href="/p3/managing-treatments/aid">Do you need to use an aid or appliance to monitor your health conditions, take medication or manage home treatments?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/managing-treatments/details">Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them</a>
             </li>
             <li>
-              <a href="/p3/managing-treatments/help">Do you need help from another person to monitor your health conditions, take medication or manage home treatments?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/managing-treatments/extra">Extra information – managing treatments</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/managing-treatments/therapies">Tell us about any therapies you take at home that need the help of another person</a>
             </li>
             <li>
               <a href="/p3/managing-treatments/check">Check your answers: managing treatments</a>
@@ -315,53 +183,23 @@
           <h5 class="govuk-heading-s">Washing and bathing</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/washing-and-bathing">Introduction</a>
+              <a href="/p3/washing-and-bathing">Does your condition affect you washing and bathing?</a>
             </li>
             <li>
-              <a href="/p3/washing-and-bathing/aid">Do you need to use an aid or appliance to wash and bathe yourself, including using a bath or shower?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/washing-and-bathing/help">Do you need help from another person to wash and bathe?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/washing-and-bathing/extra">Extra information – washing and bathing</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/washing-and-bathing/details">Tell us about the difficulties you have with washing and bathing and how you manage them</a>
             </li>
             <li>
               <a href="/p3/washing-and-bathing/check">Check your answers: washing and bathing</a>
             </li>
           </ul>
 
-          <h5 class="govuk-heading-s">Managing toilet needs</h5>
+          <h5 class="govuk-heading-s">Using the toilet and managing incontinence</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/managing-toilet-needs/">Introduction</a>
+              <a href="/p3/managing-toilet-needs/">Does your condition affect you using the toilet or managing incontinence?</a>
             </li>
             <li>
-              <a href="/p3/managing-toilet-needs/aid">Do you need to use an aid or appliance to use the toilet or manage incontinence?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/managing-toilet-needs/help">Do you need help from another person to use the toilet or manage incontinence?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/managing-toilet-needs/extra">Extra information – managing toilet needs</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/managing-toilet-needs/details">Tell us about the difficulties you have with going to the toilet and how you manage them</a>
             </li>
             <li>
               <a href="/p3/managing-toilet-needs/check">Check your answers: managing toilet needs</a>
@@ -371,81 +209,36 @@
           <h5 class="govuk-heading-s">Dressing and undressing</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/dressing-and-undressing/">Introduction</a>
+              <a href="/p3/dressing-and-undressing/">Does your condition affect you dressing or undressing?</a>
             </li>
             <li>
-              <a href="/p3/dressing-and-undressing/aid">Do you need to use an aid or appliance to dress or undress?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/dressing-and-undressing/help">Do you need help from another person to dress or undress?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/dressing-and-undressing/extra">Extra information – dressing and undressing</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/dressing-and-undressing/details">Tell us about the difficulties you have with dressing and undressing and how you manage them</a>
             </li>
             <li>
               <a href="/p3/dressing-and-undressing/check">Check your answers: dressing and undressing</a>
             </li>
           </ul>
 
-          <h5 class="govuk-heading-s">Communicating</h5>
+          <h5 class="govuk-heading-s">Talking and listening</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/communicating/">Introduction</a>
+              <a href="/p3/talking-and-listening/">Does your condition affect you talking and listening?</a>
             </li>
             <li>
-              <a href="/p3/communicating/aid">Do you need to use an aid or appliance to communicate with others?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/talking-and-listening/details">Tell us about the difficulties you have with talking and listening and how you manage them</a>
             </li>
             <li>
-              <a href="/p3/communicating/help">Do you need help from another person to communicate with others?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/communicating/extra">Extra information – communicating</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/communicating/check">Check your answers: communicating</a>
+              <a href="/p3/communicating/check">Check your answers: talking and listening</a>
             </li>
           </ul>
 
           <h5 class="govuk-heading-s">Reading</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/reading/">Introduction</a>
+              <a href="/p3/reading/">Does your condition affect you reading?</a>
             </li>
             <li>
-              <a href="/p3/reading/aid">Do you need to use an aid or appliance other than spectacles or contact lenses to read signs, symbols and words?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/reading/help">Do you need help from another person to read or understand signs, symbols and words?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/reading/extra">Extra information – reading</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/reading/details">Tell us about the difficulties you have with reading words or symbols and how you manage them</a>
             </li>
             <li>
               <a href="/p3/reading/check">Check your answers: reading</a>
@@ -455,140 +248,68 @@
           <h5 class="govuk-heading-s">Mixing with other people</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/mixing-with-other-people/">Introduction</a>
+              <a href="/p3/mixing-with-other-people/">Does your condition affect you mixing with other people?</a>
             </li>
             <li>
-              <a href="/p3/mixing-with-other-people/aid">Do you need another person to help you to mix with other people?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/mixing-with-other-people/help">Do you find it difficult to mix with other people because of severe anxiety or distress?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/mixing-with-other-people/extra">Extra information – mixing with other people</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/mixing-with-other-people/details">Tell us about the difficulties you have with mixing with other people and how you manage them</a>
             </li>
             <li>
               <a href="/p3/mixing-with-other-people/check">Check your answers: mixing with other people</a>
             </li>
           </ul>
 
-          <h5 class="govuk-heading-s">Making decisions about money</h5>
+          <h5 class="govuk-heading-s">Managing money</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/making-decisions-about-money/">Introduction</a>
+              <a href="/p3/managing-money/">Introduction</a>
             </li>
             <li>
-              <a href="/p3/making-decisions-about-money/aid">Do you need someone else to help you to understand how much things cost when you buy them or how much change you’ll receive?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/managing-money/details">Tell us about the difficulties you have with managing your money and how you manage them</a>
             </li>
             <li>
-              <a href="/p3/making-decisions-about-money/help">Do you need someone else to help you manage your household budgets, pay bills or plan future purchases?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/making-decisions-about-money/extra">Extra information – making decisions about money</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/making-decisions-about-money/check">Check your answers: making decisions about money</a>
+              <a href="/p3/managing-money/check">Check your answers: managing money</a>
             </li>
           </ul>
 
-          <h5 class="govuk-heading-s">Going out</h5>
+          <h5 class="govuk-heading-s">Planning and following a journey</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/making-decisions-about-money/">Introduction</a>
+              <a href="/p3/planning-and-following-a-journey/">Does your condition affect you planning and following journeys?</a>
             </li>
             <li>
-              <a href="/p3/going-out/aid">Do you need help from another person to plan a route to somewhere you know well?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/planning-and-following-a-journey/details">Tell us more about the difficulties you have with planning and following journeys and how you manage them</a>
             </li>
             <li>
-              <a href="/p3/going-out/help">Do you need help getting to somewhere you don’t know well?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/going-out/unable">Are you unable to go out because of severe anxiety or distress?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/going-out/extra">Extra information – going out</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/going-out/check">Check your answers: going out</a>
+              <a href="/p3/managing-money/check">Check your answers: planning and following a journey</a>
             </li>
           </ul>
 
           <h5 class="govuk-heading-s">Moving around</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
-              <a href="/p3/moving-around/">Introduction</a>
+              <a href="/p3/moving-around/">Does your condition affect you moving around?</a>
             </li>
             <li>
-              <a href="/p3/moving-around/aid">How far can you walk taking into account any aids you use?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/managing-money/info">How well can you stand and how far can you walk using any aids or appliances you need?</a>
             </li>
             <li>
-              <a href="/p3/moving-around/appliance">Do you use an aid or appliance to walk?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/moving-around/wheelchair">Do you use a wheelchair or similar device to move around safely, reliably and repeatedly and in a reasonable time period?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
-            </li>
-            <li>
-              <a href="/p3/moving-around/extra">Extra information – moving around</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+              <a href="/p3/moving-around/details">Tell us more about the difficulties you have with moving around and how you manage them</a>
             </li>
             <li>
               <a href="/p3/moving-around/check">Check your answers: moving around</a>
             </li>
           </ul>
 
+
           <h5 class="govuk-heading-s">Additional information</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/p3/additional-information/">Is there anything else you would like to tell us about?</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/additional-information/additional-information">Additional information</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/additional-information/check">Check your answers: additional information</a>
@@ -602,30 +323,21 @@
             </li>
             <li>
               <a href="/p3/supporting-evidence/supporting-evidence">Do you want to upload any supporting evidence?</a>
-              <ul>
-                <li><a href="/p3/supporting-evidence/validation/supporting-evidence">Validation messages</a></li>
-              </ul>
             </li>
             <li>
               <a href="/p3/supporting-evidence/file-upload-help">How to take a photo of your evidence</a>
             </li>
             <li>
               <a href="/p3/supporting-evidence/supporting-evidence-upload-1">Upload a file</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/supporting-evidence/supporting-evidence-uploaded-1">Your uploaded files</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/supporting-evidence/supporting-evidence-upload-2">Upload another file</a>
-              <ul>
-                <li>Validation messages to follow</li>
-              </ul>
+
             </li>
             <li>
               <a href="/p3/apply/declaration">Declaration</a>
