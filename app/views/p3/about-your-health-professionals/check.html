@@ -29,10 +29,10 @@
     
       <header class="app-summary-card__header">
         <h2 class="app-summary-card__title">
-          David Smith
+          {{ data['professional-name-1'] | title }}
         </h2>
         <div class="app-summary-card__actions">
-          <a class="govuk-link" href="/p3/about-your-health-professionals/check-remove">Remove<span class="govuk-visually-hidden"> David Smith</span>
+          <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-1'] | title }}</span>
           </a>
         </div>{# /app-summary-card__actions #}
       </header>
@@ -45,16 +45,16 @@
                 text: "Details"
               },
               value: {
-              html: '<p class="govuk-body">
-                David Smith<br>
-                Specialist nurse<br>
-                01165 9178 678<br>
-                34 Moorbank Street<br>
-                Nottingham<br>
-                NG1 1TY<br>
-                Last seen: March 2020
-              </p>'
-            },
+              html: '<p class="govuk-body">' +
+                data["professional-name-1"] | title + '<br>' +
+                data["professional-profession-1"] | title + '<br>' +
+                data["professional-phone-1"] | title + '<br>' +
+                data["professional-address-line-1-1"] | title + '<br>' +
+                data["professional-address-line-2-1"] | title + '<br>' +
+                data["professional-address-town-1"] | title + '<br>' +
+                data["professional-address-postcode-1"] | upper + '<br>' +
+                'Last seen: June ' + data["professional-date-year-1"] + '</p>'
+              },
               actions: {
                 items: [
                   {
@@ -70,52 +70,56 @@
       </div>{# /app-summary-card__body #}
     </section>
 
-    <section class="app-summary-card govuk-!-margin-bottom-6">
-    
-      <header class="app-summary-card__header">
-        <h2 class="app-summary-card__title">
-          Jason Jackson
-        </h2>
-        <div class="app-summary-card__actions">
-          <a class="govuk-link" href="/p3/about-your-health-professional/check-remove">Remove<span class="govuk-visually-hidden"> Jason Jackson</span>
-          </a>
-        </div>{# /app-summary-card__actions #}
-      </header>
-  
-      <div class="app-summary-card__body">
-        {{ govukSummaryList({
-          rows: [
-            {
-              key: {
-                text: "Details"
-              },
-              value: {
-              html: '<p class="govuk-body">
-                Jason Jackson<br>
-                Physiotherapist<br>
-                01165 1111 222<br>
-                34 Clumber Road<br>
-                Nottingham<br>
-                NG1 7YH<br>
-                Last seen: February 2019
-              </p>'
-            },
-              actions: {
-                items: [
-                  {
-                    href: "#",
-                    text: "Change",
-                    visuallyHiddenText: "details for Jason Jackson"
-                  }
-                ]
-              }
-            }
-          ]
-        }) }}
-      </div>{# /app-summary-card__body #}
-    </section>
+    {% if data['professional2'] == "Yes" %}
 
-    <p><a href="/p3/about-your-health-professionals/health-professional">Add another health professional</a></p>
+      <section class="app-summary-card govuk-!-margin-bottom-6">
+      
+        <header class="app-summary-card__header">
+          <h2 class="app-summary-card__title">
+            {{ data['professional-name-2'] | title }}
+          </h2>
+          <div class="app-summary-card__actions">
+            <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> {{ data['professional-name-2'] | title }}</span>
+            </a>
+          </div>{# /app-summary-card__actions #}
+        </header>
+    
+        <div class="app-summary-card__body">
+          {{ govukSummaryList({
+            rows: [
+              {
+                key: {
+                  text: "Details"
+                },
+                value: {
+                html: '<p class="govuk-body">' +
+                  data["professional-name-2"] | title + '<br>' +
+                  data["professional-profession-2"] | title + '<br>' +
+                  data["professional-phone-2"] | title + '<br>' +
+                  data["professional-address-line-1-2"] | title + '<br>' +
+                  data["professional-address-line-2-2"] | title + '<br>' +
+                  data["professional-address-town-2"] | title + '<br>' +
+                  data["professional-address-postcode-2"] | upper + '<br>' +
+                  'Last seen: February ' + data["professional-date-year-2"] + '</p>'
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "details for David Smith"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+        </div>{# /app-summary-card__body #}
+      </section>
+
+    {% endif %}
+
+    <p><a href="#">Add another health professional</a></p>
 
     <p><a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and save</a></p>
 

@@ -26,24 +26,24 @@
           label: {
             text: "Their name"
           },
-          id: "name",
-          name: "name"
+          id: "professional-name-2",
+          name: "professional-name-2"
         }) }}
 
         {{ govukInput({
           label: {
             text: "Profession"
           },
-          id: "profession",
-          name: "profession"
+          id: "professional-profession-2",
+          name: "professional-profession-2"
         }) }}
 
         {{ govukInput({
           label: {
             text: "Phone number, including dialling code"
           },
-          id: "telephone-number",
-          name: "telephone-number",
+          id: "professional-phone-2",
+          name: "professional-phone-2",
           type: "tel",
           autocomplete: "tel",
           classes: "govuk-input--width-20"
@@ -66,8 +66,8 @@
           label: {
             html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
           },
-          id: "address-line-1",
-          name: "address-line-1",
+          id: "professional-address-line-1-2",
+          name: "professional-address-line-1-2",
           autocomplete: "address-line1"
         }) }}
 
@@ -75,8 +75,8 @@
           label: {
             html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
           },
-          id: "address-line-2",
-          name: "address-line-2",
+          id: "professional-address-line-2-2",
+          name: "professional-address-line-2-2",
           autocomplete: "address-line2"
         }) }}
 
@@ -85,8 +85,8 @@
             text: "Town or city"
           },
           classes: "govuk-!-width-two-thirds",
-          id: "address-town",
-          name: "address-town",
+          id: "professional-address-town-2",
+          name: "professional-address-town-2",
           autocomplete: "address-level2"
         }) }}
 
@@ -95,15 +95,15 @@
             text: "Postcode"
           },
           classes: "govuk-input--width-10",
-          id: "address-postcode",
-          name: "address-postcode",
+          id: "professional-address-postcode-2",
+          name: "professional-address-postcode-2",
           autocomplete: "postal-code"
         }) }}
 
       {% endcall %}
 
         {{ govukDateInput({
-        id: "date-of-birth",
+        id: "professional-date-2",
         fieldset: {
           legend: {
             text: "When did you last see them?",
@@ -115,8 +115,8 @@
         },
         items: [
           {
-            id: "condition-0--dob--month-",
-            name: "condition-0--dob--month-",
+            id: "professional-date-month-2",
+            name: "professional-date-month-2",
             label: "Month",
             classes: "govuk-input--width-2",
             attributes: {
@@ -125,8 +125,8 @@
             }
           },
           {
-            id: "condition-0--dob--year-",
-            name: "condition-0--dob--year-",
+            id: "professional-date-year-2",
+            name: "professional-date-year-2",
             label: "Year",
             classes: "govuk-input--width-4",
             attributes: {

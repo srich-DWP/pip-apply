@@ -151,18 +151,7 @@ module.exports = function (app) {
         res.redirect('check')
       }
   });
-
-  app.get('/p3/about-your-health-professionals/another-answer', function(req, res) {
-
-    let question = req.session.data['question']
-
-    if (question === 'yes') {
-        res.redirect('health-professional-2')
-      } else {
-        res.redirect('check')
-      }
-  });
-
+  
   app.get('/p3/about-your-health-professionals/q-health-professional-answer', function(req, res) {
 
     let question = req.session.data['question']
@@ -173,6 +162,29 @@ module.exports = function (app) {
         res.redirect('check')
       }
   });
+
+  app.get('/p3/about-your-health-professionals/another-answer', function(req, res) {
+
+    let professional2 = req.session.data['professional2']
+
+    if (professional2 === 'Yes') {
+        res.redirect('health-professional-2')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p3/about-your-health-professionals/another-2-answer', function(req, res) {
+
+    let professional3 = req.session.data['professional3']
+
+    if (professional3 === 'Yes') {
+        res.redirect('health-professional-3')
+      } else {
+        res.redirect('check')
+      }
+  });
+
 
   // Preparing food
 

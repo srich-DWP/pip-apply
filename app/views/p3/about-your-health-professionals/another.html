@@ -17,14 +17,14 @@
     <div class="govuk-grid-column-two-thirds">
 
       <p class="govuk-!-font-size-24">You have added details for:
-        <br><strong>David Smith</strong>
+        <br><strong>{{ data['professional-name-1'] | title }}</strong>
       </p>
 
       <form action="/p3/about-your-health-professionals/another-answer" method="post" novalidate>
 
         {{ govukRadios({
-          idPrefix: "aid",
-          name: "question",
+          idPrefix: "professional2",
+          name: "professional2",
           fieldset: {
             legend: {
               text: "Are there any other health professionals that you would like to tell us about?",
@@ -39,11 +39,11 @@
           },
           items: [
             {
-              value: "yes",
+              value: "Yes",
               text: "Yes"
             },
             {
-              value: "no",
+              value: "No",
               text: "No"
             }
           ]
