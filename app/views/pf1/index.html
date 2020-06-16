@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% set pageTitle = "Tell us how your health condition or disability affects you" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Feedback
+      </h1>
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Have you been able to do what you set out to do?"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "How easy or hard are you finding <the page they click from>?"
+          }
+        },
+        items: [
+          {
+            value: "Easy",
+            text: "Easy"
+          },
+          {
+            value: "Difficult",
+            text: "Difficult"
+          }
+        ]
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
