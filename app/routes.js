@@ -16,6 +16,7 @@ module.exports = {
     require('./routes/p1.js')(app);
     require('./routes/p2.js')(app);
     require('./routes/p3.js')(app);
+    require('./routes/p4.js')(app);
     // Reference screens
     require('./routes/r1.js')(app);
   }
