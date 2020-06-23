@@ -23,7 +23,6 @@ module.exports = function (app) {
       // console.log('no session');
       req.session.sectionStatus = {
         // cwyn: 'complete',
-        aboutyou: undefined,
         aboutyourhealth: undefined,
         aboutyourhealthprofessionals: undefined,
         preparingfood: undefined,
@@ -42,60 +41,187 @@ module.exports = function (app) {
         supportingevidence: undefined,
       }
     }
-    
-    if (req.query.aboutyou) {
-      req.session.sectionStatus.aboutyou = req.query.aboutyou
-    };
-    if (req.query.aboutyourhealth) {
+
+    if (!req.session.sectionCount){
+      req.session.sectionCount = 0;
+    }
+
+    // aboutyourhealth
+    if (req.query.aboutyourhealth == 'completed') {
+      if (req.session.sectionStatus.aboutyourhealth != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
       req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
     };
-    if (req.query.aboutyourhealthprofessionals) {
-      req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
-    };
-    if (req.query.preparingfood) {
-      req.session.sectionStatus.preparingfood = req.query.preparingfood
-    };
-    if (req.query.eatinganddrinking) {
-      req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
-    };
-    if (req.query.managingtreatments) {
-      req.session.sectionStatus.managingtreatments = req.query.managingtreatments
-    };
-    if (req.query.washingandbathing) {
-      req.session.sectionStatus.washingandbathing = req.query.washingandbathing
-    };
-    if (req.query.managingtoiletneeds) {
-      req.session.sectionStatus.managingtoiletneeds = req.query.managingtoiletneeds
-    };
-    if (req.query.dressingandundressing) {
-      req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
-    };
-    if (req.query.talkingandlistening) {
-      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
-    };
-    if (req.query.reading) {
-      req.session.sectionStatus.reading = req.query.reading
-    };
-    if (req.query.mixingwithotherpeople) {
-      req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
-    };
-    if (req.query.managingmoney) {
-      req.session.sectionStatus.managingmoney = req.query.managingmoney
-    };
-    if (req.query.planningandfollowingajourney) {
-      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
-    };
-    if (req.query.movingaround) {
-      req.session.sectionStatus.movingaround = req.query.movingaround
-    };
-    if (req.query.additionalinformation) {
-      req.session.sectionStatus.additionalinformation = req.query.additionalinformation
-    };
-    if (req.query.supportingevidence) {
-      req.session.sectionStatus.supportingevidence = req.query.supportingevidence
+    if (req.query.aboutyourhealth == 'inprogress') {
+      req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
     };
 
-    res.render('p4/list.html', {sectionStatus: req.session.sectionStatus});
+    // aboutyourhealthprofessionals
+    if (req.query.aboutyourhealthprofessionals == 'completed') {
+      if (req.session.sectionStatus.aboutyourhealthprofessionals != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
+    };
+    if (req.query.aboutyourhealthprofessionals == 'inprogress') {
+      req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
+    };
+
+    // preparingfood
+    if (req.query.preparingfood == 'completed') {
+      if (req.session.sectionStatus.preparingfood != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.preparingfood = req.query.preparingfood
+    };
+    if (req.query.preparingfood == 'inprogress') {
+      req.session.sectionStatus.preparingfood = req.query.preparingfood
+    };
+
+    // eatinganddrinking
+    if (req.query.eatinganddrinking == 'completed') {
+      if (req.session.sectionStatus.eatinganddrinking != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
+    };
+    if (req.query.eatinganddrinking == 'inprogress') {
+      req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
+    };    
+
+    // managingtreatments
+    if (req.query.managingtreatments == 'completed') {
+      if (req.session.sectionStatus.managingtreatments != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.managingtreatments = req.query.managingtreatments
+    };
+    if (req.query.managingtreatments == 'inprogress') {
+      req.session.sectionStatus.managingtreatments = req.query.managingtreatments
+    };
+
+    // washingandbathing
+    if (req.query.washingandbathing == 'completed') {
+      if (req.session.sectionStatus.washingandbathing != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.washingandbathing = req.query.washingandbathing
+    };
+    if (req.query.washingandbathing == 'inprogress') {
+      req.session.sectionStatus.washingandbathing = req.query.washingandbathing
+    };
+
+    // managingtoiletneeds
+    if (req.query.managingtoiletneeds == 'completed') {
+      if (req.session.sectionStatus.managingtoiletneeds != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.managingtoiletneeds = req.query.managingtoiletneeds
+    };
+    if (req.query.managingtoiletneeds == 'inprogress') {
+      req.session.sectionStatus.managingtoiletneeds = req.query.managingtoiletneeds
+    };
+
+    // dressingandundressing
+    if (req.query.dressingandundressing == 'completed') {
+      if (req.session.sectionStatus.dressingandundressing != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
+    };
+    if (req.query.dressingandundressing == 'inprogress') {
+      req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
+    };
+
+    // talkingandlistening
+    if (req.query.talkingandlistening == 'completed') {
+      if (req.session.sectionStatus.talkingandlistening != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
+    };
+    if (req.query.talkingandlistening == 'inprogress') {
+      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
+    };    
+
+    // reading
+    if (req.query.reading == 'completed') {
+      if (req.session.sectionStatus.reading != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.reading = req.query.reading
+    };
+    if (req.query.reading == 'inprogress') {
+      req.session.sectionStatus.reading = req.query.reading
+    };
+
+    // mixingwithotherpeople
+    if (req.query.mixingwithotherpeople == 'completed') {
+      if (req.session.sectionStatus.mixingwithotherpeople != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
+    };
+    if (req.query.mixingwithotherpeople == 'inprogress') {
+      req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
+    };
+
+    // managingmoney
+    if (req.query.managingmoney == 'completed') {
+      if (req.session.sectionStatus.managingmoney != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.managingmoney = req.query.managingmoney
+    };
+    if (req.query.managingmoney == 'inprogress') {
+      req.session.sectionStatus.managingmoney = req.query.managingmoney
+    };
+
+    // planningandfollowingajourney
+    if (req.query.planningandfollowingajourney == 'completed') {
+      if (req.session.sectionStatus.planningandfollowingajourney != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
+    };
+    if (req.query.planningandfollowingajourney == 'inprogress') {
+      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
+    };
+
+    // movingaround
+    if (req.query.movingaround == 'completed') {
+      if (req.session.sectionStatus.movingaround != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.movingaround = req.query.movingaround
+    };
+    if (req.query.movingaround == 'inprogress') {
+      req.session.sectionStatus.movingaround = req.query.movingaround
+    };
+
+    // additionalinformation
+    if (req.query.additionalinformation == 'completed') {
+      if (req.session.sectionStatus.additionalinformation != 'completed') {
+        req.session.sectionCount = (req.session.sectionCount + 1);
+      }
+      req.session.sectionStatus.additionalinformation = req.query.additionalinformation
+    };
+    if (req.query.additionalinformation == 'inprogress') {
+      req.session.sectionStatus.additionalinformation = req.query.additionalinformation
+    };
+
+
+
+
+    // if (req.query.supportingevidence) {
+    //   if (req.session.sectionStatus.supportingevidence == undefined) {
+    //     req.session.sectionCount = (req.session.sectionCount + 1)
+    //   }
+    //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
+    // };
+
+    res.render('p4/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen
