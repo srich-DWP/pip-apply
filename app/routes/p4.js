@@ -211,9 +211,6 @@ module.exports = function (app) {
       req.session.sectionStatus.additionalinformation = req.query.additionalinformation
     };
 
-
-
-
     // if (req.query.supportingevidence) {
     //   if (req.session.sectionStatus.supportingevidence == undefined) {
     //     req.session.sectionCount = (req.session.sectionCount + 1)
