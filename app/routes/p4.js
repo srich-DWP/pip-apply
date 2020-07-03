@@ -88,7 +88,7 @@ module.exports = function (app) {
     };
     if (req.query.eatinganddrinking == 'inprogress') {
       req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
-    };    
+    };
 
     // managingtreatments
     if (req.query.managingtreatments == 'completed') {
@@ -143,7 +143,7 @@ module.exports = function (app) {
     };
     if (req.query.talkingandlistening == 'inprogress') {
       req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
-    };    
+    };
 
     // reading
     if (req.query.reading == 'completed') {
@@ -274,7 +274,7 @@ module.exports = function (app) {
         res.redirect('check')
       }
   });
-  
+
   app.get('/p4/about-your-health-professionals/q-health-professional-answer', function(req, res) {
 
     let question = req.session.data['question']
@@ -474,7 +474,7 @@ module.exports = function (app) {
     if (question === 'Yes') {
         res.redirect('details')
       } else {
-        res.redirect('check')
+        res.redirect('/p4//apply/declaration')
       }
   });
 
@@ -502,7 +502,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('file-upload-help')
       } else {
-        res.redirect('../apply/declaration')
+        res.redirect('../apply/upload-information')
       }
   });
 
@@ -513,7 +513,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-2')
       } else {
-        res.redirect('../apply/declaration')
+        res.redirect('../apply/upload-information')
       }
   });
 
@@ -524,7 +524,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-3')
       } else {
-        res.redirect('../apply/declaration')
+        res.redirect('../apply/upload-information')
       }
   });
 
@@ -535,7 +535,7 @@ module.exports = function (app) {
     if (question === 'yes') {
         res.redirect('supporting-evidence-upload-4')
       } else {
-        res.redirect('../apply/declaration')
+        res.redirect('../apply/upload-information')
       }
   });
 

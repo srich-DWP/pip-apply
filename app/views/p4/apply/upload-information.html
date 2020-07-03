@@ -1,0 +1,28 @@
+{% extends "layout-p4.html" %}
+
+{% set pageTitle = "Upload information" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+  {% include "p4/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Send your application</h1>
+
+      <p>Your application is now ready to send.</p>
+      <!-- <p>You can return to the PIP service after you have sent your application and supporting evidence if you have any further supporting evidence to send.</p> -->
+
+      <a href="/p4/apply/confirmation" class="govuk-button">Continue – send my application</a>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
