@@ -22,8 +22,8 @@
       <p class="govuk-heading">Download and read the instructions <a href="#">Help with answering questions and providing evidence (PDF)</a></p>
 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{ sectionCount }} of 17 sections.</p>
-
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{ sectionCount }} of 16 sections.</p>
+  
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
@@ -416,42 +416,10 @@
             </li>
           </ul>
         </li>
-        {# Declaration #}
-        <li>
-          <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Declaration
-          </h2>
-          <ul class="app-task-list__items govuk-!-margin-bottom-7">
-            <li class="app-task-list__item">
-              {% if sectionStatus.additionalinformation === "completed" %}
-                <a class="app-task-list__task-name " href="/p4/apply/declaration">
-                  Declaration
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="additionalinformation">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.additionalinformation === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p4/apply/declaration">
-                  Declaration
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="additionalinformation">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p4/apply/declaration">
-                  Declaration
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="additionalinformation">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-          </ul>
-        </li>
         {# Upload supporting evidence and apply #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">6. </span> Upload supporting evidence and apply
+            <span class="app-task-list__section-number">5. </span> Upload supporting evidence and apply
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
