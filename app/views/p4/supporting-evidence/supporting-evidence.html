@@ -26,13 +26,13 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      
+
       {% if cya == "true" %}
         <form action="/p4/supporting-evidence/supporting-evidence-data-cya" method="post" novalidate>
       {% else %}
         <form action="/p4/supporting-evidence/supporting-evidence-data" method="post" novalidate>
       {% endif %}
-      
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -41,7 +41,7 @@
               </h1>
             </legend>
             <p>This might be care plans, reports, letters, or other information from health professionals.</p>
-            <p>You can upload photos.</p>
+            <p>You can upload photos and scanned images of your supporting evidence.</p>
             <div class="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes" {{ checked("question", "yes") }}>
