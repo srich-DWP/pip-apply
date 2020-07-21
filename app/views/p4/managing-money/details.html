@@ -1,22 +1,22 @@
 {% set pageTitle = "Tell us about the difficulties you have with managing your money and how you manage them" %}
 
-{% extends "layout-p3.html" %}
+{% extends "layout-p4.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p3/_beta-banner.html" %}
-  {% include "p3/_back-link.html" %}
+  {% include "p4/_beta-banner.html" %}
+  {% include "p4/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    
-    <form action="/p3/managing-money/check" method="post" novalidate>
+
+    <form action="/p4/managing-money/check" method="post" novalidate>
 
       {{ govukTextarea({
         name: "managingmoney-details",
@@ -34,7 +34,7 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>how often you have this difficulty. Tell us about both good and bad days</li>
             <li>what the difficulty is</li>
-            
+
             <li>why you have it or how it relates to your condition</li>
             <li>any help you get from another person</li>
             <li>any help you feel you need but don’t get</li>
@@ -55,8 +55,8 @@
 
     </form>
 
-    {% include "p3/managing-money/_return-link.html" %}
-      
+    {% include "p4/managing-money/_return-link.html" %}
+
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 
