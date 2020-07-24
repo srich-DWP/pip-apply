@@ -9,7 +9,6 @@
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
-  {% include "r1/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -32,7 +31,8 @@
 
       <p>Take your time and describe all the help you need. You do not have to answer all the questions in one go. You can save your progress at any point and continue later.</p>
 
-      <h2 class="govuk-heading-m">Before you start</h2>
+      <!-- Note: Before you start section removed as it's now included on the 'register-start' page. -->
+      <!-- <h2 class="govuk-heading-m">Before you start</h2>
 
       <p>You will need:</p>
 
@@ -40,13 +40,13 @@
         <li>the email address used by DWP to contact you</li>
         <li>your National Insurance number</li>
         <li>your mobile phone</li>
-      </ul>
+      </ul> -->
 
       <div style="margin-top: 30px"></div>
 
       {{ govukButton({
         text: "Start now",
-        href: "/p5/sign-in/register",
+        href: "/p5/sign-in/intro-question",
         isStartButton: true
       }) }}
 
