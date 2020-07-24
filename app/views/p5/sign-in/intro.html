@@ -1,14 +1,14 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Tell DWP how your disability affects you for your PIP claim" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
+  {% include "p5/_beta-banner.html" %}
   {% include "r1/_back-link.html" %}
 {% endblock %}
 
@@ -46,7 +46,7 @@
 
       {{ govukButton({
         text: "Start now",
-        href: "/p4/sign-in/register",
+        href: "/p5/sign-in/register",
         isStartButton: true
       }) }}
 

@@ -1,13 +1,13 @@
 {% set pageTitle = "Check your answers: about your health professionals" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
+  {% include "p5/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -26,7 +26,7 @@
     <h1 class="govuk-heading-l">Check your answers: about your health professionals</h1>
 
     <section class="app-summary-card govuk-!-margin-bottom-6">
-    
+
       <header class="app-summary-card__header">
         <h2 class="app-summary-card__title">
           {{ data['professional-name-1'] | title }}
@@ -36,7 +36,7 @@
           </a>
         </div>{# /app-summary-card__actions #}
       </header>
-  
+
       <div class="app-summary-card__body">
         {{ govukSummaryList({
           rows: [
@@ -73,7 +73,7 @@
     {% if data['professional2'] == "Yes" %}
 
       <section class="app-summary-card govuk-!-margin-bottom-6">
-      
+
         <header class="app-summary-card__header">
           <h2 class="app-summary-card__title">
             {{ data['professional-name-2'] | title }}
@@ -83,7 +83,7 @@
             </a>
           </div>{# /app-summary-card__actions #}
         </header>
-    
+
         <div class="app-summary-card__body">
           {{ govukSummaryList({
             rows: [

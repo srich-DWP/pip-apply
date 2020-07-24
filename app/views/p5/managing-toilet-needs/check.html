@@ -1,13 +1,13 @@
 {% set pageTitle = "Check your answers: using the toilet and managing incontinence" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
+  {% include "p5/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <form id="form" method="post" action="/p4/list">
+    <form id="form" method="post" action="/p5/list">
 
       <h1 class="govuk-heading-l">Check your answers: using the toilet and managing incontinence</h1>
 
@@ -33,7 +33,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p4/managing-toilet-needs/",
+                    href: "/p5/managing-toilet-needs/",
                     text: "Change",
                     visuallyHiddenText: "your answer to whether your condition affects you using the toilet or managing incontinence"
                   }
@@ -50,7 +50,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p4/managing-toilet-needs/details",
+                    href: "/p5/managing-toilet-needs/details",
                     text: "Change",
                     visuallyHiddenText: "your answers to difficulties you have with going to the toilet and how you manage them"
                   }
@@ -74,7 +74,7 @@
               actions: {
                 items: [
                   {
-                    href: "/p4/managing-toilet-needs/",
+                    href: "/p5/managing-toilet-needs/",
                     text: "Change",
                     visuallyHiddenText: "your answers to difficulties you have with going to the toilet and how you manage them"
                   }
@@ -86,7 +86,7 @@
 
       {% endif %}
 
-      <a href="/p4/list?managingtoiletneeds=completed" class="govuk-button">Confirm and save</a>
+      <a href="/p5/list?managingtoiletneeds=completed" class="govuk-button">Confirm and save</a>
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->

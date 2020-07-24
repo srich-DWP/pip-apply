@@ -1,22 +1,22 @@
 {% set pageTitle = "How to take a photo of your evidence" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p4/_beta-banner.html" %}
+{% include "p5/_beta-banner.html" %}
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p4/supporting-evidence-cya"
+      href: "/p5/supporting-evidence-cya"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p4/supporting-evidence"
+      href: "/p5/supporting-evidence"
     }) }}
   {% endif %}
 
@@ -38,7 +38,7 @@
       </ul>
 
       {% if getData.uploaded === '3' %}
-        
+
         {% if cya == "true" %}
           <a href="supporting-evidence-uploaded-3-cya" class="govuk-button" data-module="govuk-button">Continue to upload</a>
         {% else %}

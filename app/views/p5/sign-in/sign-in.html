@@ -1,15 +1,15 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Sign in" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
-  {% include "p4/_back-link.html" %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
 {% endblock %}
 
 
@@ -20,7 +20,7 @@
 
       <h1 class="govuk-heading-l">Sign in</h1>
 
-      <form action="/p4/sign-in/choose-scenario" method="post" novalidate>
+      <form action="/p5/sign-in/choose-scenario" method="post" novalidate>
 
         {{ govukInput({
           label: {
@@ -57,14 +57,14 @@
         }) }} #}
 
         {% if getData.scenario === "locked" %}
-          <a href="/p4/sign-in/locked-out" class="govuk-button">Continue</a>
+          <a href="/p5/sign-in/locked-out" class="govuk-button">Continue</a>
         {% else %}
-          <a href="/p4/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
+          <a href="/p5/sign-in/code-text?scenario=active" class="govuk-button">Continue</a>
         {% endif %}
 
       </form>
 
-      <p><a href="/p4/sign-in/forgot-password">I forgot my password</a></p>
+      <p><a href="/p5/sign-in/forgot-password">I forgot my password</a></p>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}

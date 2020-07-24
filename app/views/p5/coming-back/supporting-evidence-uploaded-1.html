@@ -1,23 +1,23 @@
 {% set pageTitle = "Check your uploaded files" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p4/_beta-banner.html" %}
-  
+{% include "p5/_beta-banner.html" %}
+
   {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p4/supporting-evidence/check"
+      href: "/p5/supporting-evidence/check"
     }) }}
   {% else %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p4/supporting-evidence/index?uploaded=1"
+      href: "/p5/supporting-evidence/index?uploaded=1"
     }) }}
   {% endif %}
 
@@ -29,9 +29,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% if cya == "true" %}
-        <form action="/p4/supporting-evidence/supporting-evidence-uploaded-1-data-cya" method="post" novalidate>
+        <form action="/p5/supporting-evidence/supporting-evidence-uploaded-1-data-cya" method="post" novalidate>
       {% else %}
-        <form action="/p4/supporting-evidence/supporting-evidence-uploaded-1-data" method="post" novalidate>
+        <form action="/p5/supporting-evidence/supporting-evidence-uploaded-1-data" method="post" novalidate>
       {% endif %}
 
       {% if getData.delete == "true" %}
@@ -55,7 +55,7 @@
               <a download href="/">{{ data['supporting-evidence-file-1'] }}</a>, 2MB
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/p4/supporting-evidence/supporting-evidence-upload-1?delete=true">
+              <a class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0" href="/p5/supporting-evidence/supporting-evidence-upload-1?delete=true">
                 Delete<span class="govuk-visually-hidden"> file 1</span>
               </a>
             </dd>
@@ -90,7 +90,7 @@
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
         Confirm
-        </button> 
+        </button>
 
       </form>
 

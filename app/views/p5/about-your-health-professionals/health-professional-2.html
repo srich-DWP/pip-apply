@@ -1,14 +1,14 @@
 {% set pageTitle = "Health professional details" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
-  {% include "p4/_back-link.html" %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@
 
       <p class="govuk-hint">You can add details for other health professionals later if you need to.</p>
 
-      <form action="/p4/about-your-health-professionals/another-2" method="post" novalidate>
+      <form action="/p5/about-your-health-professionals/another-2" method="post" novalidate>
 
         {{ govukInput({
           label: {
@@ -143,8 +143,8 @@
 
       </form>
 
-      {% include "p4/about-your-health-professionals/_return-link.html" %}
-      
+      {% include "p5/about-your-health-professionals/_return-link.html" %}
+
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
 {% endblock %}

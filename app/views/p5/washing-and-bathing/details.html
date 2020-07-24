@@ -1,14 +1,14 @@
 {% set pageTitle = "Tell us about the difficulties you have with washing and bathing and how you manage them" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
-  {% include "p4/_back-link.html" %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/p4/washing-and-bathing/check" method="post" novalidate>
+    <form action="/p5/washing-and-bathing/check" method="post" novalidate>
 
       {{ govukTextarea({
         name: "washingandbathing-details",
@@ -56,7 +56,7 @@
 
     </form>
 
-    {% include "p4/washing-and-bathing/_return-link.html" %}
+    {% include "p5/washing-and-bathing/_return-link.html" %}
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

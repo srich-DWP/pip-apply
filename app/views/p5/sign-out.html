@@ -1,14 +1,14 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "We’ve saved your application" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
+  {% include "p5/_beta-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -28,7 +28,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>You can return to your application again. Go to <a href="/p4/sign-in/sign-in">[Service URL/signin]</a>. You might find it useful to bookmark the sign in page in your internet browser or use the link in the email we sent you.</p>
+      <p>You can return to your application again. Go to <a href="/p5/sign-in/sign-in">[Service URL/signin]</a>. You might find it useful to bookmark the sign in page in your internet browser or use the link in the email we sent you.</p>
       <!-- <p>We will save this application until {% include 'includes/_date.html' %}. If you do not finish and send your application by this date but still want to claim, you will need to start your application again.</p> -->
       <!-- Note: deadline date removed for MVP as it varies by claimant -->
       <p>It is now safe to close this window.</p>
