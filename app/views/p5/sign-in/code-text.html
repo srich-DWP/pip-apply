@@ -22,10 +22,12 @@
         <form action="/p5/sign-in/create-password" method="POST" novalidate>
       {% endif %}
 
-        <h1 class="govuk-heading-l">A 6-digit code has been texted to<br>XXXX XXX 789</h1>
+        <h1 class="govuk-heading-l">We have texted your 6-digit security code to XXXX XXX 789</h1>
+
+        <p>It should take one minute to arrive.</p>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="code" >Enter your 6-digit code</label>
+          <label class="govuk-label" for="code" >Enter your 6-digit security code</label>
           <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
         </div>
 
