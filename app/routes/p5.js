@@ -247,7 +247,7 @@ module.exports = function (app) {
     let question = req.session.data['question']
 
     if (question === 'no') {
-        res.redirect('intro')
+        res.redirect('register-start')
       } else {
         res.redirect('sign-in')
       }
