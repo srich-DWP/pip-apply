@@ -208,6 +208,18 @@ abbr {
 }
 
 .app-task-list__intro {
-  
   padding-left: 30px;
+}
+
+body .interruption{
+  background-color: $govuk-link-colour;
+  padding: 20px;
+  p, h1, {
+    color: white;
+    max-width: 540px;
+  }
+  .govuk-button {
+    background-color: white;
+    color: black
+  }
 }

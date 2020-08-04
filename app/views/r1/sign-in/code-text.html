@@ -31,14 +31,14 @@
 
         {% if getData.scenario === "locked" %}
           <a href="/r1/sign-in/create-new-password?scenario=locked" class="govuk-button">Continue</a>
-          <p><a href="/r1/sign-in/code-text-get-another?scenario=locked">I did not get a code</a></p>
+          <p><a href="/r1/sign-in/code-text-get-another?scenario=locked">I did not get a code or there’s a problem</a></p>
         {% elif getData.scenario === "active" %}
           <a href="/r1/list" class="govuk-button">Continue</a>
           <p><a href="/r1/sign-in/code-text-get-another?scenario=active">I did not get a code</a></p>
           <p><a href="/r1/sign-in/code-email?scenario=active">Get a code by email instead</a></p>
         {% else %}
           <a href="/r1/sign-in/create-password" class="govuk-button">Continue</a>
-          <p><a href="/r1/sign-in/code-text-get-another">I did not get a code</a></p>
+          <p><a href="/r1/sign-in/code-text-get-another">I did not get a code or there’s a problem</a></p>
           <p><a href="/r1/sign-in/code-email">Get a code by email instead</a></p>
         {% endif %}
 
