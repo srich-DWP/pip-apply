@@ -41,7 +41,7 @@
           </ul>
           <div class="clear" style="clear: both"></div>
 
-          <h5 class="govuk-heading-s">Service home</h4>
+          <h5 class="govuk-heading-s">Service home</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/r1/sign-in">Service index</a><br>(temporary fallback while the tactical PDF service is in use)
               <ul>
@@ -54,15 +54,15 @@
               </ul>
             </li>
           </ul>
-          <h5 class="govuk-heading-s">New users</h4>
+          <h5 class="govuk-heading-s">New users</h5>
           <ul class="govuk-list govuk-list--bullet">
             <li>
               <a href="/r1/sign-in/intro">Introduction to the service</a>
             </li>
             <li>
-              <a href="/r1/sign-in/enter-details-first-time">Enter details</a>
+              <a href="/r1/sign-in/register">Register</a>
               <ul>
-                <li><a href="/r1/sign-in/validation/enter-details">Validation messages</a></li>
+                <li><a href="/r1/sign-in/validation/register">Validation messages</a></li>
               </ul>
             </li>
             <li>
@@ -110,9 +110,14 @@
           </ul>
 
           <h5 class="govuk-heading-s">Account locked</h5>
-          
+
           <ul class="govuk-list govuk-list--bullet">
             <li><a href="/r1/sign-in/locked-out">Locked out</a></li>
+            <li><a href="/r1/sign-in/enter-details?scenario=locked">Enter details</a>
+              <ul>
+                <li><a href="/r1/sign-in/validation/enter-details">Validation messages</a></li>
+              </ul>
+            </li>
             <li><a href="/r1/sign-in/code-text?scenario=locked">Text code - account locked</a></li>
             <li><a href="/r1/sign-in/code-text-get-another?scenario=locked">Get another text code - account locked</a></li>
             <li><a href="/r1/sign-in/code-email?scenario=locked">Email code  - account locked</a></li>
@@ -124,6 +129,13 @@
               </ul>
             </li>
           </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h4 class="govuk-heading-m">Claim form</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p5/list">Task list</a></li>
+          </ul
         </div>{# /card-body #}
       </div>{# /card #}
   </div> <!-- govuk-grid-column-full -->
