@@ -45,46 +45,7 @@
 
         <button type="submit" class="govuk-button">Continue</button>
 
-        <p><a href="#">I did not get a code or there’s a problem</a></p>
-
-        <p><a href="#">Get a code by email instead</a></p>
-
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <form action="#" novalidate>
-
-        {{ govukErrorSummary({
-          "titleText": "There is a problem",
-          "errorList": [
-            {
-              "text": "Enter your 6-digit code in the correct format",
-              "href": "#code"
-            }
-          ]
-        }) }}
-
-        <h1 class="govuk-heading-l">A 6-digit code has been emailed to email@email.com</h1>
-
-        {{ govukInput({
-          label: {
-            "text": 'Your 6-digit code'
-          },
-          id: "name",
-          classes: "govuk-input govuk-input--width-5 input-capitals",
-          name: "name",
-          value: "123TY6788",
-          errorMessage: {
-            "text": "Enter your 6-digit code in the correct format"
-          }
-        }) }}
-
-        <button type="submit" class="govuk-button">Continue</button>
-
-        <p><a href="#">I did not get a code or there’s a problem</a></p>
-
-        <p><a href="#">Get a code by email instead</a></p>
+        <p><a href="#">I did not get a code</a></p>
 
       </form>
 
@@ -119,9 +80,7 @@
 
         <button type="submit" class="govuk-button">Continue</button>
 
-        <p><a href="#">I did not get a code or there’s a problem</a></p>
-
-        <p><a href="#">Get a code by email instead</a></p>
+        <p><a href="#">I did not get a code</a></p>
 
       </form>
 
