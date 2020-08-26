@@ -22,6 +22,12 @@
         <form action="/p5/sign-in/create-password" method="POST" novalidate>
       {% endif %}
 
+      {% if data['code'] == '123456' %}
+      <script>
+          window.location.href = 'create-password'
+      </script>
+      {% endif %}
+
         <h1 class="govuk-heading-l">We have texted your 6-digit security code to XXXX XXX 789</h1>
 
         <p>This is the mobile number you gave us when you first called to apply for PIP.</p>
@@ -45,6 +51,8 @@
           <p><a href="/p5/sign-in/code-text-get-another">I did not get a code</a></p>
           <p><a href="/p5/sign-in/code-email">Get a code by email instead</a></p>
         {% endif %}
+
+
 
       </form>
 
