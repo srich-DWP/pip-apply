@@ -8,18 +8,7 @@
 
 {% block beforeContent %}
 {% include "p4/_beta-banner.html" %}
-  
-  {% if cya == "true" %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p4/supporting-evidence/check"
-    }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p4/supporting-evidence/index?uploaded=2"
-    }) }}
-  {% endif %}
+
 
 {% endblock %}
 
@@ -103,7 +92,7 @@
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
         Confirm
-        </button> 
+        </button>
 
       </form>
 

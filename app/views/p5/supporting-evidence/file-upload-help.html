@@ -8,18 +8,10 @@
 
 {% block beforeContent %}
 {% include "p5/_beta-banner.html" %}
-  {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p5/supporting-evidence-cya"
+      href: "supporting-evidence"
     }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p5/supporting-evidence"
-    }) }}
-  {% endif %}
-
 {% endblock %}
 
 {% block content %}
