@@ -9,18 +9,6 @@
 {% block beforeContent %}
 {% include "r1/_beta-banner.html" %}
 
-  {% if cya == "true" %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/r1/supporting-evidence/check"
-    }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/r1/supporting-evidence/index?uploaded=3"
-    }) }}
-  {% endif %}
-
 {% endblock %}
 
 {% block content %}

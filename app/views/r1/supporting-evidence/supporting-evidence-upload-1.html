@@ -9,17 +9,10 @@
 {% block beforeContent %}
 {% include "r1/_beta-banner.html" %}
 
-  {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/r1/interruption-screen-cya"
+      href: "file-upload-help"
     }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/r1/supporting-evidence"
-    }) }}
-  {% endif %}
 
 {% endblock %}
 
@@ -61,7 +54,7 @@
             </summary>
             <div class="govuk-details__text">
               <p>If a file is bigger than 10MB, reduce the file size if you can and try again.</p>
-            
+
               <p>If you still cannot upload and send your files you can post the information instead. Only send photocopies by post. Call 0800 121 4433 (Textphone: 0800 121 4433) if you do not know the freepost address to send them to.</p>
             </div>
           </details>

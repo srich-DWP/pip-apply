@@ -9,17 +9,10 @@
 {% block beforeContent %}
 {% include "p4/_beta-banner.html" %}
 
-  {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
-      href: "/p4/interruption-screen-cya"
+      href: "file-upload-help"
     }) }}
-  {% else %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "/p4/supporting-evidence"
-    }) }}
-  {% endif %}
 
 {% endblock %}
 
