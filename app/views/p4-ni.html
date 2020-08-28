@@ -1,0 +1,437 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Rough prototypes and exploration &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Prototype version 4 (MVP): Northern Ireland</h1>
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Claimant-facing screens</h2>
+        </div>
+
+        <div class="card-body">
+
+          <h5 class="govuk-heading-s">Service home</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/sign-in">Service index</a><br>(temporary fallback while the tactical PDF service is in use)
+            </li>
+            <li><a href="/p4-ni/sign-in/intro-question">New or existing</a></li>
+          </ul>
+          <h5 class="govuk-heading-s">New users</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/sign-in/intro">Introduction to the service</a>
+            </li>
+            <li>
+              <a href="/p4-ni/sign-in/register">Register</a>
+            </li>
+            <li>
+              <a href="/p4-ni/sign-in/code-text">Enter a 6-digit code from text message</a>
+            </li>
+            <li>
+              <a href="/p4-ni/sign-in/code-email">Enter a 6-digit code from email</a>
+            </li>
+            <li>
+              <a href="/p4-ni/sign-in/create-password">Create your password</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Sign in</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/sign-in/sign-in">Sign in</a>
+            </li>
+            <li><a href="/p4-ni/sign-in/splash-message">Signed in message</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Code expired</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/sign-in/code-text-get-another?expired=true">Text message code expired</a></li>
+            <li><a href="/p4-ni/sign-in/code-email-get-another?expired=true">Email code expired</a></li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Forgot password</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/sign-in/forgot-password">Forgot password / request reset</a></li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Account locked</h5>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/sign-in/locked-out">Locked out</a></li>
+            <li><a href="/p4-ni/sign-in/enter-details?scenario=locked">Enter details</a>
+            </li>
+            <li><a href="/p4-ni/sign-in/code-text?scenario=locked">Text code - account locked</a></li>
+            <li><a href="/p4-ni/sign-in/code-text-get-another?scenario=locked">Get another text code - account locked</a></li>
+            <li><a href="/p4-ni/sign-in/code-email?scenario=locked">Email code  - account locked</a></li>
+            <li><a href="/p4-ni/sign-in/code-email-get-another?scenario=locked">Get another email code - account locked</a></li>
+            <li>
+              <a href="/p4-ni/sign-in/create-new-password">Create your new password</a>
+            </li>
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h4 class="govuk-heading-m">Claim form</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/list">Task list</a></li>
+          </ul>
+          <h5 class="govuk-heading-s">About your health</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/about-your-health/condition">What health condition or disability do you have?</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health/conditions-details">About this condition or disability</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health/another">Do you have another condition or disability?</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health/check">Check your answers</a>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/p4-ni/about-your-health/check-remove">Remove a condition or disability</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="thumbs">
+            <li>
+              <a href="/public/flow-diagrams/p4-ni-cya-health.pdf">
+                <img src="/public/flow-diagrams/p4-ni-cya-health.png" class="thumb">
+              About your health: CYA&nbsp;flow</a>
+            </li>
+          </ul>
+          <div class="clear" style="clear: both"></div>
+
+          <h5 class="govuk-heading-s">About your health professionals</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/about-your-health-professionals">Introduction</a>
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health-professionals/q-health-professional">Are there any health professionals that you would like to tell us about?</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health-professionals/health-professional">Health professional details</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health-professionals/another">Are there any other health professionals that you would like to tell us about?</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/about-your-health-professionals/check">Check your answers: your health professionals</a>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="/p4-ni/about-your-health-professionals/check-remove">Remove a health professional</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="thumbs">
+            <li>
+              <a href="/public/flow-diagrams/p4-ni-cya-health-professionals.pdf">
+                <img src="/public/flow-diagrams/p4-ni-cya-health-professionals.png" class="thumb">
+              About your health professionals: CYA&nbsp;flow</a>
+            </li>
+          </ul>
+          <div class="clear" style="clear: both"></div>
+
+          <h5 class="govuk-heading-s">Preparing food</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/preparing-food">Does your condition affect you preparing food, or ever prevent you from doing so?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/preparing-food/details">Tell us about the difficulties you have with preparing food and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/preparing-food/check">Check your answers: preparing food</a>
+            </li>
+          </ul>
+
+          <ul class="thumbs">
+            <li>
+              <a href="/public/flow-diagrams/p4-ni-cya-daily-living.pdf">
+                <img src="/public/flow-diagrams/p4-ni-cya-daily-living.png" class="thumb">
+              Daily living: CYA&nbsp;flow</a>
+            </li>
+          </ul>
+
+          <div class="clear" style="clear: both"></div>
+
+          <h5 class="govuk-heading-s">Eating and drinking</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/eating-and-drinking/">Does your condition affect you eating and drinking?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/eating-and-drinking/feeding-tube">Do you use a feeding tube or similar device to eat or drink?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/eating-and-drinking/details">Tell us about the difficulties you have with eating and drinking and how you manage them</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/eating-and-drinking/check">Check your answers: eating and drinking</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Managing treatments</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/managing-treatments/">Does your condition affect you managing your treatments?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-treatments/details">Tell us about the difficulties you have with monitoring changes in your health condition or disability and taking medication, and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-treatments/therapies">Tell us about any therapies you take at home that need the help of another person</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-treatments/check">Check your answers: managing treatments</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Washing and bathing</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/washing-and-bathing">Does your condition affect you washing and bathing?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/washing-and-bathing/details">Tell us about the difficulties you have with washing and bathing and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/washing-and-bathing/check">Check your answers: washing and bathing</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Using the toilet and managing incontinence</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/managing-toilet-needs/">Does your condition affect you using the toilet or managing incontinence?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-toilet-needs/details">Tell us about the difficulties you have with going to the toilet and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-toilet-needs/check">Check your answers: managing toilet needs</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Dressing and undressing</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/dressing-and-undressing/">Does your condition affect you dressing or undressing?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/dressing-and-undressing/details">Tell us about the difficulties you have with dressing and undressing and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/dressing-and-undressing/check">Check your answers: dressing and undressing</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Talking, listening and understanding</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/talking-and-listening/">Does your condition affect you talking, listening and understanding?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/talking-and-listening/details">Tell us about the difficulties you have with talking,listening and understanding and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/communicating/check">Check your answers: talking, listening and understanding</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Reading</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/reading/">Does your condition affect you reading?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/reading/details">Tell us about the difficulties you have with reading words or symbols and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/reading/check">Check your answers: reading</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Mixing with other people</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/mixing-with-other-people/">Does your condition affect you mixing with other people?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/mixing-with-other-people/details">Tell us about the difficulties you have with mixing with other people and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/mixing-with-other-people/check">Check your answers: mixing with other people</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Managing money</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/managing-money/">Introduction</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-money/details">Tell us about the difficulties you have with managing your money and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-money/check">Check your answers: managing money</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Planning and following a journey</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/planning-and-following-a-journey/">Does your condition affect you planning and following journeys?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/planning-and-following-a-journey/details">Tell us more about the difficulties you have with planning and following journeys and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-money/check">Check your answers: planning and following a journey</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Moving around</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/moving-around/">Does your condition affect you moving around?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/managing-money/info">How well can you stand and how far can you walk using any aids or appliances you need?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/moving-around/details">Tell us more about the difficulties you have with moving around and how you manage them</a>
+            </li>
+            <li>
+              <a href="/p4-ni/moving-around/check">Check your answers: moving around</a>
+            </li>
+          </ul>
+
+
+          <h5 class="govuk-heading-s">Additional information</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/additional-information/">Is there anything else you would like to tell us about?</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/additional-information/details">Additional information</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/additional-information/check">Check your answers: additional information</a>
+            </li>
+          </ul>
+
+          <h5 class="govuk-heading-s">Upload supporting evidence and apply</h5>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/supporting-evidence/">Introduction</a>
+            </li>
+            <li>
+              <a href="/p4-ni/supporting-evidence/supporting-evidence">Do you want to upload any supporting evidence?</a>
+            </li>
+            <li>
+              <a href="/p4-ni/supporting-evidence/file-upload-help">How to take a photo of your evidence</a>
+            </li>
+            <li>
+              <a href="/p4-ni/supporting-evidence/supporting-evidence-upload-1">Upload a file</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/supporting-evidence/supporting-evidence-uploaded-1">Your uploaded files</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/supporting-evidence/supporting-evidence-upload-2">Upload another file</a>
+
+            </li>
+            <li>
+              <a href="/p4-ni/apply/declaration">Declaration</a>
+            </li>
+            <li>
+              <a href="/p4-ni/apply/confirmation">Application complete</a>
+            </li>
+          </ul>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h4 class="govuk-heading-m">Other screens</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/p4-ni/help">Help and contact</a>
+            </li>
+            <li>
+              <a href="/p4-ni/sign-out">Signed out</a>
+            </li>
+            <li>
+              <a href="/p4-ni/info/privacy">Privacy</a>
+            </li>
+            <li>
+              <a href="/p4-ni/info/cookies">Cookies</a>
+            </li>
+            <li>
+              <a href="/p4-ni/info/accessibility">Accessibility</a>
+            </li>
+            <li>
+              <a href="/p4-ni/feedback/feedback">Feedback</a>
+            </li>
+          </ul>
+
+        </div>{# /card-body #}
+
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Emails</h2>
+        </div>
+        <div class="card-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/emails/welcome">Welcome</a></li>
+            <li><a href="/p4-ni/emails/code">Email 6-digit code</a></li>
+            <li><a href="/p4-ni/emails/confirmation">Confirmation email after completing the form / sending more evidence</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h2 class="govuk-heading-m govuk-!-margin-0">Text messages</h2>
+        </div>
+        <div class="card-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/p4-ni/texts/6-digit-code">SMS 6-digit code</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

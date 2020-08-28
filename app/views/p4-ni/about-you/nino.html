@@ -1,0 +1,48 @@
+{% set pageTitle = "What is your National Insurance number?" %}
+
+{% extends "layout-p4-ni.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4-ni/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4-ni/_beta-banner.html" %}
+  {% include "p4-ni/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p4-ni/about-you/check" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "What is your National Insurance number?",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+        }) }}
+
+      </form>
+
+      {% include "p4-ni/about-you/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

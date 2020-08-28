@@ -1,0 +1,45 @@
+{% set pageTitle = "Check your answers: your health condition" %}
+
+{% extends "layout-p4-ni.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4-ni/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4-ni/_beta-banner.html" %}
+  {% include "p4-ni/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukRadios({
+      idPrefix: "remove",
+      name: "remove",
+      fieldset: {
+        legend: {
+          text: "Are you sure you want to remove [name of health professional]?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }}
+
+    <a href="/p4-ni/about-your-health-professionals/check?remove=true" class="govuk-button">Continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
