@@ -17,7 +17,7 @@ module.exports = function (app) {
 
   // Code for the list screen
 
-  app.get('/p4/list', (req, res, next) => {
+  app.get('/p4-ni/list', (req, res, next) => {
 
     if (!req.session.sectionStatus){
       // console.log('no session');
@@ -88,7 +88,7 @@ module.exports = function (app) {
     };
     if (req.query.eatinganddrinking == 'inprogress') {
       req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
-    };    
+    };
 
     // managingtreatments
     if (req.query.managingtreatments == 'completed') {
@@ -143,7 +143,7 @@ module.exports = function (app) {
     };
     if (req.query.talkingandlistening == 'inprogress') {
       req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
-    };    
+    };
 
     // reading
     if (req.query.reading == 'completed') {
@@ -218,20 +218,20 @@ module.exports = function (app) {
     //   req.session.sectionStatus.supportingevidence = req.query.supportingevidence
     // };
 
-    res.render('p4/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
+    res.render('p4-ni/list.html', {sectionStatus: req.session.sectionStatus, sectionCount: req.session.sectionCount});
   });
 
   // Clear data on the 'application cancelled' screen
 
-  app.get('/*/clear-p4', function (req, res) {
+  app.get('/*/clear-p4-ni', function (req, res) {
     req.session.destroy()
-    res.render('p4/application-cancelled')
+    res.render('p4-ni/application-cancelled')
   })
 
 
   // Routes
 
-  app.get('/p4/sign-in/answer-choice', function(req, res) {
+  app.get('/p4-ni/sign-in/answer-choice', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -242,7 +242,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/sign-in/intro-question-answer', function(req, res) {
+  app.get('/p4-ni/sign-in/intro-question-answer', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -253,7 +253,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/about-your-health/another-answer', function(req, res) {
+  app.get('/p4-ni/about-your-health/another-answer', function(req, res) {
 
     let condition2 = req.session.data['condition2']
 
@@ -264,7 +264,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/about-your-health/another-2-answer', function(req, res) {
+  app.get('/p4-ni/about-your-health/another-2-answer', function(req, res) {
 
     let question = req.session.data['condition3']
 
@@ -274,8 +274,8 @@ module.exports = function (app) {
         res.redirect('check')
       }
   });
-  
-  app.get('/p4/about-your-health-professionals/q-health-professional-answer', function(req, res) {
+
+  app.get('/p4-ni/about-your-health-professionals/q-health-professional-answer', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -286,7 +286,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/about-your-health-professionals/another-answer', function(req, res) {
+  app.get('/p4-ni/about-your-health-professionals/another-answer', function(req, res) {
 
     let professional2 = req.session.data['professional2']
 
@@ -297,7 +297,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/about-your-health-professionals/another-2-answer', function(req, res) {
+  app.get('/p4-ni/about-your-health-professionals/another-2-answer', function(req, res) {
 
     let professional3 = req.session.data['professional3']
 
@@ -311,7 +311,7 @@ module.exports = function (app) {
 
   // Preparing food
 
-  app.get('/p4/preparing-food/index-answer', function(req, res) {
+  app.get('/p4-ni/preparing-food/index-answer', function(req, res) {
 
     let question = req.session.data['preparingfood-question']
 
@@ -324,7 +324,7 @@ module.exports = function (app) {
 
   // Eating and drinking
 
-  app.get('/p4/eating-and-drinking/index-answer', function(req, res) {
+  app.get('/p4-ni/eating-and-drinking/index-answer', function(req, res) {
 
     let question = req.session.data['eatinganddrinking-question']
 
@@ -337,7 +337,7 @@ module.exports = function (app) {
 
   // Managing treatments
 
-  app.get('/p4/managing-treatments/index-answer', function(req, res) {
+  app.get('/p4-ni/managing-treatments/index-answer', function(req, res) {
 
     let question = req.session.data['managingtreatments-question']
 
@@ -350,7 +350,7 @@ module.exports = function (app) {
 
   // Washing and bathing
 
-  app.get('/p4/washing-and-bathing/index-answer', function(req, res) {
+  app.get('/p4-ni/washing-and-bathing/index-answer', function(req, res) {
 
     let question = req.session.data['washingandbathing-question']
 
@@ -363,7 +363,7 @@ module.exports = function (app) {
 
   // Managing toilet needs
 
-  app.get('/p4/managing-toilet-needs/index-answer', function(req, res) {
+  app.get('/p4-ni/managing-toilet-needs/index-answer', function(req, res) {
 
     let question = req.session.data['managingtoiletneeds-question']
 
@@ -376,7 +376,7 @@ module.exports = function (app) {
 
   // Dressing and undressing
 
-  app.get('/p4/dressing-and-undressing/index-answer', function(req, res) {
+  app.get('/p4-ni/dressing-and-undressing/index-answer', function(req, res) {
 
     let question = req.session.data['dressingandundressing-question']
 
@@ -389,7 +389,7 @@ module.exports = function (app) {
 
   // Talking and listening
 
-  app.get('/p4/talking-and-listening/index-answer', function(req, res) {
+  app.get('/p4-ni/talking-and-listening/index-answer', function(req, res) {
 
     let question = req.session.data['talkingandlistening-question']
 
@@ -402,7 +402,7 @@ module.exports = function (app) {
 
   // Reading
 
-  app.get('/p4/reading/index-answer', function(req, res) {
+  app.get('/p4-ni/reading/index-answer', function(req, res) {
 
     let question = req.session.data['reading-question']
 
@@ -415,7 +415,7 @@ module.exports = function (app) {
 
   // Mixing with other people
 
-  app.get('/p4/mixing-with-other-people/index-answer', function(req, res) {
+  app.get('/p4-ni/mixing-with-other-people/index-answer', function(req, res) {
 
     let question = req.session.data['mixingwithotherpeople-question']
 
@@ -428,7 +428,7 @@ module.exports = function (app) {
 
   // Managing money
 
-  app.get('/p4/managing-money/index-answer', function(req, res) {
+  app.get('/p4-ni/managing-money/index-answer', function(req, res) {
 
     let question = req.session.data['managingmoney-question']
 
@@ -441,7 +441,7 @@ module.exports = function (app) {
 
   // Planning and following a journey
 
-  app.get('/p4/planning-and-following-a-journey/index-answer', function(req, res) {
+  app.get('/p4-ni/planning-and-following-a-journey/index-answer', function(req, res) {
 
     let question = req.session.data['planningandfollowingajourney-question']
 
@@ -454,7 +454,7 @@ module.exports = function (app) {
 
   // Moving around
 
-  app.get('/p4/moving-around/index-answer', function(req, res) {
+  app.get('/p4-ni/moving-around/index-answer', function(req, res) {
 
     let question = req.session.data['movingaround-question']
 
@@ -467,7 +467,7 @@ module.exports = function (app) {
 
   // Additional information
 
-  app.get('/p4/additional-information/index-answer', function(req, res) {
+  app.get('/p4-ni/additional-information/index-answer', function(req, res) {
 
     let question = req.session.data['additionalinformation-question']
 
@@ -480,7 +480,7 @@ module.exports = function (app) {
 
   // Apply
 
-  app.get('/p4/apply/pdf-answer', function(req, res) {
+  app.get('/p4-ni/apply/pdf-answer', function(req, res) {
 
     let question = req.session.data['download']
 
@@ -495,7 +495,7 @@ module.exports = function (app) {
 
   // Supporting evidence
 
-  app.get('/p4/supporting-evidence/supporting-evidence-data', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-data', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -506,7 +506,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-1-data', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-1-data', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -517,7 +517,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-2-data', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-2-data', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -528,7 +528,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-3-data', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-3-data', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -542,16 +542,16 @@ module.exports = function (app) {
 
   // Uploading screens
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-1', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-1' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-1', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-1' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-2', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-2' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-2', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-2' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-3', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-3' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-3', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-3' });
   });
 
 
@@ -560,23 +560,23 @@ module.exports = function (app) {
 
   // Check you answers variations
 
-  app.get('/p4/supporting-evidence/upload-cya', function(req, res) {
-    res.render('p4/supporting-evidence/upload', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/upload-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/upload', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-cya', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/uploading-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/uploaded-1-cya', function(req, res) {
-    res.render('p4/supporting-evidence/uploaded-1', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/uploaded-1-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploaded-1', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-data-cya', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-data-cya', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -587,60 +587,60 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/interruption-screen-cya', function(req, res) {
-    res.render('p4/supporting-evidence/interruption-screen', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/interruption-screen-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/interruption-screen', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-upload-1-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-upload-1', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-upload-1-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-upload-1', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence-upload-2-cya', function(req, res) {
-    res.render('p4/supporting-evidence-upload-2', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence-upload-2-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence-upload-2', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-upload-3-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-upload-3', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-upload-3-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-upload-3', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-1-cya', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-1', 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-1-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-1', 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-2-cya', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-2', 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-2-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-2', 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/uploading-supporting-evidence-3-cya', function(req, res) {
-    res.render('p4/supporting-evidence/uploading', { 'file' : 'supporting-evidence-3', 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/uploading-supporting-evidence-3-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/uploading', { 'file' : 'supporting-evidence-3', 'cya' : 'true' });
   });
 
 
-  app.get('/p4/supporting-evidence/supporting-evidence-upload-1-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-upload-1', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-upload-1-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-upload-1', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-upload-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-upload-2', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-upload-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-upload-2', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-upload-3-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-upload-3', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-upload-3-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-upload-3', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-1-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-uploaded-1', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-1-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-uploaded-1', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-2-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-uploaded-2', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-2-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-uploaded-2', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-3-cya', function(req, res) {
-    res.render('p4/supporting-evidence/supporting-evidence-uploaded-3', { 'cya' : 'true' });
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-3-cya', function(req, res) {
+    res.render('p4-ni/supporting-evidence/supporting-evidence-uploaded-3', { 'cya' : 'true' });
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-1-data-cya', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-1-data-cya', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -651,7 +651,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-2-data-cya', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-2-data-cya', function(req, res) {
 
     let question = req.session.data['question']
 
@@ -662,7 +662,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4/supporting-evidence/supporting-evidence-uploaded-3-data-cya', function(req, res) {
+  app.get('/p4-ni/supporting-evidence/supporting-evidence-uploaded-3-data-cya', function(req, res) {
 
     let question = req.session.data['question']
 
