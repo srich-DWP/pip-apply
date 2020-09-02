@@ -1,5 +1,9 @@
 {% extends "layout-signed-out-p4-ni.html" %}
 
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+{% endblock %}
+
 {% set pageTitle = "Information sent" %}
 
 {% block pageTitle %}

@@ -1,5 +1,9 @@
 {% extends "layout-signed-out-r1.html" %}
 
+{% block beforeContent %}
+  {% include "r1/_beta-banner.html" %}
+{% endblock %}
+
 {% set pageTitle = "Information sent" %}
 
 {% block pageTitle %}
@@ -32,7 +36,7 @@
       <p>You might be contacted to arrange an assessment with a health professional if more information is needed. </p>
 
       <p>You may not need a consultation if you have provided enough information for us to make a decision.</p>
-      
+
       <h2 class="govuk-heading-m">If you need to upload more supporting evidence</h2>
 
       <p><a href="/r1/sign-in/sign-in">Sign in</a> if you need to upload any more evidence that might support your application.</p>
