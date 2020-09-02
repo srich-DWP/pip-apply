@@ -1,5 +1,10 @@
 {% extends "layout-signed-out-p4.html" %}
 
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+{% endblock %}
+
+
 {% set pageTitle = "Information sent" %}
 
 {% block pageTitle %}
@@ -7,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
