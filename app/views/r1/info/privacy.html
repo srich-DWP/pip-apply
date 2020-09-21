@@ -1,0 +1,30 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Privacy" %}
+
+{% extends "layout-p4.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+  {% include "p4/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Privacy
+      </h1>
+
+      <p>Content to follow&hellip;</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
