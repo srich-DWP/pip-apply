@@ -1,14 +1,14 @@
-{% extends "layout-p4.html" %}
+{% extends "layout-r1.html" %}
 
-{% set pageTitle = "Declaration" %}
+{% set pageTitle = "Declaration submission error" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "r1/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p4/_beta-banner.html" %}
-  {% include "p4/_back-link.html" %}
+  {% include "r1/_beta-banner.html" %}
+  {% include "r1/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -28,6 +28,8 @@
             <li>
               <p>Your information could not be sent.</p>
               <p>Try again.</p>
+              <p>If you sign out and try again later, you will need to upload any supporting evidence documents you have after you sign in again.</p>
+
             </li>
           </ul>
           <details class="govuk-details" data-module="govuk-details">
@@ -38,9 +40,7 @@
             </summary>
             <div class="govuk-details__text">
 
-              <p>Sign out and try again later. You will need to upload any supporting evidence documents you have after you sign in again.</p>
-
-              <p>If you need help, contact:</p>
+              <p>Contact:</p>
 
               <p><strong><abbr title="Personal Independence Payment">PIP</abbr> enquiry line</strong><br>
               Telephone: 0800 121 4433<br>
@@ -49,9 +49,8 @@
               <a href="https://main.signvideo.me/app/8/10031">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check you can use the service</a><br>
               Available Monday to Friday, 8am to 5pm. <br>
               <!-- Closed on public holidays.<br> -->
-
               <a href="/call-charges">Find out about call charges</a></p>
-              
+
             </div>
           </details>
         </div>
@@ -79,7 +78,7 @@
 
       </ul>
 
-      <a href="/p4/apply/confirmation" class="govuk-button">I agree – send my information</a>
+      <a href="/r1/apply/confirmation" class="govuk-button">I agree – send my information</a>
 
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
