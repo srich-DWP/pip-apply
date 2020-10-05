@@ -1,3 +1,5 @@
+{% set status = "signed-out" %}
+
 {% set pageTitle = "Sign in" %}
 
 {% extends "layout-p4.html" %}
@@ -8,7 +10,6 @@
 
 {% block beforeContent %}
   {% include "p4/_beta-banner.html" %}
-  {% include "p4/_back-link.html" %}
 {% endblock %}
 
 
