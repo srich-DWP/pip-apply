@@ -1,0 +1,38 @@
+{% extends "layout-r1-returning.html" %}
+
+{% set pageTitle = "Sorry-there-is-aproblem" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "r1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "r1/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      </div>
+
+      <h1 class="govuk-heading-l">Sorry, there is a problem</h1>
+
+      <p>It is not currently possible to upload and send supporting evidence documents for your PIP claim online.</p>
+
+      <p>Any supporting evidence documents you uploaded with your online application have been recieved.</p>
+
+      <p>For advice on how to send any additional supporting evidence documents, contact:</p>
+
+      <p><strong><abbr title="Personal Independence Payment">PIP</abbr> enquiry line</strong><br>
+      Telephone: 0800 121 4433<br>
+      Textphone: 0800 121 4493<br>
+      <a href="https://www.relayuk.bt.com//">Relay UK</a> (if you cannot hear or speak on the phone): 18001 then 0800 121 4433<br>
+      <a href="https://main.signvideo.me/app/8/10031">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users - <a href="https://www.youtube.com/watch?v=Osx7FFxFpNY">check you can use the service</a><br>
+      Available Monday to Friday, 8am to 5pm. <br>
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
