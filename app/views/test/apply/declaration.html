@@ -1,0 +1,31 @@
+{% extends "layout-test.html" %}
+
+{% set pageTitle = "Declaration" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "test/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "test/_beta-banner.html" %}
+  {% include "test/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Declaration</h1>
+
+      <p>The information I have given on this form is correct and complete.</p>
+
+      <p>If I give wrong or incomplete information, my benefit may be stopped and I may be prosecuted or may have to pay a penalty.</p>
+
+      <p>I must promptly tell the office that pays my Personal Independence Payment of anything that may affect my entitlement to, or the amount of, that benefit.</p>
+
+      <a href="/test/apply/confirmation" class="govuk-button">I agree – send my information</a>
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

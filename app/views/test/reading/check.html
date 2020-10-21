@@ -1,0 +1,93 @@
+{% set pageTitle = "Check your answers: reading" %}
+
+{% extends "layout-test.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "test/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "test/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/test/list">
+
+      <h1 class="govuk-heading-l">Check your answers: reading</h1>
+
+      {% if data['reading-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you reading?"
+              },
+              value: {
+                text: data['reading-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/test/reading/",
+                    text: "Change",
+                    visuallyHiddenText: "your answer to whether your condition affects you reading"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with reading words or symbols and how you manage them"
+              },
+              value: {
+                html: data['reading-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/test/reading/details",
+                    text: "Change",
+                    visuallyHiddenText: "your answer difficulties you have with reading words or symbols and how you manage them"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Does your condition affect you reading?"
+              },
+              value: {
+                text: data['reading-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/test/reading/",
+                    text: "Change",
+                    visuallyHiddenText: "your answer to whether your condition affects you reading"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+        
+      {% endif %}
+
+      <a href="/test/list?reading=completed" class="govuk-button">Confirm and save</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}
