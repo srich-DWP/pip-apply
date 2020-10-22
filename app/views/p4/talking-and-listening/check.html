@@ -17,7 +17,7 @@
 
     <form id="form" method="post" action="/p4/list">
 
-      <h1 class="govuk-heading-l">Check your answers: talking and listening</h1>
+      <h1 class="govuk-heading-l">Check your answers: talking, listening and understanding</h1>
 
       {% if data['talkingandlistening-question'] === 'Yes' %}
 
@@ -25,7 +25,7 @@
           rows: [
             {
               key: {
-                text: "Does your condition affect you talking and listening?"
+                text: "Does your condition affect you talking, listening and understanding?"
               },
               value: {
                 text: data['talkingandlistening-question']
@@ -35,14 +35,14 @@
                   {
                     href: "/p4/talking-and-listening/",
                     text: "Change",
-                    visuallyHiddenText: "your answer to whether your condition affect you talking and listening"
+                    visuallyHiddenText: "your answer to whether your condition affect you talking, listening and understanding"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "Difficulties you have with talking and listening and how you manage them"
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
               },
               value: {
                 html: data['talkingandlistening-details']
@@ -52,7 +52,7 @@
                   {
                     href: "/p4/talking-and-listening/details",
                     text: "Change",
-                    visuallyHiddenText: "your answer to difficulties you have with talking and listening and how you manage them"
+                    visuallyHiddenText: "your answer to difficulties you have with talking, listening and understanding and how you manage them"
                   }
                 ]
               }
@@ -66,7 +66,7 @@
           rows: [
             {
               key: {
-                text: "Does your condition affect you talking and listening?"
+                text: "Does your condition affect you talking, listening and understanding?"
               },
               value: {
                 text: data['talkingandlistening-question']
@@ -76,14 +76,14 @@
                   {
                     href: "/p4/talking-and-listening/",
                     text: "Change",
-                    visuallyHiddenText: "your answer to whether your condition affect you talking and listening"
+                    visuallyHiddenText: "your answer to whether your condition affect you talking, listening and understanding?"
                   }
                 ]
               }
             }
           ]
         }) }}
-        
+
       {% endif %}
 
       <a href="/p4/list?talkingandlistening=completed" class="govuk-button">Confirm and save</a>

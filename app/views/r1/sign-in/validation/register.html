@@ -1,0 +1,412 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Error – Register" %}
+
+{% extends "layout-r1.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "r1/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "r1/_beta-banner.html" %}
+  {% include "r1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% if expr %}
+
+      {% endif %}
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter your email address",
+              href: "#email"
+            },
+            {
+              text: "Enter your National Insurance number",
+              href: "#national-insurance-number"
+            },
+            {
+              text: "Enter your date of birth",
+              href: "#dob-day"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter your email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your National Insurance number"
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          errorMessage: {
+            text: "Enter your National Insurance number"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: false
+            }
+          },
+          errorMessage: {
+            text: "Enter your date or birth"
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2 govuk-input--error"
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2 govuk-input--error"
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4 govuk-input--error"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {% include "r1/sign-in/_problems.html" %}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter a valid email address",
+              href: "#email"
+            },
+            {
+              text: "Enter a National Insurance number in the correct format",
+              href: "#national-insurance-number"
+            },
+            {
+              text: "Enter a real date of birth",
+              href: "#dob-day"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          value: "emailaddressincorrectformat.com",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter your email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your National Insurance number"
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          value: "dwugwdqou&*&)",
+          errorMessage: {
+            text: "Enter a National Insurance number in the correct format"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: false
+            }
+          },
+          errorMessage: {
+            text: "Enter a real date or birth"
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2 govuk-input--error",
+              value: "1"
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2 govuk-input--error",
+              value: "02"
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4 govuk-input--error",
+              value: "2999"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {% include "r1/sign-in/_problems.html" %}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Your date of birth must include a year",
+              href: "#dob-day"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          value: "email@gmail.com",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your National Insurance number"
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          value: "QQ 12 34 56 C",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: false
+            }
+          },
+          errorMessage: {
+            text: "Date of birth must include a year"
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          },
+          items: [
+            {
+              name: "day",
+              value: "1",
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: "02",
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "year",
+              value: "",
+              classes: "govuk-input--width-4 govuk-input--error"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {% include "r1/sign-in/_problems.html" %}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Check your form. Either your email address, National Insurance number or date of birth is incorrect."
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">Register</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          value: "email@gmail.com",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your National Insurance number"
+          },
+          hint: {
+            text: "It is on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number",
+          value: "QQ 12 34 56 C",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "dob",
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 12 11 2007."
+          },
+          items: [
+            {
+              name: "day",
+              value: "1",
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "month",
+              value: "02",
+              classes: "govuk-input--width-2"
+            },
+            {
+              name: "year",
+              value: "1982",
+              classes: "govuk-input--width-4"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {% include "r1/sign-in/_problems.html" %}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
