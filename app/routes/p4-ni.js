@@ -242,7 +242,7 @@ module.exports = function (app) {
       }
   });
 
-  app.get('/p4-ni/sign-in/intro-question', function(req, res) {
+  app.get('/p4-ni/sign-in/intro-question-answer', function(req, res) {
 
     let question = req.session.data['question']
 
