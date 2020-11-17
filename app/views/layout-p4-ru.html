@@ -42,20 +42,20 @@
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "/p4/list"
+      serviceUrl: "/p4-ru/list"
     }) }}
   {% else %}
     {% include "includes/cookie-banner.html" %}
     {{ govukHeader({
       serviceName: serviceName,
-      serviceUrl: "/p4/list",
+      serviceUrl: "/p4-ru/list",
       navigation: [
         {
-          href: "/p4/help",
+          href: "/p4-ru/help",
           text: "Help and contact"
         },
         {
-          href: "/p4/sign-out",
+          href: "/p4-ru/sign-out",
           text: "Sign out"
         }
       ]
@@ -67,7 +67,7 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-    {% include "p4/_footer.html" %}
+    {% include "p4-ru/_footer.html" %}
   {% endblock %}
 {% endif %}
 
