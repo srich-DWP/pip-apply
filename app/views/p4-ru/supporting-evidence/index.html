@@ -33,11 +33,8 @@
 
       <p><a href="/public/pdfs/pip2-supporting-evidence-help-v1.pdf" download>Help with the types of supporting evidence you should upload and send&nbsp;(PDF)</a></p>
 
-      <p>If you have any paper documents to upload, take photos or scans of them and save these to the device you are using.</p>
+      <p>Any delay in sending evidence might mean:</p>
 
-      <p>Only upload copies of evidence or information you already have. If we need more, we will ask your health professional for it.</p>
-
-      <p>Any delay in sending evidence you have might mean:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>your claim to PIP will take longer to assess</li>
@@ -45,22 +42,36 @@
         <li>we might not be able to get all the information we need to make a decision on your claim which accurately reflects your daily living or mobility needs</li>
       </ul>
 
-      <p>Try to avoid:</p>
+      <p><strong>Upload</strong> photos or scans of documents that shows how your health condition or disability affects you carrying out day-to-day activities.</p>
+
+      <p>Only send us copies of information or evidence you already have.</p>
+
+      <p><strong>Do not:</strong></p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>send general information about your condition like fact sheets or information from the internet</li>
         <li>contact your GP or health professional to ask for new or additional information as they may charge you for this</li>
       </ul>
 
-      <p><a href="/public/pdfs/pip-flyer.pdf" download>Get help with the types of supporting information you should send (PDF)</a></p>
+{#       <p><a href="/public/pdfs/pip-flyer.pdf" download>Get help with the types of supporting information you should send (PDF)</a></p>
 
-      <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your claim</a></p>
-
+      <p><a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">Watch a video about providing information to support your claim</a></p> #}
 
     </div><!-- govuk-form-group -->
 
-    <a href="/p4-ru/supporting-evidence/supporting-evidence" class="govuk-button">Continue</a>
+    <!-- <a href="/p4-ru/supporting-evidence/supporting-evidence" class="govuk-button">Continue</a> -->
 
-  </div><!-- govuk-grid-column-two-thirds -->
-</div><!-- govuk-grid-row -->
+    <div style="margin-top: 30px"></div>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "/p4-ru/supporting-evidence/supporting-evidence-upload-1",
+      isStartButton: true
+    }) }}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+  <!-- </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row --> -->
 {% endblock %}
