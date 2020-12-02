@@ -1,15 +1,15 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Cookies" %}
 
-{% extends "layout-p5.html" %}
+{% extends "layout-p4.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link-list.html" %}
+  {% include "p4/_beta-banner.html" %}
+  {% include "p4/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -18,10 +18,65 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Cookies
+        How we use cookies
       </h1>
 
-      <p>Content to follow&hellip;</p>
+        <p>A cookie is a small file which is stored on your device for a short time to make this service work.</p>
+
+        <p>We only use cookies that are:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+
+            <li>essential for the service to work, like remembering your answers to certain questions</li>
+            <li>optional and will not stop the service from working, but will give us information to help us make it better</li>
+
+          </ul>
+
+
+        <p>We will not:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+
+            <li>use any essential cookies until you use the service</li>
+            <li>use any optional cookies unless you tell us we can</li>
+            <li>be able to identify you through using cookies</li>
+
+          </ul>
+
+        <h2 class="govuk-heading-m">Optional cookie settings</h2>
+
+        <h3 class="govuk-heading-s">Analytics Cookies</h3>
+
+          <p>We use Google Analytics to get information about how you use the service to help us make it better.</p>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h3 class="govuk-heading-s">
+                  Can we use cookies to help us improve the service?
+                </h3>
+              </legend>
+              <div class="govuk-radios govuk-radios--inline">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="changed-name">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+
+
+        <p><a href="/p4/info/cookies-details">Find out more about cookies on this service</a></p>
 
     </div>{# /govuk-grid-column-two-thirds #}
 
