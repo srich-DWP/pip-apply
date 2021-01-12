@@ -1,15 +1,15 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Cookies" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
-
+  {% include "p5/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -31,20 +31,20 @@
 
           <p>You will see an error message when you try to use the website if your cookies are disabled.</p>
 
-          <p>How to turn cookies on depends on the <a href="https://www.whatsmybrowser.org/">browser you are using</a> and how up to date it is.</p>
+          <p>How to turn cookies on depends on the <a target="_blank" href="https://www.whatsmybrowser.org/">browser you are using (Opens in new tab)</a> and how up to date it is.</p>
 
           <p>Find out how to change your settings for the most popular browsers, including:</p>
 
             <ul class="govuk-list govuk-list--bullet">
 
-              <li><a href="https://support.microsoft.com/en-us/products/windows?os=windows-10">Internet Explorer</a></li>
-              <li><a href="https://www.mozilla.org/en-US/?v=a">Mozilla Firefox</a></li>
-              <li><a href="https://support.google.com/accounts/answer/61416?hl=en">Google Chrome</a></li>
-              <li><a href="https://www.apple.com/">Safari,</a> commonly used on iPads, iPhones and other Apple computers</li>
+              <li><a target="_blank" href="https://support.microsoft.com/en-us/products/windows?os=windows-10">Internet Explorer (Opens in new tab)</a></li>
+              <li><a target="_blank" href="https://www.mozilla.org/en-US/?v=a">Mozilla Firefox (Opens in new tab)</a></li>
+              <li><a target="_blank" href="https://support.google.com/accounts/answer/61416?hl=en">Google Chrome (Opens in new tab)</a></li>
+              <li><a target="_blank" href="https://www.apple.com/">Safari, (Opens in new tab)</a> commonly used on iPads, iPhones and other Apple computers</li>
 
             </ul>
 
-          <p>Find out <a href="https://www.aboutcookies.org/">how to manage cookies</a> for other browsers.</p>
+          <p>Find out <a target="_blank" href="https://www.aboutcookies.org/">how to manage cookies (Opens in new tab)</a> for other browsers.</p>
 
           <h2 class="govuk-heading-l">Cookies that measure website use</h2>
 
