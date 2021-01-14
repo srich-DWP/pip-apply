@@ -1,0 +1,36 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "We’ve saved your application" %}
+
+{% extends "layout-p5.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+{#       <div class="interruption"> #}
+
+      <h1 class="govuk-heading-l">You are now signed out</h1>
+
+      <p><a class="govuk-link" href=/p5/sign-in/intro-question>Sign in</a> again to upload any more supporting evidence.</p>
+
+      <!-- <p>You can return to this application at any time until {% include 'includes/_date.html' %}.</p> -->
+      <!-- Note: deadline date removed for MVP as it varies by claimant -->
+      <p>It's now safe to close this window.</p>
+
+
+{#       </div> #}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
