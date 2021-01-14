@@ -23,5 +23,6 @@ module.exports = {
     require('./routes/test.js')(app);
     // Reference screens
     require('./routes/r1.js')(app);
+    require('./routes/r2.js')(app);
   }
 }
