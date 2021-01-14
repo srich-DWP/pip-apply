@@ -1,7 +1,7 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Cookies" %}
 
-{% extends "layout-p4.html" %}
+{% extends "layout-r2.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "r2/_page-title-slug.html" %}
@@ -9,7 +9,7 @@
 
 {% block beforeContent %}
   {% include "r2/_beta-banner.html" %}
-
+  {% include "r2/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -80,7 +80,7 @@
 
 
 
-        <p><a href="/p5/info/cookies-details">Find out more about cookies on this service</a></p>
+        <p><a href="/r2/info/cookies-details">Find out more about cookies on this service</a></p>
 
     </div>{# /govuk-grid-column-two-thirds #}
 
