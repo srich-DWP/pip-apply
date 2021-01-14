@@ -1,15 +1,15 @@
 {% set status = "signed-out" %}
 {% set pageTitle = "Is this the first time you’re using this service?" %}
 
-{% extends "layout-p5.html" %}
+{% extends "layout-r2.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "r2/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
-  {% include "p5/_back-link.html" %}
+  {% include "r2/_beta-banner.html" %}
+{#   {% include "r2/_back-link.html" %} #}
 {% endblock %}
 
 
@@ -18,13 +18,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="/p5/sign-in/intro-question-answer" method="post" novalidate>
+      <form action="/r2/sign-in/intro-question-answer" method="post" novalidate>
 
         {{ govukRadios({
           name: "question",
           fieldset: {
             legend: {
-              text: "Have you used the Apply for PIP online service before?",
+              text: "Are you using the Apply for PIP service online for the first time?",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--l"
             }
@@ -32,11 +32,11 @@
           items: [
             {
               value: "yes",
-              text: "Yes, I already have a password"
+              text: "Yes, I need to create a password"
             },
             {
               value: "no",
-              text: "No, I need to create a password"
+              text: "No, I have already created a password"
             }
           ]
         }) }}

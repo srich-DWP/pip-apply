@@ -1,0 +1,42 @@
+{% set status = "signed-out" %}
+
+{% set pageTitle = "A 6-digit code has been emailed to myemail@gmail.com" %}
+
+{% extends "layout-r2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "r2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "r2/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="POST" novalidate>
+
+        <h1 class="govuk-heading-l">A 6-digit code has been emailed to email@email.com</h1>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="code" >Your 6-digit code</label>
+          <input class="govuk-input govuk-input--width-5 input-capitals" id="code" name="code" maxlength="6" data-hj-suppress type="text" pattern="[0-9]*" inputmode="numeric" value="">
+        </div>
+
+        {% if getData.scenario === "locked" %}
+          <a href="code-text?scenario=locked" class="govuk-button">Continue</a>
+          <p><a href="code-email-get-another?scenario=locked">I did not get a code</a></p>
+        {% else %}
+          <a href="create-password" class="govuk-button">Continue</a>
+          <p><a href="code-email-get-another">I did not get a code</a></p>
+        {% endif %}
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

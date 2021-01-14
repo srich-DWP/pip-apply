@@ -1,0 +1,90 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Error – A 6-digit code has been emailed to email@email.com" %}
+
+{% extends "layout-r2.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "r2/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "r2/_beta-banner.html" %}
+  {% include "r2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" novalidate>
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Enter your 6-digit code",
+              "href": "#code"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">A 6-digit code has been emailed to email@email.com</h1>
+
+        {{ govukInput({
+          label: {
+            "text": 'Your 6-digit code'
+          },
+          id: "name",
+          classes: "govuk-input govuk-input--width-5 input-capitals",
+          name: "name",
+          errorMessage: {
+            "text": "Enter your 6-digit code"
+          }
+        }) }}
+
+        <button type="submit" class="govuk-button">Continue</button>
+
+        <p><a href="#">I did not get a code</a></p>
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" novalidate>
+
+        {{ govukErrorSummary({
+          "titleText": "There is a problem",
+          "errorList": [
+            {
+              "text": "Code not recognised – check the code in the email and try again",
+              "href": "#code"
+            }
+          ]
+        }) }}
+
+        <h1 class="govuk-heading-l">A 6-digit code has been emailed to email@email.com</h1>
+
+        {{ govukInput({
+          label: {
+            "text": 'Your 6-digit code'
+          },
+          id: "name",
+          classes: "govuk-input govuk-input--width-5 input-capitals",
+          name: "name",
+          value: "111111",
+          errorMessage: {
+            "text": "Code not recognised – check the code in the email and try again"
+          }
+        }) }}
+
+        <button type="submit" class="govuk-button">Continue</button>
+
+        <p><a href="#">I did not get a code</a></p>
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
