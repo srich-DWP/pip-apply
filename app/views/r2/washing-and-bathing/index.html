@@ -1,14 +1,14 @@
 {% set pageTitle = "Does your condition affect you washing and bathing?" %}
 
-{% extends "layout-r2.html" %}
+{% extends "layout-p5.html" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "r2/_page-title-slug.html" %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "r2/_beta-banner.html" %}
-  {% include "r2/_back-link.html" %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
 {% endblock %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/r2/washing-and-bathing/index-answer" method="post" novalidate>
+    <form action="/p5/washing-and-bathing/index-answer" method="post" novalidate>
 
       {{ govukRadios({
         name: "washingandbathing-question",
@@ -40,9 +40,9 @@
         },
         items: [
           {
-            value: "No, never",
-            text: "No, never",
-            checked: checked("washingandbathing-question", "No, never")
+            value: "No",
+            text: "No",
+            checked: checked("washingandbathing-question", "No")
           },
           {
             value: "Yes",
@@ -58,7 +58,7 @@
 
     </form>
 
-    {% include "r2/washing-and-bathing/_return-link.html" %}
+    {% include "p5/washing-and-bathing/_return-link.html" %}
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
