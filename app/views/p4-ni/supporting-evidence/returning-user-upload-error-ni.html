@@ -1,0 +1,39 @@
+{% extends "layout-p4-ni.html" %}
+
+{% set pageTitle = "Sorry-there-is-a-problem" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4-ni/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4-ni/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      </div>
+
+      <h1 class="govuk-heading-l">Sorry, there is a problem</h1>
+
+      <p>Your supporting evidence was not sent.</p>
+      <p><a href="supporting-evidence-upload-1">Try again</a></p>
+
+      <p>If you keep seeing this message and need to post your supporting evidence instead, contact:</p>
+
+      <p><strong><abbr title="Contact">Personal Independent Payment</abbr></strong><br>
+      Telephone: 0800 587 0932<br>
+      Textphone: 0800 587 0937<br>
+      <a href="https://www.nidirect.gov.uk/contacts/personal-independence-payment-pip-centre">Video relay service</a> for British Sign Language (<abbr title="British Sign Language">BSL</abbr>) users<br>
+      <a href="https://www.nidirect.gov.uk/contacts/personal-independence-payment-pip-centre">Video relay service</a> for Irish Sign Language (<abbr title="Irish Sign Language">ISL</abbr>) users<br>
+      <!-- <a href="https://www.nidirect.gov.uk/contacts/personal-independence-payment-pip-centre">Check you can use the service</a><br> -->
+      Available Monday to Friday, 9am to 5pm.<br>
+      Calls to 0800 numbers are free from mobiles and landlines.
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
