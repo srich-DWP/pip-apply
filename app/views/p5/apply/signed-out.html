@@ -15,33 +15,28 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
 
 {#       <div class="interruption"> #}
 
-      <h1 class="govuk-heading-l">You have signed out</h1>
+            <div class="govuk-panel govuk-panel--confirmation">
+              <h1 class="govuk-panel__title">
+                You have signed out
+              </h1>
+            </div>
+            <p><a class="govuk-link" href="/p4/sign-in/sign-in">Sign in</a> again if you need to upload any more evidence that might support your application.</p>
+            <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
+            <p>You will need your email address, mobile phone and password to sign in.</p>
+            <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+            <p>It's now safe to close this window.</p>
 
-      <!-- <p><a class="govuk-link" href=/p5/sign-in/intro-question>Sign in</a> again to upload any more supporting evidence.</p>
-
-      <h2 class="govuk-heading-m">If you need to upload more supporting evidence</h2> -->
-
-      <p><a class="govuk-link" href="/p4/sign-in/sign-in">Sign in</a> again if you need to upload any more evidence that might support your application.</p>
-
-      <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
-
-      <p>You will need your email address, mobile phone and password to sign in.</p>
-
-      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
-
-
-      <!-- <p>You can return to this application at any time until {% include 'includes/_date.html' %}.</p> -->
-      <!-- Note: deadline date removed for MVP as it varies by claimant -->
-      <p>It's now safe to close this window.</p>
-
+            <h2 class="govuk-heading-m">Give feedback</h2>
+            <p><a class="govuk-link" href="feedback/feedback" target="_blank">What did you think of this service? (opens in new tab)</a> takes 30 seconds</p>
+            <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
 
 {#       </div> #}
 
-    </div>{# /govuk-grid-column-two-thirds #}
+    </div>{# /govuk-grid-column-full #}
   </div>{# /govuk-grid-row #}
 
 {% endblock %}
