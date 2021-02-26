@@ -1,7 +1,8 @@
-{% extends "layout-signed-out-p5.html" %}
+{% extends "layout-p5.html" %}
 
 {% block beforeContent %}
   {% include "p5/_beta-banner.html" %}
+  
 {% endblock %}
 
 
@@ -10,6 +11,8 @@
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
 {% endblock %}
+
+
 
 {% block content %}
 
@@ -45,10 +48,9 @@
 
       <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
 
-
-      <p>It’s now safe to close this window.</p>
-
-
+      <p>Sign out to keep your information secure.</p>
+      
+      <a href="signed-out" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Sign out</a>
 
     </div>{# /govuk-grid-column-one-third #}
   </div>{# /govuk-grid-row #}
