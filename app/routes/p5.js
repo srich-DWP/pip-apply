@@ -554,6 +554,18 @@ module.exports = function (app) {
     res.render('p5/supporting-evidence/uploading', { 'file' : 'supporting-evidence-3' });
   });
 
+// // Coming back uploading evidence
+
+//   app.get('/p5/coming-back/supporting-evidence-uploaded-1', function(req, res) {
+
+//     let question = req.session.data['question']
+
+//     if (question === 'yes') {
+//         res.redirect('/p5/coming-back/supporting-evidence-upload-2')
+//       } else {
+//         res.redirect('/p5/coming-back/confirmation-returning')
+//       }
+//   });
 
 
 
