@@ -1,0 +1,150 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Error – Your email address" %}
+
+{% extends "layout-r3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "r3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "r3/_beta-banner.html" %}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter an email address",
+              href: "#email"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          classes: "govuk-input--width-20",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter an email address"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Enter an email address in the correct format, like name@example.com",
+              href: "#email"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          classes: "govuk-input--width-20",
+          name: "email",
+          type: "email",
+          value: "emailaddresshere@gmailcom",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Enter an email address in the correct format, like name@example.com"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <form action="#" method="post" novalidate>
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: [
+            {
+              text: "Email address not recognised – enter the email address your invitation was sent to",
+              href: "#email"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Enter your email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "This must be the same email address we sent your invitation email to."
+          },
+          id: "email",
+          classes: "govuk-input--width-20",
+          name: "email",
+          type: "email",
+          value: "not-a-recognised-email@gmail.com",
+          autocomplete: "email",
+          errorMessage: {
+            text: "Email address not recognised – enter the email address your invitation was sent to"
+          },
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
