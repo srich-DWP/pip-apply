@@ -1,4 +1,4 @@
-{% extends "layout-p4-ni-ni.html" %}
+{% extends "layout-p4-ni.html" %}
 
 {% set pageTitle = "Check your uploaded files" %}
 
@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "p4-ni-ni/_beta-banner.html" %}
+{% include "p4-ni/_beta-banner.html" %}
 
   {% if cya == "true" %}
     {{ govukBackLink({
