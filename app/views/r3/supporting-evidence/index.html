@@ -20,7 +20,7 @@
   <div class="govuk-grid-column-two-thirds">
 
     <div class="govuk-form-group">
-      <h1 class="govuk-heading-l">Supporting evidence</h1>
+      <h1 class="govuk-heading-l">Upload supporting evidence for your PIP application</h1>
       <p class="govuk-body-l">It is important that you help us to understand your needs by uploading any documentary evidence or information. This should explain how your health condition or disability affects your daily life.</p>
 
       <p>Examples of documents you could upload include:
@@ -58,7 +58,13 @@
 
     </div><!-- govuk-form-group -->
 
-    <a href="/r3/supporting-evidence/supporting-evidence" class="govuk-button">Continue</a>
+    <div style="margin-top: 30px"></div>
+
+    {{ govukButton({
+      text: "Start now",
+      href: "supporting-evidence-upload-1",
+      isStartButton: true
+    }) }}
 
   </div><!-- govuk-grid-column-two-thirds -->
 </div><!-- govuk-grid-row -->
