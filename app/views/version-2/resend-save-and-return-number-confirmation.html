@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Resend my save and return number confirmation
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  {% endblock %}
+
+  {% block content %}
+        <div class="govuk-width-container">
+          <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-panel govuk-panel--confirmation">
+                  <h1 class="govuk-panel__title">
+                    Email sent
+                  </h1>
+                </div>
+<br>
+                        <h2 class="govuk-heading-m">What happens next</h2>
+
+                        <p class="govuk-body">
+                          We’ve sent you an email with your save and return number.
+                        </p>
+
+                        <h2 class="govuk-heading-m">Give feedback</h2>
+                        <p class="govuk-body">
+                        <a href="#">What do you think of the service?</a>
+                        </p>
+              <div>
+            </div>
+          </main>
+
+      </div>
+  {% endblock %}

@@ -1,0 +1,126 @@
+{% extends "layout-no-nav.html" %}
+
+{% block pageTitle %}
+  Check if you are eligible
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+          <a href="#" class="govuk-back-link">Back</a>
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-form-group">
+    <form action="you-are-eligible-to-apply-as-a-lead-applicant" method="post" class="form">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Check if you are eligible
+        </h1>
+      </legend>
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-three-quarters">
+          <p>Can your organisation meet all of the needs listed in the competition?</p>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-1-yes" name="q-1" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="q-1-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-1-no" name="q-1" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="q-1-no">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-three-quarters">
+          <p>Will your organisation deliver projects in the UK?</p>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-2-yes" name="q-2" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="q-2-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-2-no" name="q-2" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="q-2-no">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-three-quarters">
+          <p>Does your organisation have a UK bank account or building society account?</p>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-3-yes" name="q-3" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="q-3-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-3-no" name="q-3" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="q-3-no">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-three-quarters">
+          <p>Is your organisation a registered company, charity, or a non-registered public body such as a Local Authority?</p>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-4-yes" name="q-4" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="q-4-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-4-no" name="q-4" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="q-4-no">
+            No
+          </label>
+        </div>
+      </div>
+
+      <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-grid-column-three-quarters">
+          <p>If your organisation is a registered company or charity, has it filed a full set of accounts within the last 12 months?</p>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-5-yes" name="q-5" type="radio" value="true">
+          <label class="govuk-label govuk-radios__label" for="q-5-yes">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="q-5-no" name="q-5" type="radio" value="false">
+          <label class="govuk-label govuk-radios__label" for="q-5-no">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </div>
+    </form>
+  </div>
+  {% endblock %}

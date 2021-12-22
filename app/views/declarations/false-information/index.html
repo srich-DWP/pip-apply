@@ -1,0 +1,54 @@
+{% set pageTitle = "Does your condition affect you talking, listening and understanding?" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/declarations/false-information/index-answer" method="post" novalidate>
+
+      <span class="govuk-caption-l">Declarations</span>
+      <h1 class="govuk-heading-l">
+        False or incomplete information
+      </h1>
+      <p>If your organisation gives false or incomplete information to obtain a grant or uses funds for a purpose not stated in the application, you risk prosecution (under but not limited to the Bribery Act 2010, Fraud Act 2006 and anti-money laundering regulations). In such circumstances, any funding provided may be repayable and future payments stopped.</p>
+
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="false-info" name="falseinformation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="false-info">
+                I have read and understand the statement above
+              </label>
+            </div>
+      </div>
+<br>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "declarations/false-information/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

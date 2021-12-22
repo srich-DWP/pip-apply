@@ -1,0 +1,56 @@
+{% set pageTitle = "Page title" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="/project-details/timeline/check" method="post" novalidate>
+      <span class="govuk-caption-l">Project details - Outcomes</span>
+      <h1 class="govuk-heading-l">What are your project outcomes?</h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="milestone-hint">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half govuk-form-group">
+              <div id="event-name-hint" class="govuk-hint">
+                By outcomes, we mean the changes created by your project that lead to improvements for beneficiaries and which define success.
+              </div>
+              <label class="govuk-label" for="milestone">
+                Outcomes
+              </label>
+              <input class="govuk-input" id="staffing" name="milestone"  value="{{ data['milestone'] }}"type="text" autocomplete="text">
+            </div>
+        </fieldset>
+      </div>
+        <p><a class="govuk-link" href="#">Add outcome</a></p>
+<br>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "project-details/timeline/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

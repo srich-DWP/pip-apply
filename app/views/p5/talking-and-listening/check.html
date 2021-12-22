@@ -1,6 +1,6 @@
-{% set pageTitle = "Check your answers: talking and listening" %}
+{% set pageTitle = "Check your answers: declaration" %}
 
-{% extends "layout-p5.html" %}
+{% extends "layout-account.html" %}
 
 {% block pageTitle %}
   {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
@@ -17,7 +17,7 @@
 
     <form id="form" method="post" action="/p5/list">
 
-      <h1 class="govuk-heading-l">Check your answers: talking, listening and understanding</h1>
+      <h1 class="govuk-heading-l">Declaration</h1>
 
       {% if data['talkingandlistening-question'] === 'Yes' %}
 
@@ -25,7 +25,7 @@
           rows: [
             {
               key: {
-                text: "Does your condition affect you talking, listening and understanding?"
+                text: "Declaration"
               },
               value: {
                 text: data['talkingandlistening-question']
@@ -35,7 +35,7 @@
                   {
                     href: "/p5/talking-and-listening/",
                     text: "Change",
-                    visuallyHiddenText: " your answer to whether your condition affect you talking, listening and understanding"
+                    visuallyHiddenText: " your answer to declaration"
                   }
                 ]
               }
@@ -66,7 +66,7 @@
           rows: [
             {
               key: {
-                text: "Does your condition affect you talking, listening and understanding?"
+                text: "False or incomplete information"
               },
               value: {
                 text: data['talkingandlistening-question']

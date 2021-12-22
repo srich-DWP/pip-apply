@@ -1,0 +1,68 @@
+{% set pageTitle = "Page title" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form action="/project-details/timeline/outcomes" method="post" novalidate>
+      <span class="govuk-caption-l">Project details - Milestones</span>
+      <h1 class="govuk-heading-l">What are your project milestones and when do you expect to achieve them?</h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="milestone-hint">
+          <div id="event-name-hint" class="govuk-hint">
+            By milestones, we mean the points in your project that signify a change or stage of development when delivering your project.
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half govuk-form-group">
+              <label class="govuk-label" for="milestone">
+                Milestone
+              </label>
+              <input class="govuk-input" id="staffing" name="milestone"  value="{{ data['milestone'] }}"type="text" autocomplete="text">
+            </div>
+            <div class="govuk-date-input__item">
+               <div class="govuk-form-group">
+                 <label class="govuk-label govuk-date-input__label" for="milestone-month">
+                   Month
+                 </label>
+                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="milestone-month" name="milestone-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+             </div>
+             <div class="govuk-date-input__item">
+               <div class="govuk-form-group">
+                 <label class="govuk-label govuk-date-input__label" for="milestone-year">
+                   Year
+                 </label>
+                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="milestone-year" name="milestone-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+             </div>
+        </fieldset>
+        <p><a class="govuk-link" href="#">Add milestone</a></p>
+      </div>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "project-details/timeline/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

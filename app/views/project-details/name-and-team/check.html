@@ -1,0 +1,93 @@
+{% set pageTitle = "Check your answers: talking and listening" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers - Project details</h1>
+
+      {% if data['nameandteam-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Project details"
+              },
+              value: {
+                text: "data['nameandteam-question']"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/project-details/name-and-team/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to name and team"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
+              },
+              value: {
+                html: data['nameandteam-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/project-details/name-and-team/details",
+                    text: "Change",
+                    visuallyHiddenText: " Name and team"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "This is the project name"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/project-details/name-and-team/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to what's your project name?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?nameandteam=completed" class="govuk-button">Save and return to application overview</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

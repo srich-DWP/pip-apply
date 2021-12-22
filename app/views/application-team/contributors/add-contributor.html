@@ -1,0 +1,70 @@
+{% set pageTitle = "Does your condition affect you talking, listening and understanding?" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+  {% include "p5/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/application-team/contributors/index-answer" method="post" novalidate>
+
+      <span class="govuk-caption-l">Application team</span>
+      <h1 class="govuk-heading-l">
+        Contributors
+      </h1>
+      <p>The lead contact from the lead applicant is the default contributor. A contributor can access, add, edit and delete content in each application question.</p>
+      <p>Joe Blogggs - Bid Writer (Lead contact) - <a href="">joe@bloggs.com</a></p>
+      <p><a href="/application-team/contributors/add-contributor">Add a contributor</a></p>
+
+      <div>
+            <div>
+              <label class="govuk-label" for="event-name">
+                  Contributor full name
+              </label>
+              <input class="govuk-input" id="name" name="team-member" type="text" value="">
+            </div>
+      </div>
+      <br>
+      <br>
+      <div>
+            <div>
+              <label class="govuk-label" for="event-name">
+                  Contributor email
+              </label>
+              <input class="govuk-input" id="name" name="team-member" type="text" value="">
+            </div>
+      </div>
+      <br>
+      <br>
+      <div>
+            <div>
+              <label class="govuk-label" for="event-name">
+                  Contributor Organisation role
+              </label>
+              <input class="govuk-input govuk-input--width-20" id="name" name="team-member" type="text" value="">
+            </div>
+      </div>
+
+
+<br>
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "application-team/contributors/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

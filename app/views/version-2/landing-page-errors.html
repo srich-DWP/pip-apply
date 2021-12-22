@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Landing page
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  {% endblock %}
+
+  {% block content %}
+  {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select start an application or return to an application",
+        href: "#email"
+      }
+    ]
+  }) }}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/docs/examples/branching" method="post" novalidate>
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What do you want to do?
+          </h1>
+        </legend>
+
+        <span id="where-do-you-live-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select start an application or return to an application
+        </span>
+
+        <p>You can start a new application or return to an application you have already started.</p>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="over-18-yes" name="over-18" type="radio" value="true">
+            <label class="govuk-label govuk-radios__label" for="over-18-yes">
+              Start a new application
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="over-18-no" name="over-18" type="radio" value="false">
+            <label class="govuk-label govuk-radios__label" for="over-18-no">
+              Return to an application
+            </label>
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

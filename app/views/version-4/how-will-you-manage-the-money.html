@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How will you manage the money
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a href="#" class="govuk-back-link">Back</a>
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="500">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="word-count">
+              How will you manage the money?
+            </label>
+          </h1>
+          <p>You must tell us how you will:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>make sure financial reports are done on time</li>
+            <li>keep audits of your financial accounts</li>
+          </ul>
+          <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="10" aria-describedby="word-count-info"></textarea>
+        </div>
+
+        <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+          You can enter up to 150 words
+        </div>
+      </div>
+      <div>
+        <a href="how-will-you-manage-the-performance-of-your-project" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

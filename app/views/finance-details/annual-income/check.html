@@ -1,0 +1,93 @@
+{% set pageTitle = "Check your answers: sub-section " %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers - Annual income</h1>
+
+      {% if data['talkingandlistening-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Declaration"
+              },
+              value: {
+                text: data['talkingandlistening-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/finance-details/annual-income/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to false or incomplete information"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
+              },
+              value: {
+                html: data['talkingandlistening-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/finance-details/annual-income/",
+                    text: "Change",
+                    visuallyHiddenText: " GDPR and Freedom of Information Act"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "What is your annual income and expenditure as shown in your most recent audited accounts?"
+            },
+            value: {
+              text: "£100000"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/finance-details/annual-income/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to false or incomplete information declaration?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?annualincome=completed" class="govuk-button">Save and return to application overview</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

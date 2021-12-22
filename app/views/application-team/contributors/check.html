@@ -1,0 +1,127 @@
+{% set pageTitle = "Check your answers: talking and listening" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers - Contributors</h1>
+
+      {% if data['organisations-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Organisational structure"
+              },
+              value: {
+                text: data['organisations-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/application-team/organisations/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to organisational structure"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Organisational structure"
+              },
+              value: {
+                html: data['organisations-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/application-team/organisations/details",
+                    text: "Change",
+                    visuallyHiddenText: " Organisational structure"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Contributor full name"
+            },
+            value: {
+              text: "Joe Bloggs"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/application-team/contributors/add-contributor",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to contributor name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contributor email"
+            },
+            value: {
+              text: "Joe@bloggs.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/application-team/contributors/add-contributor",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to contributor email address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contributor organisation role"
+            },
+            value: {
+              text: "Bid Writer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/application-team/contributors/add-contributor",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to contributor organisation role"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?contributors=completed" class="govuk-button">Save and return to application overview</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

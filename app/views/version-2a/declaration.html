@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Eligibility page
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+          <a href="check-your-answers" class="govuk-back-link">Back</a>
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
+              Declaration
+            </label>
+          </h1>
+          <p>By sending the application you confirm you have the authority to represent the organisation stated in 'Organisation name'.</p>
+          <p>You confirm that:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>the information you've given is complete and correct</li>
+            <li>the organisation meets and will continue to meet all qualifying criteria</li>
+          </ul>
+          <p>If you deliberately give the wrong or incomplete information, or you do not report any changes to obtain and keep a grant, or use funds for a purpose not outlined in this application, you may:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>be prosecuted</li>
+            <li>need to pay back funding</li>
+            <li>have future payments stopped</li>
+          </ul>
+        </div>
+      </div>
+      <br></br>
+      <div>
+        <a href="application-submitted-confirmation" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          I agree - accept and send application
+        </a>
+      </div>
+    </div>
+</div>
+  {% endblock %}

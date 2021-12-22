@@ -1,0 +1,277 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter a breakdown of your project costs
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-form-group">
+    <form action="/finance-details/cost-breakdown/index-answer" method="post" class="form">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Enter a breakdown of your project costs
+        </h1>
+      </legend>
+      <p>Itemise the costs for each financial year of your project.</p>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-m">Item</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-m">Year 1</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-m">Year 2</h2>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <h2 class="govuk-heading-m">Year 3</h2>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter govuk-form-group">
+          <p class="govuk-!-font-size-19 wrapper">Direct staff costs</p>
+        </div>
+        <div class="govuk-grid-column-one-quarter govuk-form-group">
+          <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+        </div>
+        <div class="govuk-grid-column-one-quarter govuk-form-group">
+          <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+        </div>
+        <div class="govuk-grid-column-one-quarter govuk-form-group">
+          <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Premises costs</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Equipment Hire</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Consumables</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Items valued less than £1k</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Audit</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Consultants</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Volunteer expenses</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Marketing and publicity</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Care provider running costs</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Other</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Flat rate indirect costs @ 40%</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-size-19 wrapper">Flat rate indirect costs @ 15%</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-1"  value="{{ data['staffing-1'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-2"  value="{{ data['staffing-2'] }}"type="number" autocomplete="text">
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <input class="govuk-input" id="staffing" name="staffing-3"  value="{{ data['staffing-3'] }}"type="number" autocomplete="text">
+          </div>
+      </div>
+
+      <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p class="govuk-!-font-weight-bold">Total per year</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+             <p class="govuk-!-text-align-right">£100,000</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p>£50,000</p>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-form-group">
+            <p>£10,000</p>
+          </div>
+      </div>
+
+
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxwords="250">
+        <div class="govuk-form-group">
+          <p>Tell us how you have ensured the costings are accurate</p>
+          <textarea class="govuk-textarea govuk-js-character-count" id="word-count" name="word-count" rows="10" aria-describedby="word-count-info"></textarea>
+        </div>
+
+        <div id="word-count-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+          You can enter up to 250 words
+        </div>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+    {% include "finance-details/cost-breakdown/_return-link.html" %}
+
+
+
+  {% endblock %}

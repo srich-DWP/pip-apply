@@ -1,0 +1,50 @@
+{% extends "layout-no-nav.html" %}
+
+{% block pageTitle %}
+  Confirm your organisation's details
+{% endblock %}
+  {% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <a href="#" class="govuk-back-link">Back</a>
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-two-thirds">
+      <span class="govuk-caption-xl">Create an account</span>
+      <h1 class="govuk-heading-l">
+        Confirm your organisation as a lead applicant
+      </h1>
+      <p class="govuk-body">This organisation will be the lead applicant in all applications started from this account.</p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">Organisation type</p>
+      <p>Business</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Organisation names</p>
+      <p>Skills for life</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Organisation registration number</p>
+      <p>09876543</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Registered address</p>
+      <ul class="govuk-list">
+        <li>1 Somewhere Street</li>
+        <li>Leeds</li>
+        <li>England</li>
+        <li>LS1 2AT</li>
+      </ul>
+      <div>
+        <a href="your-details" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </a>
+      </div>
+  </div>
+
+  {% endblock %}

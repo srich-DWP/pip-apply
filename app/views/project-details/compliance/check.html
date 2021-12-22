@@ -1,0 +1,93 @@
+{% set pageTitle = "Check your answers: sub-section " %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers - Compliance</h1>
+
+      {% if data['talkingandlistening-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Declaration"
+              },
+              value: {
+                text: data['talkingandlistening-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to false or incomplete information"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
+              },
+              value: {
+                html: data['talkingandlistening-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/details",
+                    text: "Change",
+                    visuallyHiddenText: " GDPR and Freedom of Information Act"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "How will you comply with the Equality Act 2010 for the “protected characteristics” of the people delivering your project and its beneficiaries?"
+            },
+            value: {
+              text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit leo blandit, consequat nisl feugiat, facilisis nibh. Suspendisse sit amet sollicitudin diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+            },
+            actions: {
+              items: [
+                {
+                  href: "/project-details/compliance/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to false or incomplete information declaration?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?compliance=completed" class="govuk-button">Save and return to application overview</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

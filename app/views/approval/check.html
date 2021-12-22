@@ -1,0 +1,128 @@
+{% set pageTitle = "Check your answers: sub-section " %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/version-4/application-submitted">
+
+      <h1 class="govuk-heading-l">Approval</h1>
+
+      {% if data['talkingandlistening-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Declaration"
+              },
+              value: {
+                text: data['talkingandlistening-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to false or incomplete information"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Difficulties you have with talking, listening and understanding and how you manage them"
+              },
+              value: {
+                html: data['talkingandlistening-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/p5/talking-and-listening/details",
+                    text: "Change",
+                    visuallyHiddenText: " GDPR and Freedom of Information Act"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Full name"
+            },
+            value: {
+              text: "Joe Bloggs"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/approval/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Role in organisation"
+            },
+            value: {
+              text: "Finance Officer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/approval/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to approval role"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              text: "21/01/2022"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/approval/",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to approval date?"
+                }
+              ]
+            }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/version-4/application-submitted" class="govuk-button">Approve and submit application</a>
+      {% include "approval/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

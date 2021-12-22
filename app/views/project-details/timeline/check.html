@@ -1,0 +1,144 @@
+{% set pageTitle = "Check your answers: sub-section " %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <form id="form" method="post" action="/p5/list">
+      <div class="govuk-width-container">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+          <div class="govuk-grid-row">
+            <div>
+              <h1 class="govuk-heading-l">Check your answers - Timeline, milestones and outcomes</h1>
+              <h2 class="govuk-heading-m">Timeline</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project start date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    30 4 2022
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline">
+                      Change<span class="govuk-visually-hidden"> name</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project end date
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    15 11 2023
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline">
+                      Change<span class="govuk-visually-hidden"> date of birth</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Project duration
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    565 months
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Milestones</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Milestone
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This is a milestone<br>
+                    10 2022
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline/milestones">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Milestone
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This is another milestone<br>
+                    12 2022
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline/milestones">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <h2 class="govuk-heading-m">Outcomes</h2>
+              <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Outcome
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This is an outcome
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline/outcomes">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Outcome
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This is another outcome
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline/outcomes">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Tell us how you have your defined these outcomes?
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    This is the answer to the question
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="/project-details/timeline/outcomes">
+                      Change<span class="govuk-visually-hidden"> previous application number</span>
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+              <a href="/p5/list?timeline=completed" class="govuk-button">Save and return to application overview</a>
+            </div>
+          </main>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,144 @@
+{% set pageTitle = "Check your answers: talking and listening" %}
+
+{% extends "layout-account.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p5/_beta-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p5/list">
+
+      <h1 class="govuk-heading-l">Check your answers - Organisational structure</h1>
+
+      {% if data['organisations-question'] === 'Yes' %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Organisational structure"
+              },
+              value: {
+                text: data['organisations-question']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/application-team/organisations/",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to organisational structure"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Organisational structure"
+              },
+              value: {
+                html: data['organisations-details']
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/application-team/organisations/details",
+                    text: "Change",
+                    visuallyHiddenText: " Organisational structure"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      {% else %}
+
+        {{ govukSummaryList({
+          rows: [
+          {
+            key: {
+              text: "Partner organisation name"
+            },
+            value: {
+              text: "The Hummingbird Society"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/application-team/organisations/add-partner",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to organisation name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Partner organisation type"
+            },
+            value: {
+              text: "Business"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/application-team/organisations/add-partner",
+                  text: "Change",
+                  visuallyHiddenText: " your answer to organisation type?"
+                }
+              ]
+            }
+          },
+            {
+              key: {
+                text: "Contact full name"
+              },
+              value: {
+                text: "Joe Bloggs"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "/application-team/organisations/add-partner",
+                    text: "Change",
+                    visuallyHiddenText: " your answer to contact name"
+                  }
+                ]
+              }
+            },
+              {
+                key: {
+                  text: "Contact email"
+                },
+                value: {
+                  text: "joe@bloggs.com"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "/application-team/organisations/add-partner",
+                      text: "Change",
+                      visuallyHiddenText: " your answer to contact email"
+                    }
+                  ]
+                }
+          }
+          ]
+        }) }}
+
+      {% endif %}
+
+      <a href="/p5/list?organisations=completed" class="govuk-button">Save and return to application overview</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

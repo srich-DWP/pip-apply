@@ -1,456 +1,432 @@
-{% extends "layout-p5.html" %}
 
-{% set pageTitle = "Tell us how your health condition or disability affects you" %}
+{% extends "layout-account.html" %}
+
+{% set pageTitle = "Application overview" %}
 
 {% block pageTitle %}
-  {{ pageTitle }} {% include "p5/_page-title-slug.html" %}
+{{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "p5/_beta-banner.html" %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
       <h1 class="govuk-heading-l" style="margin-bottom: 40px;">
-        Tell us how your health condition or disability affects you
+        Application overview
       </h1>
+    </div>
+  </div>
 
-      <p class="govuk-heading">Download and read the instructions <a href="/public/pdfs/pip2-info-booklet-v1.pdf" download>Help with answering questions and providing evidence (PDF)</a></p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Competition name</p>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Application deadline</p>
+    </div>
 
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{ sectionCount }} of 16 sections.</p>
+    <div class="govuk-grid-column-three-quarters">
+      <p class="govuk-body govuk-!-margin-bottom-1">Strengthening employability skills for the over-50s</p>
+      <p class="govuk-body">11:00 am on Wednesday, 28 January 2021</p>
+    </div>
+  </div>
 
+  <hr class="govuk-grid-column-two-thirds">
+  <br>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Application progress</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed {{ sectionCount }} of 14 sections.</p>
+
+      {# Applicatoin team #}
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Tell us about your health
+            <span class="app-task-list__section-number">Application team</span>
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.aboutyourhealth === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health/check">
-                  About your health
+              {% if sectionStatus.organisations === "completed" %}
+                <a class="app-task-list__task-name " href="/application-team/organisations/check">
+                  Organisation structure
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealth">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="organisations">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.aboutyourhealth === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health/condition">
-                  About your health
+              {% elif sectionStatus.organisations === "inprogress" %}
+                <a class="app-task-list__task-name " href="/application-team/organisations">
+                  Organisation structure
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealth">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="organisations">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health/condition">
-                  About your health
+                <a class="app-task-list__task-name " href="/application-team/organisations">
+                  Organisation structure
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealth">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="organisations">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.aboutyourhealthprofessionals === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health-professionals/check">
-                  About your health professionals
+              {% if sectionStatus.contributors === "completed" %}
+                <a class="app-task-list__task-name " href="/application-team/contributors/check">
+                  Contributors
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="aboutyourhealthprofessionals">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="contributors">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.aboutyourhealthprofessionals === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health-professionals">
-                  About your health professionals
+              {% elif sectionStatus.contributors === "inprogress" %}
+                <a class="app-task-list__task-name " href="/application-team/contributors">
+                  Contributors
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="aboutyourhealthprofessionals">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="contributors">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/about-your-health-professionals">
-                  About your health professionals
+                <a class="app-task-list__task-name " href="/application-team/contributors">
+                  Contributors
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="aboutyourhealthprofessionals">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="contributors">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
           </ul>
         </li>
-        {# Daily living activities #}
+        {# Project deails #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> Tell us about your daily living activities
+            <span class="app-task-list__section-number">Project details</span>
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.preparingfood === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/preparing-food/check">
-                  Preparing food
+              {% if sectionStatus.nameandteam === "completed" %}
+                <a class="app-task-list__task-name " href="/project-details/name-and-team/check">
+                  Name
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="preparingfood">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="nameandteam">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.preparingfood === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/preparing-food/">
-                  Preparing food
+              {% elif sectionStatus.nameandteam === "inprogress" %}
+                <a class="app-task-list__task-name " href="/project-details/name-and-team">
+                  Name
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="preparingfood">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="nameandteam">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/preparing-food/">
-                  Preparing food
+                <a class="app-task-list__task-name " href="/project-details/name-and-team">
+                  Name
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="preparingfood">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="nameandteam">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.eatinganddrinking === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/eating-and-drinking/check">
-                  Eating and drinking
+              {% if sectionStatus.description === "completed" %}
+                <a class="app-task-list__task-name " href="/project-details/description/check">
+                  Description
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="eatinganddrinking">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="description">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.eatinganddrinking === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/eating-and-drinking/">
-                  Eating and drinking
+              {% elif sectionStatus.description === "inprogress" %}
+                <a class="app-task-list__task-name " href="/project-details/description">
+                  Description
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="eatinganddrinking">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="description">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/eating-and-drinking/">
-                  Eating and drinking
+                <a class="app-task-list__task-name " href="/project-details/description">
+                  Description
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="eatinganddrinking">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="description">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.managingtreatments === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/managing-treatments/check">
-                  Managing treatments
+              {% if sectionStatus.timeline === "completed" %}
+                <a class="app-task-list__task-name " href="/project-details/timeline/check">
+                  Timeline, milestones and outcomes
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="managingtreatments">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="timeline">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.managingtreatments === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/managing-treatments/">
-                  Managing treatments
+              {% elif sectionStatus.timeline === "inprogress" %}
+                <a class="app-task-list__task-name " href="/project-details/timeline/">
+                  Timeline, milestones and outcomes
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingtreatments">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="timeline">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/managing-treatments/">
-                  Managing treatments
+                <a class="app-task-list__task-name " href="/project-details/timeline/">
+                  Timeline, milestones and outcomes
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingtreatments">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="timeline">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.washingandbathing === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/washing-and-bathing/check">
-                  Washing and bathing
+              {% if sectionStatus.projectmanagement === "completed" %}
+                <a class="app-task-list__task-name " href="/project-details/management/check">
+                  Management
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="washingandbathing">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="projectmanagement">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.washingandbathing === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/washing-and-bathing/">
-                  Washing and bathing
+              {% elif sectionStatus.projectmanagement === "inprogress" %}
+                <a class="app-task-list__task-name " href="/project-details/management/">
+                  Management
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="washingandbathing">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="projectmanagement">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/washing-and-bathing/">
-                  Washing and bathing
+                <a class="app-task-list__task-name " href="/project-details/management/">
+                  Management
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="washingandbathing">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="projectmanagement">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.managingtoiletneeds === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/managing-toilet-needs/check">
-                  Using the toilet and managing incontinence
+              {% if sectionStatus.compliance === "completed" %}
+                <a class="app-task-list__task-name " href="/project-details/compliance/check">
+                  Compliance
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="managingtoiletneeds">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="compliance">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.managingtoiletneeds === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/managing-toilet-needs/">
-                  Using the toilet and managing incontinence
+              {% elif sectionStatus.compliance === "inprogress" %}
+                <a class="app-task-list__task-name " href="/project-details/compliance/">
+                  Compliance
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingtoiletneeds">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p5/managing-toilet-needs/">
-                  Using the toilet and managing incontinence
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingtoiletneeds">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              {% if sectionStatus.dressingandundressing === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/dressing-and-undressing/check">
-                  Dressing and undressing
-                  <span>
-                    <strong class="govuk-tag tag-completed app-task-list__task-completed" id="dressingandundressing">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.dressingandundressing === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/dressing-and-undressing/">
-                  Dressing and undressing
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="dressingandundressing">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="compliance">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/dressing-and-undressing/">
-                  Dressing and undressing
+                <a class="app-task-list__task-name " href="/project-details/compliance/">
+                  Compliance
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="dressingandundressing">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              {% if sectionStatus.talkingandlistening === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/talking-and-listening/check">
-                  Talking, listening and understanding
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="talkingandlistening">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.talkingandlistening === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/talking-and-listening/">
-                  Talking,listening and understanding
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="talkingandlistening">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p5/talking-and-listening/">
-                  Talking,listening and understanding
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="talkingandlistening">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              {% if sectionStatus.reading === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/reading/check">
-                  Reading
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="reading">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.reading === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/reading/">
-                  Reading
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="reading">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p5/reading/">
-                  Reading
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="reading">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              {% if sectionStatus.mixingwithotherpeople === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/mixing-with-other-people/check">
-                  Mixing with other people
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="mixingwithotherpeople">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.mixingwithotherpeople === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/mixing-with-other-people/">
-                  Mixing with other people
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="mixingwithotherpeople">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p5/mixing-with-other-people/">
-                  Mixing with other people
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="mixingwithotherpeople">Not started</strong>
-                  </span>
-                </a>
-              {% endif %}
-            </li>
-            <li class="app-task-list__item">
-              {% if sectionStatus.managingmoney === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/managing-money/check">
-                  Managing money
-                  <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="managingmoney">Completed</strong>
-                  </span>
-                </a>
-              {% elif sectionStatus.managingmoney === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/managing-money/">
-                  Managing money
-                  <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="managingmoney">In progress</strong>
-                  </span>
-                </a>
-              {% else %}
-                <a class="app-task-list__task-name " href="/p5/managing-money/">
-                  Managing money
-                  <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="managingmoney">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="compliance">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
           </ul>
         </li>
-        {# Mobility activities #}
+        {# Finance #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">3. </span> Tell us about your mobility activities
+            <span class="app-task-list__section-number">Finance details</span>
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.planningandfollowingajourney === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/planning-and-following-a-journey/check">
-                  Planning and following a journey
+              {% if sectionStatus.annualincome === "completed" %}
+                <a class="app-task-list__task-name " href="/finance-details/annual-income/check">
+                  Annual income
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="planningandfollowingajourney">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="annualincome">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.planningandfollowingajourney === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/planning-and-following-a-journey/">
-                  Planning and following a journey
+              {% elif sectionStatus.annualincome === "inprogress" %}
+                <a class="app-task-list__task-name " href="/finance-details/annual-income/">
+                  Annual income
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="planningandfollowingajourney">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="annualincome">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/planning-and-following-a-journey/">
-                  Planning and following a journey
+                <a class="app-task-list__task-name " href="/finance-details/annual-income/">
+                  Annual income
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="planningandfollowingajourney">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="annualincome">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
             <li class="app-task-list__item">
-              {% if sectionStatus.movingaround === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/moving-around/check">
-                  Moving around
+              {% if sectionStatus.costbreakdown === "completed" %}
+                <a class="app-task-list__task-name " href="/finance-details/cost-breakdown/check">
+                  Cost breakdown
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="movingaround">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="costbreakdown">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.movingaround === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/moving-around/">
-                  Moving around
+              {% elif sectionStatus.costbreakdown === "inprogress" %}
+                <a class="app-task-list__task-name " href="/finance-details/cost-breakdown/">
+                  Cost breakdown
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="movingaround">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="costbreakdown">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/moving-around/">
-                  Moving around
+                <a class="app-task-list__task-name " href="/finance-details/cost-breakdown/">
+                  Cost breakdown
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="movingaround">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="costbreakdown">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.financemanagement === "completed" %}
+                <a class="app-task-list__task-name " href="/finance-details/management/check">
+                  Management
+                  <span>
+                    <strong class="govuk-tag tag-completed app-task-list__task-completed" id="financemanagement">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.financemanagement === "inprogress" %}
+                <a class="app-task-list__task-name " href="/finance-details/management/">
+                  Management
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="financemanagement">In progress</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/finance-details/management/">
+                  Management
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="financemanagement">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
           </ul>
         </li>
-        {# Additional information #}
+        {# Declarations #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">4. </span> Tell us about anything else
+            <span class="app-task-list__section-number">Declarations</span>
           </h2>
           <ul class="app-task-list__items govuk-!-margin-bottom-7">
             <li class="app-task-list__item">
-              {% if sectionStatus.additionalinformation === "completed" %}
-                <a class="app-task-list__task-name " href="/p5/additional-information/check">
-                  Additional information
+              {% if sectionStatus.evidence === "completed" %}
+                <a class="app-task-list__task-name " href="/declarations/evidence/check">
+                  Evidence
                   <span>
-                    <strong class="govuk-tag app-task-list__task-completed" id="additionalinformation">Completed</strong>
+                    <strong class="govuk-tag app-task-list__task-completed" id="evidence">Completed</strong>
                   </span>
                 </a>
-              {% elif sectionStatus.additionalinformation === "inprogress" %}
-                <a class="app-task-list__task-name " href="/p5/additional-information/">
-                  Additional information
+              {% elif sectionStatus.evidence === "inprogress" %}
+                <a class="app-task-list__task-name " href="/declarations/evidence/">
+                  Evidence
                   <span>
-                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="additionalinformation">In progress</strong>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="evidence">In progress</strong>
                   </span>
                 </a>
               {% else %}
-                <a class="app-task-list__task-name " href="/p5/additional-information/">
-                  Additional information
+                <a class="app-task-list__task-name " href="/declarations/evidence/">
+                  Evidence
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="additionalinformation">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="evidence">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.falseinformation === "completed" %}
+                <a class="app-task-list__task-name " href="/declarations/false-information/check">
+                  False information
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="falseinformation">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.falseinformation === "inprogress" %}
+                <a class="app-task-list__task-name " href="/declarations/false-information/">
+                  False information
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="falseinformation">In progress</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/declarations/false-information/">
+                  False information
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="falseinformation">Not started</strong>
+                  </span>
+                </a>
+              {% endif %}
+            </li>
+            <li class="app-task-list__item">
+              {% if sectionStatus.gdpr === "completed" %}
+                <a class="app-task-list__task-name " href="/declarations/gdpr/check">
+                  GDPR and Freedon of Information
+                  <span>
+                    <strong class="govuk-tag app-task-list__task-completed" id="gdpr">Completed</strong>
+                  </span>
+                </a>
+              {% elif sectionStatus.gdpr === "inprogress" %}
+                <a class="app-task-list__task-name " href="/declarations/gdpr/">
+                  GDPR and Freedon of Information
+                  <span>
+                    <strong class="govuk-tag govuk-tag--blue app-task-list__task-completed" id="gdpr">In progress</strong>
+                  </span>
+                </a>
+              {% else %}
+                <a class="app-task-list__task-name " href="/declarations/gdpr/">
+                  GDPR and Freedon of Information
+                  <span>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="gdpr">Not started</strong>
                   </span>
                 </a>
               {% endif %}
             </li>
           </ul>
         </li>
-        {# Upload supporting evidence and apply #}
+        {# Approval #}
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">5. </span> Upload supporting evidence and apply
+            <span class="app-task-list__section-number">Approval</span>
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               {% if
-                sectionStatus.aboutyourhealth === "completed" and
-                sectionStatus.aboutyourhealthprofessionals === "completed" and
-                sectionStatus.preparingfood === "completed" and
-                sectionStatus.eatinganddrinking === "completed" and
-                sectionStatus.managingtreatments === "completed" and
-                sectionStatus.washingandbathing === "completed" and
-                sectionStatus.managingtoiletneeds === "completed" and
-                sectionStatus.dressingandundressing === "completed" and
-                sectionStatus.talkingandlistening === "completed" and
-                sectionStatus.reading === "completed" and
-                sectionStatus.mixingwithotherpeople === "completed" and
-                sectionStatus.managingmoney === "completed" and
-                sectionStatus.planningandfollowingajourney === "completed" and
-                sectionStatus.movingaround === "completed" and
-                sectionStatus.additionalinformation === "completed"
+                sectionStatus.organisations === "completed" and
+                sectionStatus.contributors === "completed" and
+                sectionStatus.nameandteam === "completed" and
+                sectionStatus.description === "completed" and
+                sectionStatus.timeline === "completed" and
+                sectionStatus.projectmanagement === "completed" and
+                sectionStatus.compliance === "completed" and
+                sectionStatus.annualincome === "completed" and
+                sectionStatus.costbreakdown === "completed" and
+                sectionStatus.financemanagement === "completed" and
+                sectionStatus.evidence === "completed" and
+                sectionStatus.falseinformation === "completed" and
+                sectionStatus.gdpr === "completed"
               %}
-                <a class="app-task-list__task-name " href="/p5/supporting-evidence">
-                 Upload supporting evidence and apply
+                <a class="app-task-list__task-name " href="/approval/">
+                 Authority to approve and submit
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Not started</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="approval">In progress</strong>
                   </span>
                 </a>
               {% else %}
                 <span class="app-task-list__task-name">
-                  <span style="width: 70%; display: inline-block;">Submit your application</span>
+                  <span style="width: 70%; display: inline-block;">Authority to approve and submit</span>
                   <span>
-                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="uploadsupportingevidenceandapply">Do this last</strong>
+                    <strong class="govuk-tag govuk-tag--grey app-task-list__task-completed" id="approval">Do this last</strong>
                   </span>
                 </span>
               {% endif %}
@@ -462,7 +438,27 @@
 {#       {% include "p5/_prototype-shortcuts.html" %} #}
 
     </div>{# /govuk-grid-column-two-thirds #}
-
   </div>{# /govuk-grid-row #}
 
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/prototype-admin/clear-data",
+          text: "Clear data"
+        },
+        {
+          href: "/docs/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/docs/privacy-policy",
+          text: "Privacy policy"
+        }
+      ]
+    }
+  }) }}
 {% endblock %}

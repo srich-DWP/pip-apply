@@ -1,0 +1,67 @@
+{% set pageTitle = "Page title" %}
+
+{% extends "layout-no-nav.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <h3 class="moj-side-navigation__title">Competition details</h3>
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item">
+          <a href="/scratchpad/summary">Summary</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/scratchpad/eligibility">Eligibility</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/scratchpad/scope">Scope</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/scratchpad/dates">Dates</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/scratchpad/how-to-apply">How to apply</a>
+        </li>
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="/scratchpad/supporting-information" aria-current="location">Supporting information</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <br>
+    <h1 class="govuk-heading-m">Strengthening employment skills for the over-50s</h1>
+    <p>Supporting information paragraph</p>
+  </div>
+</div>
+
+{% endblock %}

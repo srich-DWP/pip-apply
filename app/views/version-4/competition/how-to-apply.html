@@ -1,0 +1,86 @@
+{% set pageTitle = "Page title" %}
+
+{% extends "layout-no-nav.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "version-4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Competition</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <nav class="moj-side-navigation" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+
+        <li class="moj-side-navigation__item">
+          <a href="/version-4/competition/summary">Summary</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/version-4/competition/eligibility">Eligibility</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/version-4/competition/scope">Scope</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/version-4/competition/dates">Dates</a>
+        </li>
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+          <a href="/version-4/competition/how-to-apply" aria-current="location">How to apply</a>
+        </li>
+
+        <li class="moj-side-navigation__item">
+          <a href="/version-4/competition/supporting-information">Supporting information</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    <br>
+    <h2 class="govuk-heading-m">Strengthening employment skills for the over-50s</h2>
+    <p>Organisations can apply for £600,000 to something very short about the project that adds to what the title has already informed the applicant about</p>
+    <p class="govuk-body govuk-!-font-weight-bold govuk-body govuk-!-margin-bottom-1">Competition opens: <span class="govuk-body govuk-!-font-weight-regular"> 29 December 2021 at 12:00</span></p>
+    <p class="govuk-body govuk-!-font-weight-bold">Competition closes: <span class="govuk-body govuk-!-font-weight-regular"> 28 January 2022 at 12:00</span></p>
+  </div>
+<hr>
+
+  <div class="govuk-grid-column-three-quarters">
+    <br>
+    <h2 class="govuk-heading-s">Before you start</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <h2 class="govuk-heading-s">What we will ask you</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <h2 class="govuk-heading-s">What happens next</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+
+</div>
+
+{% endblock %}
