@@ -1,0 +1,64 @@
+{% set pageTitle = "Does your condition affect you reading?" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p3/reading/index-answer" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "reading-question",
+        fieldset: {
+          legend: {
+            text: "Does your condition affect you reading?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: '
+          <p>This means doing the following in your own language:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>reading written words and numbers both indoors and outdoors</li>
+            <li>reading signs and symbols (for example, a green exit sign on a door) </li>
+          </ul>
+          <p>For this question, reading braille does not count as reading.</p>
+          '
+        },
+        items: [
+          {
+            value: "No, never",
+            text: "No, never",
+            checked: checked("reading-question", "No, never")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("reading-question", "Yes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p3/reading/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

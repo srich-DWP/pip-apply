@@ -1,0 +1,60 @@
+{% extends "layout-p1.html" %}
+
+{% block pageTitle %}
+  Apply for Personal Independence Payment (PIP)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p1/managing-treatments/help" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "aid",
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Do you need to use an aid or appliance to monitor your health conditions, take medication or manage home treatments?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '
+            <p class="govuk-!-margin-top-2">For example, using a Dosette Box for tablets.</p>
+            '
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "sometimes",
+              text: "Sometimes"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      {% include "p1/managing-treatments/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

@@ -1,0 +1,120 @@
+{% set status = "signed-out" %}
+{% set pageTitle = "Cookies" %}
+
+{% extends "layout-p4.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+  {% include "p4/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Details about cookies on this service
+      </h1>
+
+      <p>We need to use some essential cookies to make the ‘Apply for Personal Independence Payment’ website work.</p>
+
+      <h2 class="govuk-heading-m">Cookies that help performance</h2>
+
+        <p>We use some cookies to help make sure this website works consistently for everyone.</p>
+
+        <table class="govuk-table">
+
+          <caption class="govuk-table__caption">Perfomance cookies</caption>
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+
+              <th scope="col" class="govuk-table__header">Name</th>
+
+              <th scope="col" class="govuk-table__header">Purpose</th>
+
+              <th scope="col" class="govuk-table__header">Expires</th>
+
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">routing_stage</td>
+
+                  <td class="govuk-table__cell">Cookies help us to allocate server traffic to make the user experience as smooth as possible.</td>
+
+                  <td class="govuk-table__cell">60 minutes</td>
+
+                </tr>
+
+                <tr class="govuk-table__row">
+
+                  <td class="govuk-table__cell">routing_stage.sig</td>
+
+                  <td class="govuk-table__cell">Cookies help us to allocate server traffic to make the user experience as smooth as possible.</td>
+
+                  <td class="govuk-table__cell">60 minutes</td>
+
+                </tr>
+
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Cookies that help keep your information secure</h2>
+
+          <p>We use session cookies to keep your information secure as you move back and forward through the website.</p>
+
+          <p>These cookies are automatically removed from your computer when you complete your application or if you:</p>
+
+          <ul class="govuk-list govuk-list--bullet">
+
+            <li>don’t do anything for 60 minutes</li>
+            <li>close your browser</li>
+            <li>switch off your computer</li>
+
+          </ul>
+
+          <table class="govuk-table">
+
+            <caption class="govuk-table__caption">Security cookies</caption>
+
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+
+                <th scope="col" class="govuk-table__header">Name</th>
+
+                <th scope="col" class="govuk-table__header">Purpose</th>
+
+                <th scope="col" class="govuk-table__header">Expires</th>
+
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+
+                    <td class="govuk-table__cell">SESSIONID</td>
+
+                    <td class="govuk-table__cell">To remember where you are in the application and your previous answers so you can move back and forward through the website.</td>
+
+                    <td class="govuk-table__cell">60 minutes or when you close your browser</td>
+
+                  </tr>
+
+            </tbody>
+          </table>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

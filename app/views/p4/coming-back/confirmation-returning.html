@@ -1,0 +1,55 @@
+{% extends "layout-signed-out-p4.html" %}
+
+{% block beforeContent %}
+  {% include "p4/_beta-banner.html" %}
+{% endblock %}
+
+
+{% set pageTitle = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">If you need to upload more supporting evidence</h2>
+
+      <p><a href="/p4/sign-in/sign-in">Sign in</a> if you need to upload any more evidence that might support your application.</p>
+
+      <p>You might find it useful to bookmark the sign in page in your internet browser.</p>
+
+      <p>You will need your email address, mobile phone and password to sign in.</p>
+
+      <p>You will not need to answer the questions about your daily living activities or mobility again.</p>
+
+      <h2 class="govuk-heading-m">Give feedback</h2>
+
+      <p><a href="/p4/feedback/feedback">What did you think of this service?</a> (takes 30 seconds)</p>
+
+      <p><a class="govuk-link"href="https://getinvolved.dwp.gov.uk/digital/626599b1" target="_blank">Volunteer to take part in research about PIP (opens in new tab)</a></p>
+
+
+      <p>It’s now safe to close this window.</p>
+
+
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

@@ -25,6 +25,5 @@ module.exports = {
     require('./routes/r1.js')(app);
     require('./routes/r2.js')(app);
     require('./routes/r3.js')(app);
-    require('./routes/j1.js')(app);
   }
 }

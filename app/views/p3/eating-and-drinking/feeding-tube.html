@@ -1,0 +1,59 @@
+{% set pageTitle = "Do you use a feeding tube or similar device to eat or drink?" %}
+
+{% extends "layout-p3.html" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p3/_beta-banner.html" %}
+  {% include "p3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/p3/eating-and-drinking/details" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "eatinganddrinking-feedingtube",
+        fieldset: {
+          legend: {
+            text: "Do you use a feeding tube or similar device to eat or drink?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "No",
+            text: "No",
+            checked: checked("eatinganddrinking-feedingtube", "No")
+          },
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("eatinganddrinking-feedingtube", "Yes")
+          },
+          {
+            value: "Sometimes",
+            text: "Sometimes",
+            checked: checked("eatinganddrinking-feedingtube", "Sometimes")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+
+    {% include "p3/preparing-food/_return-link.html" %}
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

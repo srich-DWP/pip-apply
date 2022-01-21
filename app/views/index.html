@@ -1,128 +1,40 @@
-{% extends "layout-no-nav.html" %}
+{% extends "layout_master.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  HTML PIP form
 {% endblock %}
 
-{% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full-width">
-    <h1 class="govuk-heading-l">
-      UKSPF (Employment) Prototype
-    </h1>
-    <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Version history</caption>
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header app-custom-class">Version</th>
-      <th scope="col" class="govuk-table__header app-custom-class">Description</th>
-      <th scope="col" class="govuk-table__header app-custom-class">Tested</th>
-      <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-quarter">Link</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">v4</th>
-      <td class="govuk-table__cell govuk-!-width-one-half">
-          <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Forgotten password
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p>Users can now reset their password if they have forgotten it.</p>
-              </div>
-            </details>
-            <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Manual capture of organisation details
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p>Replaced companies house and charity commission API lookup with a manual data entry flow.</p>
-                </div>
-              </details>
-              <details class="govuk-details" data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Application questions
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    <p>Application questions have been broken down further to improve the quality of the answers submitted.</p>
-                  </div>
-                </details>
-                <details class="govuk-details" data-module="govuk-details">
-                    <summary class="govuk-details__summary">
-                      <span class="govuk-details__summary-text">
-                        Emails
-                      </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                      <p><a href="version-4/reset-password-email">Reset password email</a></p>
-                      <p><a href="version-4/verify-account-email">Verify account email</a></p>
-                    </div>
-                  </details>
-      </td>
-      <td class="govuk-table__cell">tbc</td>
-      <td class="govuk-table__cell"><a href="/version-4/start" class="govuk-link govuk-!-font-size-19">Version 4</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">v3</th>
-      <td class="govuk-table__cell govuk-!-width-one-half">
-        <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Register for UKSPF
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              Users are now required to answer eligibility questions before they can continue on to create an account.
-            </div>
-          </details>
-      </td>
-      <td class="govuk-table__cell">22 Nov 2021</td>
-      <td class="govuk-table__cell"><a href="/version-3/start" class="govuk-link govuk-!-font-size-19">Version 3</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">v2</th>
-      <td class="govuk-table__cell">
-        <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Save and return
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              Users can save their application data and return to it later.
-            </div>
-          </details>
-      </td>
-      <td class="govuk-table__cell">7 to 20 Oct 2021</td>
-      <td class="govuk-table__cell"><a href="/version-2a/start" class="govuk-link govuk-!-font-size-19">Version 2</a></td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">v1</th>
-      <td class="govuk-table__cell">
-        <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Complete application in a single session
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              Users are required to answer all application questions and submit the application in a single session. If the session drops, for whatever reason, the data the user has entered will be lost.
-            </div>
-          </details>
-      </td>
-      <td class="govuk-table__cell">8 Jul to 13 Sept 2021</td>
-      <td class="govuk-table__cell"><a href="/version-1/start" class="govuk-link govuk-!-font-size-19">Version 1</a></td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
+{# {% block header %}
+{% endblock %} #}
 
+{% block beforeContent %}
+{% endblock %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-half">
+      <a href="proto-index" class="tile tile--grey">
+        <div class="tile__contents">
+          <h2 class="tile__title">Rough prototypes and exploration</h2>
+        </div>
+      </a>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+      <a href="ref-index" class="tile tile--grey">
+        <div class="tile__contents">
+          <h2 class="tile__title">Reference screens to support JIRA stories</h2>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}
 {% endblock %}

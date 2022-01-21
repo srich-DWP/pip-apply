@@ -1,0 +1,63 @@
+{% extends "layout-signed-out-p1.html" %}
+
+{% block pageTitle %}
+  We’ve saved your application
+{% endblock %}
+
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+{#   {% include "p1/_back-link.html" %} #}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p1/start/code-text" method="post" novalidate>
+
+        <h1 class="govuk-heading-l">Sign in</h1>
+
+        {{ govukInput({
+          label: {
+            text: "Your email address",
+            isPageHeading: false
+          },
+          hint: {
+            text: "The email address your invite was sent to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Your password",
+            isPageHeading: false
+          },
+          classes: "govuk-input--width-10",
+          id: "password",
+          name: "password",
+          type: "password",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        <a href="/p1/start/code-text?next=list" class="govuk-button" data-module="govuk-button">Continue</a>
+
+        <p><a href="#">Forgotten your password?</a></p>
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

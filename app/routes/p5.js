@@ -23,22 +23,22 @@ module.exports = function (app) {
       // console.log('no session');
       req.session.sectionStatus = {
         // cwyn: 'complete',
-
-// ukspf variables
-        nameandteam: undefined,
-        description: undefined,
-        timeline: undefined,
-        projectmanagement: undefined,
-        compliance: undefined,
-        annualincome: undefined,
-        costbreakdown: undefined,
-        financemanagement: undefined,
-        evidence: undefined,
-        falseinformation: undefined,
-        gdpr: undefined,
-        approval: undefined,
-        organisations: undefined,
-        contributors: undefined,
+        aboutyourhealth: undefined,
+        aboutyourhealthprofessionals: undefined,
+        preparingfood: undefined,
+        eatinganddrinking: undefined,
+        managingtreatments: undefined,
+        washingandbathing: undefined,
+        managingtoiletneeds: undefined,
+        dressingandundressing: undefined,
+        talkingandlistening: undefined,
+        reading: undefined,
+        mixingwithotherpeople: undefined,
+        managingmoney: undefined,
+        planningandfollowingajourney: undefined,
+        movingaround: undefined,
+        additionalinformation: undefined,
+        supportingevidence: undefined,
       }
     }
 
@@ -46,182 +46,170 @@ module.exports = function (app) {
       req.session.sectionCount = 0;
     }
 
-    // organisations
-    if (req.query.organisations == 'completed') {
-      if (req.session.sectionStatus.organisations != 'completed') {
+    // aboutyourhealth
+    if (req.query.aboutyourhealth == 'completed') {
+      if (req.session.sectionStatus.aboutyourhealth != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.organisations = req.query.organisations
+      req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
     };
-    if (req.query.organisations == 'inprogress') {
-      req.session.sectionStatus.organisations = req.query.organisations
+    if (req.query.aboutyourhealth == 'inprogress') {
+      req.session.sectionStatus.aboutyourhealth = req.query.aboutyourhealth
     };
 
-    // contributors
-    if (req.query.contributors == 'completed') {
-      if (req.session.sectionStatus.contributors != 'completed') {
+    // aboutyourhealthprofessionals
+    if (req.query.aboutyourhealthprofessionals == 'completed') {
+      if (req.session.sectionStatus.aboutyourhealthprofessionals != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.contributors = req.query.contributors
+      req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
     };
-    if (req.query.contributors == 'inprogress') {
-      req.session.sectionStatus.contributors = req.query.contributors
+    if (req.query.aboutyourhealthprofessionals == 'inprogress') {
+      req.session.sectionStatus.aboutyourhealthprofessionals = req.query.aboutyourhealthprofessionals
     };
 
-    // nameandteam
-    if (req.query.nameandteam == 'completed') {
-      if (req.session.sectionStatus.nameandteam != 'completed') {
+    // preparingfood
+    if (req.query.preparingfood == 'completed') {
+      if (req.session.sectionStatus.preparingfood != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.nameandteam = req.query.nameandteam
+      req.session.sectionStatus.preparingfood = req.query.preparingfood
     };
-    if (req.query.nameandteam == 'inprogress') {
-      req.session.sectionStatus.nameandteam = req.query.nameandteam
+    if (req.query.preparingfood == 'inprogress') {
+      req.session.sectionStatus.preparingfood = req.query.preparingfood
     };
 
-    // description
-    if (req.query.description == 'completed') {
-      if (req.session.sectionStatus.description != 'completed') {
+    // eatinganddrinking
+    if (req.query.eatinganddrinking == 'completed') {
+      if (req.session.sectionStatus.eatinganddrinking != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.description = req.query.description
+      req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
     };
-    if (req.query.description == 'inprogress') {
-      req.session.sectionStatus.description = req.query.description
+    if (req.query.eatinganddrinking == 'inprogress') {
+      req.session.sectionStatus.eatinganddrinking = req.query.eatinganddrinking
     };
 
-    // timeline
-    if (req.query.timeline == 'completed') {
-      if (req.session.sectionStatus.timeline != 'completed') {
+    // managingtreatments
+    if (req.query.managingtreatments == 'completed') {
+      if (req.session.sectionStatus.managingtreatments != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.timeline = req.query.timeline
+      req.session.sectionStatus.managingtreatments = req.query.managingtreatments
     };
-    if (req.query.timeline == 'inprogress') {
-      req.session.sectionStatus.timeline = req.query.timeline
+    if (req.query.managingtreatments == 'inprogress') {
+      req.session.sectionStatus.managingtreatments = req.query.managingtreatments
     };
 
-    // milestones
-    if (req.query.milestones == 'completed') {
-      if (req.session.sectionStatus.timeline != 'completed') {
+    // washingandbathing
+    if (req.query.washingandbathing == 'completed') {
+      if (req.session.sectionStatus.washingandbathing != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.timeline = req.query.timeline
+      req.session.sectionStatus.washingandbathing = req.query.washingandbathing
     };
-    if (req.query.timeline == 'inprogress') {
-      req.session.sectionStatus.timeline = req.query.timeline
+    if (req.query.washingandbathing == 'inprogress') {
+      req.session.sectionStatus.washingandbathing = req.query.washingandbathing
     };
 
-    // outcomes
-    if (req.query.outcomes == 'completed') {
-      if (req.session.sectionStatus.timeline != 'completed') {
+    // managingtoiletneeds
+    if (req.query.managingtoiletneeds == 'completed') {
+      if (req.session.sectionStatus.managingtoiletneeds != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.timeline = req.query.timeline
+      req.session.sectionStatus.managingtoiletneeds = req.query.managingtoiletneeds
     };
-    if (req.query.timeline == 'inprogress') {
-      req.session.sectionStatus.timeline = req.query.timeline
+    if (req.query.managingtoiletneeds == 'inprogress') {
+      req.session.sectionStatus.managingtoiletneeds = req.query.managingtoiletneeds
     };
 
-    // projectmanagement
-    if (req.query.projectmanagement == 'completed') {
-      if (req.session.sectionStatus.projectmanagement != 'completed') {
+    // dressingandundressing
+    if (req.query.dressingandundressing == 'completed') {
+      if (req.session.sectionStatus.dressingandundressing != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.projectmanagement = req.query.projectmanagement
+      req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
     };
-    if (req.query.projectmanagement == 'inprogress') {
-      req.session.sectionStatus.projectmanagement = req.query.projectmanagement
+    if (req.query.dressingandundressing == 'inprogress') {
+      req.session.sectionStatus.dressingandundressing = req.query.dressingandundressing
     };
 
-    // compliance
-    if (req.query.compliance == 'completed') {
-      if (req.session.sectionStatus.compliance != 'completed') {
+    // talkingandlistening
+    if (req.query.talkingandlistening == 'completed') {
+      if (req.session.sectionStatus.talkingandlistening != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.compliance = req.query.compliance
+      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
     };
-    if (req.query.compliance == 'inprogress') {
-      req.session.sectionStatus.compliance = req.query.compliance
+    if (req.query.talkingandlistening == 'inprogress') {
+      req.session.sectionStatus.talkingandlistening = req.query.talkingandlistening
     };
 
-    // annualincome
-    if (req.query.annualincome == 'completed') {
-      if (req.session.sectionStatus.annualincome != 'completed') {
+    // reading
+    if (req.query.reading == 'completed') {
+      if (req.session.sectionStatus.reading != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.annualincome = req.query.annualincome
+      req.session.sectionStatus.reading = req.query.reading
     };
-    if (req.query.annualincome == 'inprogress') {
-      req.session.sectionStatus.annualincome = req.query.annualincome
+    if (req.query.reading == 'inprogress') {
+      req.session.sectionStatus.reading = req.query.reading
     };
 
-    // costbreakdown
-    if (req.query.costbreakdown == 'completed') {
-      if (req.session.sectionStatus.costbreakdown != 'completed') {
+    // mixingwithotherpeople
+    if (req.query.mixingwithotherpeople == 'completed') {
+      if (req.session.sectionStatus.mixingwithotherpeople != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.costbreakdown = req.query.costbreakdown
+      req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
     };
-    if (req.query.costbreakdown == 'inprogress') {
-      req.session.sectionStatus.costbreakdown = req.query.costbreakdown
+    if (req.query.mixingwithotherpeople == 'inprogress') {
+      req.session.sectionStatus.mixingwithotherpeople = req.query.mixingwithotherpeople
     };
 
-    // financemanagement
-    if (req.query.financemanagement == 'completed') {
-      if (req.session.sectionStatus.financemanagement != 'completed') {
+    // managingmoney
+    if (req.query.managingmoney == 'completed') {
+      if (req.session.sectionStatus.managingmoney != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.financemanagement = req.query.financemanagement
+      req.session.sectionStatus.managingmoney = req.query.managingmoney
     };
-    if (req.query.financemanagement == 'inprogress') {
-      req.session.sectionStatus.financemanagement = req.query.financemanagement
+    if (req.query.managingmoney == 'inprogress') {
+      req.session.sectionStatus.managingmoney = req.query.managingmoney
     };
 
-    // evidence
-    if (req.query.evidence == 'completed') {
-      if (req.session.sectionStatus.evidence != 'completed') {
+    // planningandfollowingajourney
+    if (req.query.planningandfollowingajourney == 'completed') {
+      if (req.session.sectionStatus.planningandfollowingajourney != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.evidence = req.query.evidence
+      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
     };
-    if (req.query.evidence == 'inprogress') {
-      req.session.sectionStatus.evidence = req.query.evidence
+    if (req.query.planningandfollowingajourney == 'inprogress') {
+      req.session.sectionStatus.planningandfollowingajourney = req.query.planningandfollowingajourney
     };
 
-    // falseinformation
-    if (req.query.falseinformation == 'completed') {
-      if (req.session.sectionStatus.falseinformation != 'completed') {
+    // movingaround
+    if (req.query.movingaround == 'completed') {
+      if (req.session.sectionStatus.movingaround != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.falseinformation = req.query.falseinformation
+      req.session.sectionStatus.movingaround = req.query.movingaround
     };
-    if (req.query.falseinformation == 'inprogress') {
-      req.session.sectionStatus.falseinformation = req.query.falseinformation
+    if (req.query.movingaround == 'inprogress') {
+      req.session.sectionStatus.movingaround = req.query.movingaround
     };
 
-    // gdpr
-    if (req.query.gdpr == 'completed') {
-      if (req.session.sectionStatus.gdpr != 'completed') {
+    // additionalinformation
+    if (req.query.additionalinformation == 'completed') {
+      if (req.session.sectionStatus.additionalinformation != 'completed') {
         req.session.sectionCount = (req.session.sectionCount + 1);
       }
-      req.session.sectionStatus.gdpr = req.query.gdpr
+      req.session.sectionStatus.additionalinformation = req.query.additionalinformation
     };
-    if (req.query.gdpr == 'inprogress') {
-      req.session.sectionStatus.gdpr = req.query.gdpr
+    if (req.query.additionalinformation == 'inprogress') {
+      req.session.sectionStatus.additionalinformation = req.query.additionalinformation
     };
-
-    // approval
-    if (req.query.approval == 'completed') {
-      if (req.session.sectionStatus.approval != 'completed') {
-        req.session.sectionCount = (req.session.sectionCount + 1);
-      }
-      req.session.sectionStatus.approval = req.query.approval
-    };
-    if (req.query.approval == 'inprogress') {
-      req.session.sectionStatus.approval = req.query.approval
-    };
-
 
     // if (req.query.supportingevidence) {
     //   if (req.session.sectionStatus.supportingevidence == undefined) {
@@ -240,87 +228,241 @@ module.exports = function (app) {
     res.render('p5/application-cancelled')
   })
 
+
   // Routes
 
-  // Organisations
-  app.get('/application-team/organisations/index-answer', function(req, res) {
-        res.redirect('/application-team/organisations/check')
+  app.get('/p5/sign-in/answer-choice', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'pdf') {
+        res.redirect('tactical-pdf')
+      } else {
+        res.redirect('intro-question')
+      }
   });
 
-  // Contributors
-  app.get('/application-team/contributors/index-answer', function(req, res) {
-        res.redirect('/application-team/contributors/check')
+  app.get('/p5/sign-in/intro-question-answer', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'no') {
+        res.redirect('register-start')
+      } else {
+        res.redirect('sign-in')
+      }
+  });
+
+  app.get('/p5/about-your-health/another-answer', function(req, res) {
+
+    let condition2 = req.session.data['condition2']
+
+    if (condition2 === 'Yes') {
+        res.redirect('condition-2')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p5/about-your-health/another-2-answer', function(req, res) {
+
+    let question = req.session.data['condition3']
+
+    if (question === 'Yes') {
+        res.redirect('condition-3')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p5/about-your-health-professionals/q-health-professional-answer', function(req, res) {
+
+    let question = req.session.data['question']
+
+    if (question === 'yes') {
+        res.redirect('health-professional')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p5/about-your-health-professionals/another-answer', function(req, res) {
+
+    let professional2 = req.session.data['professional2']
+
+    if (professional2 === 'Yes') {
+        res.redirect('health-professional-2')
+      } else {
+        res.redirect('check')
+      }
+  });
+
+  app.get('/p5/about-your-health-professionals/another-2-answer', function(req, res) {
+
+    let professional3 = req.session.data['professional3']
+
+    if (professional3 === 'Yes') {
+        res.redirect('health-professional-3')
+      } else {
+        res.redirect('check')
+      }
   });
 
 
-  // Name and team
-  app.get('/project-details/name-and-team/index-answer', function(req, res) {
-        res.redirect('/project-details/name-and-team/check')
+  // Preparing food
+
+  app.get('/p5/preparing-food/index-answer', function(req, res) {
+
+    let question = req.session.data['preparingfood-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Timeline
-  app.get('/project-details/timeline/index-answer', function(req, res) {
-        res.redirect('/project-details/milestones')
+  // Eating and drinking
+
+  app.get('/p5/eating-and-drinking/index-answer', function(req, res) {
+
+    let question = req.session.data['eatinganddrinking-question']
+
+    if (question === 'Yes') {
+        res.redirect('feeding-tube')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Project management
-  app.get('/project-details/management/index-answer', function(req, res) {
-        res.redirect('/project-details/management/project-management-page-2')
+  // Managing treatments
+
+  app.get('/p5/managing-treatments/index-answer', function(req, res) {
+
+    let question = req.session.data['managingtreatments-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Compliance
-  app.get('/project-details/compliance/index-answer', function(req, res) {
-        res.redirect('/project-details/compliance/check')
+  // Washing and bathing
+
+  app.get('/p5/washing-and-bathing/index-answer', function(req, res) {
+
+    let question = req.session.data['washingandbathing-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Annual income
-  app.get('/finance-details/annual-income/index-answer', function(req, res) {
-        res.redirect('/finance-details/annual-income/check')
+  // Managing toilet needs
+
+  app.get('/p5/managing-toilet-needs/index-answer', function(req, res) {
+
+    let question = req.session.data['managingtoiletneeds-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Cost breakdown
-  app.get('/finance-details/cost-breakdown/index-answer', function(req, res) {
-        res.redirect('/finance-details/cost-breakdown/check')
+  // Dressing and undressing
+
+  app.get('/p5/dressing-and-undressing/index-answer', function(req, res) {
+
+    let question = req.session.data['dressingandundressing-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Finance Management
-  app.get('/finance-details/management/index-answer', function(req, res) {
-        res.redirect('/finance-details/management/check')
+  // Talking and listening
+
+  app.get('/p5/talking-and-listening/index-answer', function(req, res) {
+
+    let question = req.session.data['talkingandlistening-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Milestones
-  app.get('/project-details/milestones/index-answer', function(req, res) {
-        res.redirect('/project-details/outcomes')
+  // Reading
+
+  app.get('/p5/reading/index-answer', function(req, res) {
+
+    let question = req.session.data['reading-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Outcomes
-  app.get('/project-details/outcomes/index-answer', function(req, res) {
-        res.redirect('/project-details/outcomes/check')
+  // Mixing with other people
+
+  app.get('/p5/mixing-with-other-people/index-answer', function(req, res) {
+
+    let question = req.session.data['mixingwithotherpeople-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Description
-  app.get('/project-details/description/index-answer', function(req, res) {
-        res.redirect('/project-details/description/check')
+  // Managing money
+
+  app.get('/p5/managing-money/index-answer', function(req, res) {
+
+    let question = req.session.data['managingmoney-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // Evidence
-  app.get('/declarations/evidence/index-answer', function(req, res) {
-        res.redirect('/declarations/false-information')
+  // Planning and following a journey
+
+  app.get('/p5/planning-and-following-a-journey/index-answer', function(req, res) {
+
+    let question = req.session.data['planningandfollowingajourney-question']
+
+    if (question === 'Yes') {
+        res.redirect('details')
+      } else {
+        res.redirect('check')
+      }
   });
 
-  // False information
-  app.get('/declarations/false-information/index-answer', function(req, res) {
-        res.redirect('/declarations/gdpr')
-  });
+  // Moving around
 
-  // gdpr
-  app.get('/declarations/gdpr/index-answer', function(req, res) {
-        res.redirect('/declarations/gdpr/check')
-  });
+  app.get('/p5/moving-around/index-answer', function(req, res) {
 
-  // Approval
-  app.get('/approval/index-answer', function(req, res) {
-        res.redirect('/approval/check')
+    let question = req.session.data['movingaround-question']
+
+    if (question === 'Yes') {
+        res.redirect('info')
+      } else {
+        res.redirect('check')
+      }
   });
 
   // Additional information
@@ -348,6 +490,7 @@ module.exports = function (app) {
         res.redirect('confirmation')
       }
   });
+
 
 
   // Supporting evidence

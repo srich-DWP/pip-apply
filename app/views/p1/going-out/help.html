@@ -1,0 +1,69 @@
+{% extends "layout-p1.html" %}
+
+{% block pageTitle %}
+  Apply for Personal Independence Payment (PIP)
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/p1/going-out/unable" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "help",
+          name: "question",
+          fieldset: {
+            legend: {
+              text: "Do you need help getting to somewhere you don’t know well?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            html: '
+            <p class="govuk-!-margin-top-2">By this we mean do you:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>need to be encouraged to go out or have someone with you when going out to reassure you?</li>
+              <li>need help from an assistance dog or specialist aid, such as a white stick?</li>
+              <li>need someone to be with you to keep you safe or stop you getting lost?</li>
+              <li>need help using public transport?</li>
+            </ul>
+            <p>This includes help you have and help you need but don’t get.</p>
+            '
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "sometimes",
+              text: "Sometimes"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      {% include "p1/going-out/_return-link.html" %}
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
+
+

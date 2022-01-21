@@ -1,0 +1,48 @@
+{% extends "layout-signed-out-p3.html" %}
+
+{% set pageTitle = "Information sent" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p3/_page-title-slug.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Information sent"
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p class="govuk-body">We have sent a confirmation email to <strong>email@gmail.com</strong>.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>You might be contacted to arrange a phone consultation with a health professional if more information is needed. </p>
+
+      <p>If you have provided enough information already a consultation might not be needed.</p>
+
+      <p>Use this service again if you need to upload and send more documents.</p>
+
+      <h2 class="govuk-heading-m">Download a copy of your completed form</h2>
+
+      <p>You can download a copy of your completed form using this link: <a href="#">David Smith PIP application.pdf</a></p>
+
+      <h2 class="govuk-heading-m">Feedback on this service</h2>
+
+      <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
+
+      <p>It’s now safe to close this window.</p>
+
+
+      
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}

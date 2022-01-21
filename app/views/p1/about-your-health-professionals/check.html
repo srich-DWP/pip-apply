@@ -1,0 +1,78 @@
+{% extends "layout-p1.html" %}
+
+{% block beforeContent %}
+  {% include "p1/_beta-banner.html" %}
+  {% include "p1/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <form id="form" method="post" action="/p1/list">
+
+      <h1 class="govuk-heading-l">Check your answers: your health professionals</h1>
+
+      {{ govukSummaryList({
+        rows: [
+
+        {
+            key: {
+              text: "Healthcare professional 1"
+            },
+            value: {
+              html: '<p class="govuk-body">
+                David Smith<br>
+                Specialist nurse<br>
+                01165 9178 678<br>
+                34 Moorbank Street<br>
+                Nottingham<br>
+                NG1 1TY<br>
+                Last seen: March 2020
+              </p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Healthcare professional 2"
+            },
+            value: {
+              html: '<p class="govuk-body">
+                Jason Jackson<br>
+                Physiotherapist<br>
+                01165 1111 222<br>
+                34 Clumber Road<br>
+                Nottingham<br>
+                NG1 7YH<br>
+                Last seen: February 2019
+              </p>'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
+      <a href="../list?aboutyourhealthprofessionals=completed" class="govuk-button">Confirm and continue</a>
+
+  </div><!-- govuk-grid-column-two-thirds -->
+</div><!-- govuk-grid-row -->
+{% endblock %}

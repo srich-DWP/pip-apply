@@ -1,0 +1,41 @@
+{% extends "layout-p4-ni.html" %}
+
+{% set pageTitle = "Declaration" %}
+
+{% block pageTitle %}
+  {{ pageTitle }} {% include "p4-ni/_page-title-slug.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "p4-ni/_beta-banner.html" %}
+  {% include "p4-ni/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Declaration</h1>
+
+      <p>I declare that the information I have given on this form is correct and complete.</p>
+
+      <p>I understand if I give wrong or incomplete information, my benefit may be stopped and I may be prosecuted or may have to pay a penalty.</p>
+
+      <p>I understand I must promptly tell the office that pays my Personal Independence Payment of anything that may affect my entitlement to, or amount of, that benefit. </p>
+
+      <p>I understand that the Department for Communities may use the information which it has now or may get in the future to decide whether I am entitled to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>the benefit I am claiming</li>
+        <li>any other benefit I have claimed</li>
+        <li>any other benefit I may claim or be awarded in the future</li>
+
+      </ul>
+
+      <a href="/p4-ni/apply/confirmation" class="govuk-button">I agree – send my information</a>
+
+    </div>{# /govuk-grid-column-one-third #}
+  </div>{# /govuk-grid-row #}
+{% endblock %}
